@@ -7,7 +7,7 @@
  - [popper.min.js.map](https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System/blob/Loic/vendor/assets/javascripts/popper.min.js.map)
  - [scripts.js](https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System/blob/Loic/vendor/assets/javascripts/scripts.js)
  - [demo.revolution_slider.js](https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System/blob/Loic/vendor/assets/javascripts/demo.revolution_slider.js)
- - Not keep quote.js
+ - Not keep quote.js for now
 
  ## css
  - [custom.scss](https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System/blob/Loic/vendor/assets/stylesheets/custom.scss)
