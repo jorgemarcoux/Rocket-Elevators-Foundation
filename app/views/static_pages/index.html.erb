@@ -11,7 +11,7 @@
 
             <!-- Logo -->
             <a class="logo float-left scrollTo" href="#">
-                <img src="../../assets/images/custom/logo/R2.png" alt="" />
+                <%= image_tag("custom/logo/R2.png", :alt => "logo") %>
             </a>
 
             <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
@@ -78,7 +78,7 @@
             <!-- SLIDE  -->
             <li data-transition="parallaxtobottom" data-slotamount="7" data-masterspeed="600"  data-saveperformance="off"  data-title="Elevate Safety">
                 <!-- MAIN IMAGE -->
-                <img src="../../assets/images/custom/slide/slide_1.jpg"  alt="cover image"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                <%= image_tag("custom/slide/slide_1.jpg", :alt => "cover image", :data_bgposition => "center top", :data_bgfit => "cover", :data_bgrepeat => "no-repeat") %>
 
                 <div class="overlay dark-6"></div>
 
@@ -151,7 +151,7 @@
             <!--SLIDE-->
             <li data-transition="parallaxtoleft" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" data-title="Residential">
                 <!-- MAIN IMAGE -->
-                <img src="../../assets/images/custom/slide/slide_2.jpg" alt="cover image"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                <%= image_tag("custom/slide/slide_2.jpg", :alt => "cover image", :data_bgposition => "center top", :data_bgfit => "cover", :data_bgrepeat => "no-repeat") %>
 
                 <div class="overlay dark-5"><!-- dark overlay [0 to 9 opacity] --></div>
 
@@ -205,7 +205,7 @@
             <!-- SLIDE  -->
             <li data-transition="parallaxright" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" data-title="Corporate">
                 <!-- MAIN IMAGE -->
-                <img src="../../assets/images/custom/slide/slide_3.jpg" alt="cover image"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                <%= image_tag("custom/slide/slide_3.jpg", :alt => "cover image", :data_bgposition => "center top", :data_bgfit => "cover", :data_bgrepeat => "no-repeat") %>
 
                 <div class="overlay dark-5"><!-- dark overlay [0 to 9 opacity] --></div>
 
@@ -271,56 +271,27 @@
 </a>
 <!-- /BUTTON CALLOUT -->
 
-<!-- 			<div class="carousel carousol slide mt-1" data-ride="carousel">
-    <div class="carousel-item active">
-        <div class="overlay dark-5"></div>
-        <img class="d-block" style="width: 100%;" src="../../assets/images/custom/slide/slide_1_com.png" alt="First slide">
-        
-        <div class="carousel-caption d-md-block">
-            <h3 style="color: white;">Elevate Safely With Speed and Style</h3>
-        </div>						
-    </div>
-
-    <div class="carousel-item">
-        <div class="overlay dark-5"></div>
-        <img class="d-block" style="width: 100%;" src="../../assets/images/custom/slide/slide_2_com.png" alt="Second slide">
-
-        <div class="carousel-caption d-md-block">
-            <h3 style="color: white;">Want an Elevator in Your home?</h3>
-        </div>	
-    </div>
-
-    <div class="carousel-item">
-        <div class="overlay dark-5"></div>
-        <img class="d-block" style="width: 100%;" src="../../assets/images/custom/slide/slide_3_com.png" alt="Third slide">
-
-        <div class="carousel-caption d-md-block">
-            <h3 style="color: white;">Elevate Yourself At Work</h3>
-        </div>	
-    </div>
-</div> -->
-
 <!-- Services -->
 <section id="services">
     <div class="container">
 
         <div class="row">
             <div class="col-lg-4 col-md-6 col-12 text-center">
-                <img class="img-fluid" src="../../assets/images/custom/services/elevator_3_1920x1000.png" alt="img" />
+                <%= image_tag("custom/services/elevator_3_1920x1000.png", :alt => "image", :class => "img-fluid") %>
                 <h3 class="mt-10">Award Winning Elevators!</h3>
                 <p>Rocket Elevators has gained many prices over the years, notably the 2020 golden gear award. Read more below !</p>
                 <a href="#portfolio" class="btn btn-default">OUR SUCCESS !</a>
             </div>
 
             <div class="col-lg-4 col-md-6 col-12 text-center">
-                <img class="img-fluid" src="../../assets/images/custom/services/elevator_4_1920x1000.png" alt="img" />
+                <%= image_tag("custom/services/elevator_4_1920x1000.png", :alt => "image", :class => "img-fluid") %>
                 <h3 class="mt-10">An elevator at home ?</h3>
                 <p>Yes ! You read that right ! Rocket Elevators offers a large variety of residential elevators to choose from !</p>
                 <a href="residential.html" class="btn btn-default">SERVICE DETAILS</a>
             </div>
 
             <div class="col-lg-4 col-md-6 mx-auto text-center" id="service-3">
-                <img class="img-fluid" src="../../assets/images/custom/services/elevator_2_1920x1000.png" alt="img" />
+                <%= image_tag("custom/services/elevator_2_1920x1000.png", :alt => "image", :class => "img-fluid") %>
                 <h3 class="mt-10">Spare your legs !</h3>
                 <p>Taking the stairs to your office can be quite a tedious task when your building has many stories.
                         That's why, we, at Rocket Elevators, offer you an outstanding amount of corporate models to choose from ! </p>
@@ -333,16 +304,16 @@
 <!-- /Services -->
 
 <!-- Parallax -->
-<section class="parallax parallax-1" style="background-image: url('assets/images/custom/parallax/34-min.jpg');">
+<section class="parallax parallax-1" id="parallax_index_1">
     <div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
 
     <div class="container">
 
         <div class="text-center">
             <h2 class="fs-40 fw-300">Elevating You With Safety, Speed And Style Since 1976</h2>
-            <a class="btn btn-default btn-lg" href="quote.html">GET A QUOTE <i class="fa fa-angle-right"></i></a> 
+            <a class="btn btn-default btn-lg" href="quote.html">GET A QUOTE</a> 
             &nbsp; OR &nbsp;
-            <a class="btn btn-red btn-lg" href="#contact">CONTACT US <i class="fa fa-angle-right"></i></a>
+            <a class="btn btn-red btn-lg" href="#contact">CONTACT US</a>
         </div>
 
     </div>
@@ -351,411 +322,405 @@
 
 <!-- PORTFOLIO -->
 <section id="portfolio">
-        <div class="heading-title heading-dotted text-center" style="font-size: 30px;">
-            <h2>Our portfolio</h2>
-        </div>
-
-        <div class="text-center">
-            <ul class="nav nav-pills mix-filter mb-60">
-                <li data-filter="all" class="filter active"><a href="#">All</a></li>
-                <li data-filter="prizes" class="filter"><a href="#">Prizes</a></li>
-                <li data-filter="residential" class="filter"><a href="#">Residential</a></li>
-                <li data-filter="corporate" class="filter"><a href="#">Corporate</a></li>
-            </ul>
-        </div>
-
-        <div class="">
-            <div class="portfolio-gutter">
-
-                    <div class="row mix-grid">
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix corporate"><!-- item -->
-
-                            <div class="item-box">
-                                <figure>
-                                    <span class="item-hover">
-                                        <span class="overlay dark-5"></span>
-                                        <span class="inner">
-
-                                            <!-- lightbox -->
-                                            <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_3_con.png" data-plugin-options='{"type":"image"}'>
-                                                <span class="fa fa-plus fs-20"></span>
-                                            </a>
-
-                                        </span>
-                                    </span>
-
-                                    <img class="img-fluid" src="../../assets/images/custom/portfolio/portfolio_3_con.png" width="600" height="399" alt="">
-                                </figure>
-
-                                <div class="item-box-desc">
-                                    <h3>Marble Project</h3>
-                                    <ul class="list-inline categories m-0">
-                                        <li><a href="#portfolio">Corporate</a></li>
-                                        <li><a href="#portfolio">Marble</a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                        </div><!-- /item -->
-
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix residential"><!-- item -->
-
-                            <div class="item-box">
-                                <figure>
-                                    <span class="item-hover">
-                                        <span class="overlay dark-5"></span>
-                                        <span class="inner">
-
-                                            <!-- lightbox -->
-                                            <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_5_con.png" data-plugin-options='{"type":"image"}'>
-                                                <span class="fa fa-plus fs-20"></span>
-                                            </a>
-
-                                        </span>
-                                    </span>
-
-                                    <img class="img-fluid" src="../../assets/images/custom/portfolio/portfolio_5_con.png" width="600" height="399" alt="">
-                                </figure>
-
-                                <div class="item-box-desc">
-                                    <h3>Glass Home</h3>
-                                    <ul class="list-inline categories m-0">
-                                        <li><a href="#portfolio">Residential</a></li>
-                                        <li><a href="#portfolio">Glass</a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                        </div><!-- /item -->
-
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix residential"><!-- item -->
-
-                            <div class="item-box">
-                                <figure>
-                                    <span class="item-hover">
-                                        <span class="overlay dark-5"></span>
-                                        <span class="inner">
-
-                                            <!-- lightbox -->
-                                            <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_6_con.png" data-plugin-options='{"type":"image"}'>
-                                                <span class="fa fa-plus fs-20"></span>
-                                            </a>
-
-                                        </span>
-                                    </span>
-
-                                    <img class="img-fluid" src="../../assets/images/custom/portfolio/portfolio_6_con.png" width="600" height="399" alt="">
-                                </figure>
-
-                                <div class="item-box-desc">
-                                    <h3>Spiral Design</h3>
-                                    <ul class="list-inline categories m-0">
-                                        <li><a href="#portfolio">Residential</a></li>
-                                        <li><a href="#portfolio">Spiral</a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                        </div><!-- /item -->
-
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix prizes"><!-- item -->
-
-                            <div class="item-box">
-                                <figure>
-                                    <span class="item-hover">
-                                        <span class="overlay dark-5"></span>
-                                        <span class="inner">
-
-                                            <!-- lightbox -->
-                                            <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_14_con.png" data-plugin-options='{"type":"image"}'>
-                                                <span class="fa fa-plus fs-20"></span>
-                                            </a>
-
-                                        </span>
-                                    </span>
-
-                                    <img class="img-fluid" src="../../assets/images/custom/portfolio/portfolio_14_con.png" width="600" height="399" alt="">
-                                </figure>
-
-                                <div class="item-box-desc">
-                                    <h3>Art Circle</h3>
-                                    <ul class="list-inline categories m-0">
-                                        <li><a href="#portfolio">Prizes</a></li>
-                                        <li><a href="#portfolio">Art</a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                        </div><!-- /item -->
-
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix prizes"><!-- item -->
-
-                            <div class="item-box">
-                                <figure>
-                                    <span class="item-hover">
-                                        <span class="overlay dark-5"></span>
-                                        <span class="inner">
-
-                                            <!-- lightbox -->
-                                            <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_4_con.png" data-plugin-options='{"type":"image"}'>
-                                                <span class="fa fa-plus fs-20"></span>
-                                            </a>
-
-                                        </span>
-                                    </span>
-
-                                    <img class="img-fluid" src="../../assets/images/custom/portfolio/portfolio_4_con.png" width="600" height="399" alt="">
-                                </figure>
-
-                                <div class="item-box-desc">
-                                    <h3>Metallic Structures</h3>
-                                    <ul class="list-inline categories m-0">
-                                        <li><a href="#portfolio">Prizes</a></li>
-                                        <li><a href="#portfolio">Full Metal</a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                        </div><!-- /item -->
-
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix prizes"><!-- item -->
-
-                            <div class="item-box">
-                                <figure>
-                                    <span class="item-hover">
-                                        <span class="overlay dark-5"></span>
-                                        <span class="inner">
-
-                                            <!-- lightbox -->
-                                            <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_2_con.png" data-plugin-options='{"type":"image"}'>
-                                                <span class="fa fa-plus fs-20"></span>
-                                            </a>
-
-                                        </span>
-                                    </span>
-
-                                    <img class="img-fluid" src="../../assets/images/custom/portfolio/portfolio_2_con.png" width="600" height="399" alt="">
-                                </figure>
-
-                                <div class="item-box-desc">
-                                    <h3>Project Intersect</h3>
-                                    <ul class="list-inline categories m-0">
-                                        <li><a href="#portfolio">Prizes</a></li>
-                                        <li><a href="#portfolio">Intersect</a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                        </div><!-- /item -->
-
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix corporate"><!-- item -->
-
-                            <div class="item-box">
-                                <figure>
-                                    <span class="item-hover">
-                                        <span class="overlay dark-5"></span>
-                                        <span class="inner">
-
-                                            <!-- lightbox -->
-                                            <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_7_con.png" data-plugin-options='{"type":"image"}'>
-                                                <span class="fa fa-plus fs-20"></span>
-                                            </a>
-
-                                        </span>
-                                    </span>
-
-                                    <img class="img-fluid" src="../../assets/images/custom/portfolio/portfolio_7_con.png" width="600" height="399" alt="">
-                                </figure>
-
-                                <div class="item-box-desc">
-                                    <h3>Christmas Elevation</h3>
-                                    <ul class="list-inline categories m-0">
-                                        <li><a href="#portfolio">Corporate</a></li>
-                                        <li><a href="#portfolio">Christmas</a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                        </div><!-- /item -->
-
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix corporate"><!-- item -->
-
-                            <div class="item-box">
-                                <figure>
-                                    <span class="item-hover">
-                                        <span class="overlay dark-5"></span>
-                                        <span class="inner">
-
-                                            <!-- lightbox -->
-                                            <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_8_con.png" data-plugin-options='{"type":"image"}'>
-                                                <span class="fa fa-plus fs-20"></span>
-                                            </a>
-
-                                        </span>
-                                    </span>
-
-                                    <img class="img-fluid" src="../../assets/images/custom/portfolio/portfolio_8_con.png" width="600" height="399" alt="">
-                                </figure>
-
-                                <div class="item-box-desc">
-                                    <h3>Minimalist Art</h3>
-                                    <ul class="list-inline categories m-0">
-                                        <li><a href="#portfolio">Corporate</a></li>
-                                        <li><a href="#portfolio">Art</a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                        </div><!-- /item -->
-
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix residential"><!-- item -->
-
-                            <div class="item-box">
-                                <figure>
-                                    <span class="item-hover">
-                                        <span class="overlay dark-5"></span>
-                                        <span class="inner">
-
-                                            <!-- lightbox -->
-                                            <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_9_con.png" data-plugin-options='{"type":"image"}'>
-                                                <span class="fa fa-plus fs-20"></span>
-                                            </a>
-
-                                        </span>
-                                    </span>
-
-                                    <img class="img-fluid" src="../../assets/images/custom/portfolio/portfolio_9_con.png" width="600" height="399" alt="">
-                                </figure>
-
-                                <div class="item-box-desc">
-                                    <h3>The Man Cave</h3>
-                                    <ul class="list-inline categories m-0">
-                                        <li><a href="#portfolio">Residential</a></li>
-                                        <li><a href="#portfolio">The Man Cave</a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                        </div><!-- /item -->
-
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix prizes"><!-- item -->
-
-                            <div class="item-box">
-                                <figure>
-                                    <span class="item-hover">
-                                        <span class="overlay dark-5"></span>
-                                        <span class="inner">
-
-                                            <!-- lightbox -->
-                                            <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_10_con.png" data-plugin-options='{"type":"image"}'>
-                                                <span class="fa fa-plus fs-20"></span>
-                                            </a>
-
-                                        </span>
-                                    </span>
-
-                                    <img class="img-fluid" src="../../assets/images/custom/portfolio/portfolio_10_con.png" width="600" height="399" alt="">
-                                </figure>
-
-                                <div class="item-box-desc">
-                                    <h3>Highest Level</h3>
-                                    <ul class="list-inline categories m-0">
-                                        <li><a href="#portfolio">Prizes</a></li>
-                                        <li><a href="#portfolio">Infinity</a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                        </div><!-- /item -->
-
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix residential"><!-- item -->
-
-                            <div class="item-box">
-                                <figure>
-                                    <span class="item-hover">
-                                        <span class="overlay dark-5"></span>
-                                        <span class="inner">
-
-                                            <!-- lightbox -->
-                                            <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_11_con.png" data-plugin-options='{"type":"image"}'>
-                                                <span class="fa fa-plus fs-20"></span>
-                                            </a>
-
-                                        </span>
-                                    </span>
-
-                                    <img class="img-fluid" src="../../assets/images/custom/portfolio/portfolio_11_con.png" width="600" height="399" alt="">
-                                </figure>
-
-                                <div class="item-box-desc">
-                                    <h3>Museum Home</h3>
-                                    <ul class="list-inline categories m-0">
-                                        <li><a href="#portfolio">Residential</a></li>
-                                        <li><a href="#portfolio">Art Museum</a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                        </div><!-- /item -->
-
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix residential"><!-- item -->
-
-                            <div class="item-box">
-                                <figure>
-                                    <span class="item-hover">
-                                        <span class="overlay dark-5"></span>
-                                        <span class="inner">
-
-                                            <!-- lightbox -->
-                                            <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_12_con.png" data-plugin-options='{"type":"image"}'>
-                                                <span class="fa fa-plus fs-20"></span>
-                                            </a>
-
-                                        </span>
-                                    </span>
-
-                                    <img class="img-fluid" src="../../assets/images/custom/portfolio/portfolio_12_con.png" width="600" height="399" alt="">
-                                </figure>
-
-                                <div class="item-box-desc">
-                                    <h3>Bird Cage</h3>
-                                    <ul class="list-inline categories m-0">
-                                        <li><a href="#portfolio">Residential</a></li>
-                                        <li><a href="#portfolio">Cage</a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                        </div><!-- /item -->
-
+    <div class="heading-title heading-dotted text-center" style="font-size: 30px;">
+        <h2>Our portfolio</h2>
+    </div>
+
+    <div class="text-center">
+        <ul class="nav nav-pills mix-filter mb-60">
+            <li data-filter="all" class="filter active"><a href="#">All</a></li>
+            <li data-filter="prizes" class="filter"><a href="#">Prizes</a></li>
+            <li data-filter="residential" class="filter"><a href="#">Residential</a></li>
+            <li data-filter="corporate" class="filter"><a href="#">Corporate</a></li>
+        </ul>
+    </div>
+
+    <div class="">
+        <div class="portfolio-gutter">
+            <div class="row mix-grid">
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix corporate"><!-- item -->
+
+                    <div class="item-box">
+                        <figure>
+                            <span class="item-hover">
+                                <span class="overlay dark-5"></span>
+                                <span class="inner">
+
+                                    <!-- lightbox -->
+                                    <a class="ico-rounded lightbox" href="assets/custom/portfolio/portfolio_3_con.png" data-plugin-options='{"type":"image"}'>
+                                        <span class="fa fa-plus fs-20"></span>
+                                    </a>
+
+                                </span>
+                            </span>
+
+                            <%= image_tag("custom/portfolio/portfolio_3_con.png", :alt => "image", :class => "img-fluid", :width => "600", :height => "399") %>
+                        </figure>
+
+                        <div class="item-box-desc">
+                            <h3>Marble Project</h3>
+                            <ul class="list-inline categories m-0">
+                                <li><a href="#portfolio">Corporate</a></li>
+                                <li><a href="#portfolio">Marble</a></li>
+                            </ul>
+                        </div>
 
                     </div>
 
-    
+                </div><!-- /item -->
+
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix residential"><!-- item -->
+
+                    <div class="item-box">
+                        <figure>
+                            <span class="item-hover">
+                                <span class="overlay dark-5"></span>
+                                <span class="inner">
+
+                                    <!-- lightbox -->
+                                    <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_5_con.png" data-plugin-options='{"type":"image"}'>
+                                        <span class="fa fa-plus fs-20"></span>
+                                    </a>
+
+                                </span>
+                            </span>
+
+                            <%= image_tag("custom/portfolio/portfolio_5_con.png", :alt => "image", :class => "img-fluid", :width => "600", :height => "399") %>
+                        </figure>
+
+                        <div class="item-box-desc">
+                            <h3>Glass Home</h3>
+                            <ul class="list-inline categories m-0">
+                                <li><a href="#portfolio">Residential</a></li>
+                                <li><a href="#portfolio">Glass</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div><!-- /item -->
+
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix residential"><!-- item -->
+
+                    <div class="item-box">
+                        <figure>
+                            <span class="item-hover">
+                                <span class="overlay dark-5"></span>
+                                <span class="inner">
+
+                                    <!-- lightbox -->
+                                    <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_6_con.png" data-plugin-options='{"type":"image"}'>
+                                        <span class="fa fa-plus fs-20"></span>
+                                    </a>
+
+                                </span>
+                            </span>
+
+                            <%= image_tag("custom/portfolio/portfolio_6_con.png", :alt => "image", :class => "img-fluid", :width => "600", :height => "399") %>
+                        </figure>
+
+                        <div class="item-box-desc">
+                            <h3>Spiral Design</h3>
+                            <ul class="list-inline categories m-0">
+                                <li><a href="#portfolio">Residential</a></li>
+                                <li><a href="#portfolio">Spiral</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div><!-- /item -->
+
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix prizes"><!-- item -->
+
+                    <div class="item-box">
+                        <figure>
+                            <span class="item-hover">
+                                <span class="overlay dark-5"></span>
+                                <span class="inner">
+
+                                    <!-- lightbox -->
+                                    <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_14_con.png" data-plugin-options='{"type":"image"}'>
+                                        <span class="fa fa-plus fs-20"></span>
+                                    </a>
+
+                                </span>
+                            </span>
+
+                            <%= image_tag("custom/portfolio/portfolio_14_con.png", :alt => "image", :class => "img-fluid", :width => "600", :height => "399") %>
+                        </figure>
+
+                        <div class="item-box-desc">
+                            <h3>Art Circle</h3>
+                            <ul class="list-inline categories m-0">
+                                <li><a href="#portfolio">Prizes</a></li>
+                                <li><a href="#portfolio">Art</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div><!-- /item -->
+
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix prizes"><!-- item -->
+
+                    <div class="item-box">
+                        <figure>
+                            <span class="item-hover">
+                                <span class="overlay dark-5"></span>
+                                <span class="inner">
+
+                                    <!-- lightbox -->
+                                    <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_4_con.png" data-plugin-options='{"type":"image"}'>
+                                        <span class="fa fa-plus fs-20"></span>
+                                    </a>
+
+                                </span>
+                            </span>
+
+                            <%= image_tag("custom/portfolio/portfolio_4_con.png", :alt => "image", :class => "img-fluid", :width => "600", :height => "399") %>
+                        </figure>
+
+                        <div class="item-box-desc">
+                            <h3>Metallic Structures</h3>
+                            <ul class="list-inline categories m-0">
+                                <li><a href="#portfolio">Prizes</a></li>
+                                <li><a href="#portfolio">Full Metal</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div><!-- /item -->
+
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix prizes"><!-- item -->
+
+                    <div class="item-box">
+                        <figure>
+                            <span class="item-hover">
+                                <span class="overlay dark-5"></span>
+                                <span class="inner">
+
+                                    <!-- lightbox -->
+                                    <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_2_con.png" data-plugin-options='{"type":"image"}'>
+                                        <span class="fa fa-plus fs-20"></span>
+                                    </a>
+
+                                </span>
+                            </span>
+
+                            <%= image_tag("custom/portfolio/portfolio_2_con.png", :alt => "image", :class => "img-fluid", :width => "600", :height => "399") %>
+                        </figure>
+
+                        <div class="item-box-desc">
+                            <h3>Project Intersect</h3>
+                            <ul class="list-inline categories m-0">
+                                <li><a href="#portfolio">Prizes</a></li>
+                                <li><a href="#portfolio">Intersect</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div><!-- /item -->
+
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix corporate"><!-- item -->
+
+                    <div class="item-box">
+                        <figure>
+                            <span class="item-hover">
+                                <span class="overlay dark-5"></span>
+                                <span class="inner">
+
+                                    <!-- lightbox -->
+                                    <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_7_con.png" data-plugin-options='{"type":"image"}'>
+                                        <span class="fa fa-plus fs-20"></span>
+                                    </a>
+
+                                </span>
+                            </span>
+
+                            <%= image_tag("custom/portfolio/portfolio_7_con.png", :alt => "image", :class => "img-fluid", :width => "600", :height => "399") %>
+                        </figure>
+
+                        <div class="item-box-desc">
+                            <h3>Christmas Elevation</h3>
+                            <ul class="list-inline categories m-0">
+                                <li><a href="#portfolio">Corporate</a></li>
+                                <li><a href="#portfolio">Christmas</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div><!-- /item -->
+
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix corporate"><!-- item -->
+
+                    <div class="item-box">
+                        <figure>
+                            <span class="item-hover">
+                                <span class="overlay dark-5"></span>
+                                <span class="inner">
+
+                                    <!-- lightbox -->
+                                    <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_8_con.png" data-plugin-options='{"type":"image"}'>
+                                        <span class="fa fa-plus fs-20"></span>
+                                    </a>
+
+                                </span>
+                            </span>
+
+                            <%= image_tag("custom/portfolio/portfolio_8_con.png", :alt => "image", :class => "img-fluid", :width => "600", :height => "399") %>
+                        </figure>
+
+                        <div class="item-box-desc">
+                            <h3>Minimalist Art</h3>
+                            <ul class="list-inline categories m-0">
+                                <li><a href="#portfolio">Corporate</a></li>
+                                <li><a href="#portfolio">Art</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div><!-- /item -->
+
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix residential"><!-- item -->
+
+                    <div class="item-box">
+                        <figure>
+                            <span class="item-hover">
+                                <span class="overlay dark-5"></span>
+                                <span class="inner">
+
+                                    <!-- lightbox -->
+                                    <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_9_con.png" data-plugin-options='{"type":"image"}'>
+                                        <span class="fa fa-plus fs-20"></span>
+                                    </a>
+
+                                </span>
+                            </span>
+
+                            <%= image_tag("custom/portfolio/portfolio_9_con.png", :alt => "image", :class => "img-fluid", :width => "600", :height => "399") %>
+                        </figure>
+
+                        <div class="item-box-desc">
+                            <h3>The Man Cave</h3>
+                            <ul class="list-inline categories m-0">
+                                <li><a href="#portfolio">Residential</a></li>
+                                <li><a href="#portfolio">The Man Cave</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div><!-- /item -->
+
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix prizes"><!-- item -->
+
+                    <div class="item-box">
+                        <figure>
+                            <span class="item-hover">
+                                <span class="overlay dark-5"></span>
+                                <span class="inner">
+
+                                    <!-- lightbox -->
+                                    <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_10_con.png" data-plugin-options='{"type":"image"}'>
+                                        <span class="fa fa-plus fs-20"></span>
+                                    </a>
+
+                                </span>
+                            </span>
+
+                            <%= image_tag("custom/portfolio/portfolio_10_con.png", :alt => "image", :class => "img-fluid", :width => "600", :height => "399") %>
+                        </figure>
+
+                        <div class="item-box-desc">
+                            <h3>Highest Level</h3>
+                            <ul class="list-inline categories m-0">
+                                <li><a href="#portfolio">Prizes</a></li>
+                                <li><a href="#portfolio">Infinity</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div><!-- /item -->
+
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix residential"><!-- item -->
+
+                    <div class="item-box">
+                        <figure>
+                            <span class="item-hover">
+                                <span class="overlay dark-5"></span>
+                                <span class="inner">
+
+                                    <!-- lightbox -->
+                                    <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_11_con.png" data-plugin-options='{"type":"image"}'>
+                                        <span class="fa fa-plus fs-20"></span>
+                                    </a>
+
+                                </span>
+                            </span>
+
+                            <%= image_tag("custom/portfolio/portfolio_11_con.png", :alt => "image", :class => "img-fluid", :width => "600", :height => "399") %>
+                        </figure>
+
+                        <div class="item-box-desc">
+                            <h3>Museum Home</h3>
+                            <ul class="list-inline categories m-0">
+                                <li><a href="#portfolio">Residential</a></li>
+                                <li><a href="#portfolio">Art Museum</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div><!-- /item -->
+
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12 mix residential"><!-- item -->
+
+                    <div class="item-box">
+                        <figure>
+                            <span class="item-hover">
+                                <span class="overlay dark-5"></span>
+                                <span class="inner">
+
+                                    <!-- lightbox -->
+                                    <a class="ico-rounded lightbox" href="../../assets/images/custom/portfolio/portfolio_12_con.png" data-plugin-options='{"type":"image"}'>
+                                        <span class="fa fa-plus fs-20"></span>
+                                    </a>
+
+                                </span>
+                            </span>
+
+                            <%= image_tag("custom/portfolio/portfolio_12_con.png", :alt => "image", :class => "img-fluid", :width => "600", :height => "399") %>
+                        </figure>
+
+                        <div class="item-box-desc">
+                            <h3>Bird Cage</h3>
+                            <ul class="list-inline categories m-0">
+                                <li><a href="#portfolio">Residential</a></li>
+                                <li><a href="#portfolio">Cage</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div><!-- /item -->
+            </div>
         </div>
     </div>
 </section>
@@ -1189,17 +1154,3 @@
         <span class="loader"></span>
     </div>
 </div><!-- /PRELOADER --> %>
-
-<!-- JAVASCRIPT FILES -->
-<script>var plugin_path = 'assets/plugins/';</script>
-<script src="../../assets/plugins/jquery/jquery-3.3.1.min.js"></script>
-
-<script src="../../assets/javascripts/scripts.js"></script>
-
-<!-- REVOLUTION SLIDER -->
-<script src="../../assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
-<script src="../../assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
-<script src="../../assets/javascripts/view/demo.revolution_slider.js"></script>
-
-<!-- PAGELEVEL SCRIPTS -->
-<script src="../../assets/javascripts/contact.js"></script>

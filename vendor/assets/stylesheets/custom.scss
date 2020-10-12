@@ -1,5 +1,9 @@
 /* Mobile first - up to 565px wide */
 
+#parallax_index_1 {
+	background-image: image-url("custom/parallax/34-min.jpg");
+}
+
 #card-form {
 	padding: 0;
 	background-color: white;
@@ -45,6 +49,15 @@
 	padding-bottom: 5px;
 	background-color: white;
 }
+
+/* .button-default {
+	background-color: rgba (255, 255, 255, .5) !important;
+	border: gray 1px solid;
+}
+
+.button-default:hover {
+	background-color: rgba(0, 0, 0, 30) !important;
+} */
 
 .btn-red:hover {
 	background-color: #961d31;
