@@ -1,5 +1,3 @@
-console.log('hello !');
-
 /** ********************************************** **
 	@Author			Dorin Grigoras
 	@Website		www.stepofweb.com
@@ -44,8 +42,8 @@ console.log('hello !');
 
 
 	/* Init */
-	$(() => {
-		console.log('init');
+	jQuery(window).ready(function () {
+
 		// jQuery 3.x do no support size() - should be replaceced with .length
 		// We use this hack to make old plugins working
 		jQuery.fn.extend({
@@ -57,16 +55,14 @@ console.log('hello !');
 		// Popper user by Bootstrap
 		_loadPopperBS4();
 
-		console.log('Path Bootstrap JS => ', plugin_path + 'bootstrap/js/bootstrap.min.js');
-
 		// Load Bootstrap JS
 		loadScript(plugin_path + 'bootstrap/js/bootstrap.min.js', function() {
-			console.log('init action !');
-			
+
 			// Load Material Design Js
 			if(jQuery("body").hasClass('enable-materialdesign')) {
 				loadScript(plugin_path + 'mdl/material.min.js');
 			}
+
 			// Init
 			Init(false);
 
@@ -107,7 +103,6 @@ console.log('hello !');
 		_owl_carousel();
 		_flexslider();
 		_lightbox();
-		console.log("mixt!", plugin_path);
 		_mixitup();
 		_animate();
 		_onepageNav();
@@ -1800,9 +1795,7 @@ console.log('hello !');
 		var _container = jQuery('.mix-grid');
 		
 		if(_container.length > 0) {
-			console.log('path for loading', plugin_path + 'mixitup/jquery.mixitup.min.js');
 			loadScript(plugin_path + 'mixitup/jquery.mixitup.min.js', function() {
-				console.log('plug');
 
 				if(jQuery().mixitup) {
 
