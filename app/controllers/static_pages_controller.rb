@@ -10,4 +10,10 @@ class StaticPagesController < ApplicationController
 
   def corporate
   end
+
+  def login
+  end
+
+  def backoffice
+  end
 end
