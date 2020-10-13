@@ -1,0 +1,51 @@
+<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+  <!-- TOP NAV -->
+  <header id="topNav">
+    <div class="container">
+      <!-- Mobile Menu Button -->
+      <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+        <i class="fa fa-bars"></i>
+      </button>
+      <!-- Logo -->
+      <a class="logo float-left scrollTo" href="/">
+        <%= image_tag("logo/R2.png", :alt => "logo") %>
+      </a>
+      <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+        <nav class="nav-main">
+          <ul id="topMain" class="nav nav-pills nav-main nav-hover nav-onepage">
+            <li class="active"><!-- HOME -->
+              <%= link_to 'HOME', root_path %>
+            </li>
+            <li class="dropdown nav-animate-fadeIn resp-active"><!-- SERVICES -->
+              <%= link_to 'SERVICES', root_path(anchor: "services") %>
+              <ul class="dropdown-menu">
+                <li class="dropdown">
+                  <a href="/static_pages/residential">RESIDENTIAL SERVICES</a>
+                </li>
+                <li class="dropdown">
+                  <a href="/static_pages/corporate">CORPORATE SERVICES</a>
+                </li>
+                <li class="dropdown">
+                  <a href="/static_pages/quote">GET A QUOTE</a>
+                </li>
+              </ul>
+            </li>
+            <li><!-- PORTFOLIO -->
+              <%= link_to 'PORTFOLIO', root_path(anchor: "portfolio") %>
+            </li>
+            <li><!-- NEWS -->
+              <%= link_to 'NEWS', root_path(anchor: "news") %>
+            </li>
+            <li><!-- CLIENTS -->
+              <%= link_to 'CLIENTS', root_path(anchor: "clients") %>
+            </li>
+            <li><!-- CONTACT -->
+              <%= link_to 'CONTACT', root_path(anchor: "contact") %>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- /Top Nav -->
+</div>
