@@ -17,18 +17,17 @@
     <%= stylesheet_link_tag    'red', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'https://use.fontawesome.com/releases/v5.0.10/css/all.css' %>
     <%= stylesheet_link_tag    'https://cdn.jsdelivr.net/npm/et-line@1.0.1/style.min.css' %>
+  </head>
+  <body>
+    <%= render 'partials/alerts'%>
+    <%= render 'partials/header' %>
+    <%= yield %>
+    <%= render 'partials/footer' %>
     <script>
       var plugin_path;
     </script>
-  </head>
-  <body>
-    <%= yield %>
     <%= javascript_include_tag 'jquery-3.3.1.min.js', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'scripts.js', 'data-turbolinks-track': 'reload' %>
-    <%= render 'partials/header' %>
-    <%= render 'partials/alerts'%>
-    <%= yield %>
-    <%= render 'partials/footer' %>
     <%= javascript_include_tag 'jquery-3.3.1.min.js', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'jquery.themepunch.tools.min.js', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'jquery.themepunch.revolution.min.js', 'data-turbolinks-track': 'reload' %>
