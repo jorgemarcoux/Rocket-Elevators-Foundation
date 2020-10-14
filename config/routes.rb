@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
 
   devise_for :users,
-  :path_prefix => 'd',
+  :path_prefix => '',
   path: '',
   path_names: {
     sign_in: 'signin',
