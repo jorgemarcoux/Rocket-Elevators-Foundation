@@ -56,7 +56,7 @@
 		_loadPopperBS4();
 
 		// Load Bootstrap JS
-		loadScript(plugin_path + 'bootstrap/js/bootstrap.min.js', function() {
+		loadScript(plugin_path + 'bootstrap.min.js', function() {
 
 			// Load Material Design Js
 			if(jQuery("body").hasClass('enable-materialdesign')) {
@@ -1237,15 +1237,16 @@
 
 		if(_container.length > 0) {
 
-			loadScript(plugin_path + 'owl-carousel/owl.carousel.min.js', function() {
+			loadScript(plugin_path + 'owl.carousel.min.js', function() {
 
 				_container.each(function() {
 
 					var slider 		= jQuery(this);
-					var options 	= slider.attr('data-plugin-options');
+					var options 	= slider.attr('data_plugin_options');
 
 					// Progress Bar
 					var $opt = eval('(' + options + ')');  // convert text to json
+					console.log($opt, options);
 
 					if($opt.progressBar == 'true') {
 						var afterInit = progressBar;
@@ -1399,7 +1400,7 @@
 
 				_container2.each(function() {
 					var _this 		= jQuery(this),
-						_options 	= _this.attr('data-plugin-options');
+						_options 	= _this.attr('data_plugin_options');
 
 					_defaults = {
 					    loop: 					true,
@@ -1583,7 +1584,7 @@
 				_el.each(function() {
 
 					var _t 			= jQuery(this),
-						options 	= _t.attr('data-plugin-options'),
+						options 	= _t.attr('data_plugin_options'),
 						config		= {},
 						defaults 	= {
 							type: 				'image',
@@ -1612,8 +1613,8 @@
 							},
 						};
 
-					if(_t.data("plugin-options")) {
-						config = jQuery.extend({}, defaults, options, _t.data("plugin-options"));
+					if(_t.data("plugin_options")) {
+						config = jQuery.extend({}, defaults, options, _t.data("plugin_options"));
 					}
 
 					jQuery(this).magnificPopup(config);
@@ -3804,7 +3805,7 @@
 
 
 /** Flickr Widget
-	<div class="widget-flickr clearfix lightbox margin-bottom-60" data-id="37304598@N02" data-limit="16" data-plugin-options='{"delegate": "a", "gallery": {"enabled": true}}'></div>
+	<div class="widget-flickr clearfix lightbox margin-bottom-60" data-id="37304598@N02" data-limit="16" data_plugin_options='{"delegate": "a", "gallery": {"enabled": true}}'></div>
  **************************************************************** **/
 	function _widget_flickr() {
 		var _container = jQuery('.widget-flickr');
