@@ -1,2 +1,769 @@
-<h1>StaticPages#quote</h1>
-<p>Find me in app/views/static_pages/quote.html.erb</p>
+
+    <div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+
+        <!-- TOP NAV -->
+        <header id="topNav">
+            <div class="container">
+
+                <!-- Mobile Menu Button -->
+                <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+                <!-- Logo -->
+                <a class="logo float-left" href="/#home">
+                    <%= image_tag('logo/R2.png', :alt => 'Rocket elevators logo') %>
+                </a>
+
+                <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+                    <nav class="nav-main">
+
+                        <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+                            <li><!-- HOME -->
+                                <a href="/#home">
+                                    HOME
+                                </a>
+                            </li>
+                            <li class="dropdown nav-animate-fadeIn resp-active"><!-- SERVICES -->
+                                <a href="/#services">
+                                    SERVICES
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown">
+                                        <a href="residential">RESIDENTIAL SERVICES</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="corporate">CORPORATE SERVICES</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#">GET A QUOTE</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><!-- PORTFOLIO -->
+                                <a href="/#portfolio">
+                                    PORTFOLIO
+                                </a>
+                            </li>
+                            <li><!-- NEWS -->
+                                <a href="/#news">
+                                    NEWS
+                                </a>
+                            </li>
+                            <li><!-- CLIENTS -->
+                                <a href="/#clients">
+                                    CLIENTS
+                                </a>
+                            </li>
+                            <li><!-- CONTACT -->
+                                <a href="/#contact">
+                                    CONTACT
+                                </a>
+                            </li>
+                        </ul>
+
+                    </nav>
+                </div>
+
+            </div>
+        </header>
+        <!-- /Top Nav -->
+
+    </div>
+
+	<!-- Parallax -->
+		<section class="parallax parallax-1" id="parallax-quote-1" >
+			<div class="overlay dark-5">
+				<!-- dark overlay [1 to 9 opacity] -->
+			</div>
+
+			<div class="container">
+
+				<div class="text-center">
+					<h2 class="fs-90 fw-300">GET A SUBMISSION</h2>
+					<a class="btn btn-lg btn-default btn-lg" href="/">HOME <i class="fa fa-angle-right"></i></a>
+					&nbsp; OR &nbsp;
+					<a class="btn btn-lg btn-red" href="/#contact">CONTACT US <i
+							class="fa fa-angle-right"></i></a>
+				</div>
+
+			</div>
+		</section>
+		<!-- /Parallax -->
+
+		<section style="padding: 0;">
+
+
+			<div>
+
+				<div class="heading-title heading-dotted text-center mt-35">
+					<h3 class="fs-50">Select the type <span> of building</span></h3>
+				</div>
+
+				<!--Accordion wrapper-->
+				<div class="accordion md-accordion accordion-4" id="accordionEx2" role="tablist" aria-multiselectable="true">
+
+					<!-- Accordion card -->
+					<div class="card mb-0" id="res">
+                        <%= form_with do |f| %>
+
+						<!-- Card header -->
+						<div class="card-header z-depth-1 teal lighten-4" role="tab" id="heading10">
+							<a data-toggle="collapse" data-parent="#accordionEx2" href="#collapse10"
+								aria-expanded="true" aria-controls="collapse10">
+								<div button type="button"
+									class="btn btn-fullwidth btn-outline-danger text-center font-weight-bold"
+                                    style="width: 100%;">
+										Residential
+								</div>
+							</a>
+						</div>
+
+						<!-- Card body -->
+						<div id="collapse10" class="collapse" role="tabpanel" aria-labelledby="heading10"
+							data-parent="#accordionEx2">
+							<div class="card-body rgba-teal-strong white-text">
+
+								<div class="row">
+									<div class="col-md-3">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_apartments_the_building_offers %>
+                                            <br>
+                                            <%= f.text_field :apartments, :class => 'form-control', :placeholder => 'Nb. Appartments',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+
+									<div class="col-md-3">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_floors_in_the_building %>
+                                            <br>
+                                            <%= f.text_field :floors, :class => 'form-control', :placeholder => 'Nb. Floor',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+
+									<div class="col-md-3">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_basements_in_the_building %>
+                                            <br>
+                                            <%= f.text_field :basements, :class => 'form-control', :placeholder => 'Nb. Basements',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+                                    
+                                    <div class="col-md-3">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_elevator_needed_for_the_building %>
+                                            <br>
+                                            <%= f.text_field :total_elev, :class => 'form-control', :disabled => true, :placeholder => 'Nb. Elevator' %>
+                                        </div>
+                                    </div>
+								</div>
+
+                                <div class="text-center">
+
+                                    <h4 class="fs-20">Select Your Product Line : </h4>
+
+                                    <div class="row text-center"> 
+                                        <div class="col-md-4">
+                                            <%= radio_button_tag :prod, 'prodLine-1' %>
+                                            <%= label_tag :Standard, "Standard: $7,565 per elevator", :class => 'fs-15 text-center' %>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <%= radio_button_tag :prod, 'prodLine-2' %>
+                                            <%= label_tag :Premium, "Premium: $12,345 per elevator", :class => 'fs-15 text-center' %>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <%= radio_button_tag :prod, 'prodLine-3' %>
+                                            <%= label_tag :Excelium, "Excelium: $15,400 per elevator", :class => 'fs-15 text-center' %>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+								<div class="row">
+                                    <div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :Price_for_all_the_elevators %>
+                                            <br>
+                                            <%= f.text_field :total_elev_cost, :class => 'form-control', :disabled => true, :placeholder => 'Elevator Cost' %>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :Price_for_all_the_installation_fee %>
+                                            <br>
+                                            <%= f.text_field :total_elev, :class => 'form-control', :disabled => true, :placeholder => 'Installation Fee' %>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :Final_price %>
+                                            <br>
+                                            <%= f.text_field :total_elev, :class => 'form-control', :disabled => true, :placeholder => 'Total Cost' %>
+                                        </div>
+                                    </div>
+								</div>
+
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-lg btn-default">Reset</button>
+                                    <span class="fs-20">&#160; OR &#160;</span>
+                                    <button type="button" onclick="offer()" class="btn btn-lg btn-red">Submit</button>
+                                </div>
+                                
+							</div>
+						</div>
+                        <% end %>
+					</div>
+					<!-- Accordion card -->
+
+					<!-- Accordion card -->
+					<div class="card mb-0" id="com">
+                        <%= form_with do |f| %>
+
+						<!-- Card header -->
+						<div class="card-header z-depth-1 teal lighten-3" role="tab" id="heading11">
+							<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx2" href="#collapse11"
+								aria-expanded="false" aria-controls="collapse11">
+								<div button type="button"
+									class="btn btn-fullwidth btn-outline-info text-center font-weight-bold"
+                                    style="width: 100%;">
+										Commercial
+								</div>
+							</a>
+						</div>
+
+						<!-- Card body -->
+						<div id="collapse11" class="collapse" role="tabpanel" aria-labelledby="heading11"
+							data-parent="#accordionEx2">
+							<div class="card-body rgba-teal-strong white-text">
+                            
+								<div class="row">
+									<div class="col-md-4">
+                                        <div id="businesses-div" class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_distinct_businesses %>
+                                            <br>
+                                            <%= f.text_field :businesses, :class => 'form-control', :placeholder => 'Nb. Businesses',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+
+									<div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_floors_in_the_building %>
+                                            <br>
+                                            <%= f.text_field :floor, :class => 'form-control', :placeholder => 'Nb. Floors',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+
+									<div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_basements_in_the_building %>
+                                            <br>
+                                            <%= f.text_field :basements, :class => 'form-control', :placeholder => 'Nb. Basements',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+
+									<div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_parking_space_available %>
+                                            <br>
+                                            <%= f.text_field :parking, :class => 'form-control', :placeholder => 'Nb. Parking Space',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+
+									<div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_elevator_cages_to_deploy %>
+                                            <br>
+                                            <%= f.text_field :cages, :class => 'form-control', :placeholder => 'Nb. Cages',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_elevator_needed_for_the_building %>
+                                            <br>
+                                            <%= f.text_field :total_elev, :class => 'form-control', :disabled => true, :placeholder => 'Nb. Elevator' %>
+                                        </div>
+                                    </div>
+								</div>
+
+                                <div class="text-center">
+
+                                    <h4 class="fs-20">Select Your Product Line : </h4>
+
+                                    <div class="row text-center"> 
+                                        <div class="col-md-4">
+                                            <%= radio_button_tag :prod, 'prodLine-1' %>
+                                            <%= label_tag :Standard, "Standard: $7,565 per elevator", :class => 'fs-15 text-center' %>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <%= radio_button_tag :prod, 'prodLine-2' %>
+                                            <%= label_tag :Premium, "Premium: $12,345 per elevator", :class => 'fs-15 text-center' %>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <%= radio_button_tag :prod, 'prodLine-3' %>
+                                            <%= label_tag :Excelium, "Excelium: $15,400 per elevator", :class => 'fs-15 text-center' %>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+								<div class="row">
+                                    <div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :Price_for_all_the_elevators %>
+                                            <br>
+                                            <%= f.text_field :total_elev_cost, :class => 'form-control', :disabled => true, :placeholder => 'Elevator Cost' %>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :Price_for_all_the_installation_fee %>
+                                            <br>
+                                            <%= f.text_field :total_elev, :class => 'form-control', :disabled => true, :placeholder => 'Installation Fee' %>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :Final_price %>
+                                            <br>
+                                            <%= f.text_field :total_elev, :class => 'form-control', :disabled => true, :placeholder => 'Total Cost' %>
+                                        </div>
+                                    </div>
+								</div>
+
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-lg btn-default">Reset</button>
+                                    <span class="fs-20">&#160; OR &#160;</span>
+                                    <button type="button" onclick="offer()" class="btn btn-lg btn-red">Submit</button>
+							    </div>
+
+							</div>
+						</div>
+                        <% end %>
+					</div>
+					<!-- Accordion card -->
+
+					<!-- Accordion card -->
+					<div class="card mb-0" id="cor">
+                        <%= form_with do |f| %>
+
+						<!-- Card header -->
+						<div class="card-header z-depth-1 teal lighten-2" role="tab" id="heading12">
+							<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx2" href="#collapse12"
+								aria-expanded="false" aria-controls="collapse12">
+								<div button type="button"
+									class="btn btn-fullwidth btn-outline-danger text-center font-weight-bold"
+                                    style="width: 100%;">
+										Corporate
+								</div>
+							</a>
+						</div>
+
+						<!-- Card body -->
+						<div id="collapse12" class="collapse" role="tabpanel" aria-labelledby="heading12"
+							data-parent="#accordionEx2">
+							<div class="card-body rgba-teal-strong white-text">
+
+								<div class="row">
+									<div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_separate_tenant_companies %>
+                                            <br>
+                                            <%= f.text_field :companies, :class => 'form-control', :placeholder => 'Nb. Companies',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+
+									<div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_floors_in_the_building %>
+                                            <br>
+                                            <%= f.text_field :floors, :class => 'form-control', :placeholder => 'Nb. Floors',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+
+									<div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_basements_in_the_building %>
+                                            <br>
+                                            <%= f.text_field :Basements, :class => 'form-control', :placeholder => 'Nb. Basements',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+
+									<div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_parking_space_available %>
+                                            <br>
+                                            <%= f.text_field :parking, :class => 'form-control', :placeholder => 'Nb. Parking Space',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+
+									<div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_occupants_per_floor %>
+                                            <br>
+                                            <%= f.text_field :ocuupants, :class => 'form-control', :placeholder => 'Nb. Occupants per Floor',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+
+                                    <div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_elevator_needed_for_the_building %>
+                                            <br>
+                                            <%= f.text_field :total_elev, :class => 'form-control', :disabled => true, :placeholder => 'Nb. Elevator' %>
+                                        </div>
+                                    </div>
+								</div>
+
+                                <div class="text-center">
+
+                                    <h4 class="fs-20">Select Your Product Line : </h4>
+
+                                    <div class="row text-center"> 
+                                        <div class="col-md-4">
+                                            <%= radio_button_tag :prod, 'prodLine-1' %>
+                                            <%= label_tag :Standard, "Standard: $7,565 per elevator", :class => 'fs-15 text-center' %>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <%= radio_button_tag :prod, 'prodLine-2' %>
+                                            <%= label_tag :Premium, "Premium: $12,345 per elevator", :class => 'fs-15 text-center' %>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <%= radio_button_tag :prod, 'prodLine-3' %>
+                                            <%= label_tag :Excelium, "Excelium: $15,400 per elevator", :class => 'fs-15 text-center' %>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+								<div class="row">
+                                    <div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :Price_for_all_the_elevators %>
+                                            <br>
+                                            <%= f.text_field :total_elev_cost, :class => 'form-control', :disabled => true, :placeholder => 'Elevator Cost' %>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :Price_for_all_the_installation_fee %>
+                                            <br>
+                                            <%= f.text_field :total_elev, :class => 'form-control', :disabled => true, :placeholder => 'Installation Fee' %>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :Final_price %>
+                                            <br>
+                                            <%= f.text_field :total_elev, :class => 'form-control', :disabled => true, :placeholder => 'Total Cost' %>
+                                        </div>
+                                    </div>
+								</div>
+
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-lg btn-default">Reset</button>
+                                    <span class="fs-20">&#160; OR &#160;</span>
+                                    <button type="button" onclick="offer()" class="btn btn-lg btn-red">Submit</button>
+							    </div>
+
+							</div>
+						</div>
+                        <% end %>
+					</div>
+					<!-- Accordion card -->
+
+					<!-- Accordion card -->
+					<div class="card mb-0" id="hyb">
+                        <%= form_with do |f| %>
+
+						<!-- Card header -->
+						<div class="card-header z-depth-1 teal lighten-1" role="tab" id="heading13">
+							<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx2" href="#collapse13"
+								aria-expanded="true" aria-controls="collapse13">
+								<div button type="button"
+									class="btn btn-fullwidth btn-outline-info text-center font-weight-bold"
+                                    style="width: 100%;">
+										Hybrid
+								</div>
+							</a>
+						</div>
+
+						<!-- Card body -->
+						<div id="collapse13" class="collapse" role="tabpanel" aria-labelledby="heading13"
+							data-parent="#accordionEx2">
+							<div class="card-body rgba-teal-strong white-text">
+
+								<div class="row">
+									<div class="col-md-3">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_separate_tenant_companies %>
+                                            <br>
+                                            <%= f.text_field :companies, :class => 'form-control', :placeholder => 'Nb. Companies',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+
+									<div class="col-md-3">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_floors_in_the_building %>
+                                            <br>
+                                            <%= f.text_field :floors, :class => 'form-control', :placeholder => 'Nb. Floors',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+
+									<div class="col-md-3">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_basements_in_the_building %>
+                                            <br>
+                                            <%= f.text_field :Basements, :class => 'form-control', :placeholder => 'Nb. Basements',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+
+									<div class="col-md-3">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_parking_space_available %>
+                                            <br>
+                                            <%= f.text_field :parking, :class => 'form-control', :placeholder => 'Nb. Parking Space',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+
+									<div class="col-md-3">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_occupants_per_floor %>
+                                            <br>
+                                            <%= f.text_field :ocuupants, :class => 'form-control', :placeholder => 'Nb. Occupants per Floor',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+
+                                    <div class="col-md-3">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_hours_of_activity %>
+                                            <br>
+                                            <%= f.select :hours_of_activity, options_for_select([
+                                                ['0 hours'], ['1 hours'], ['2 hours'],
+                                                ['3 hours'], ['4 hours'], ['5 hours'],
+                                                ['6 hours'], ['7 hours'], ['8 hours'],
+                                                ['9 hours'], ['10 hours'], ['11 hours'],
+                                                ['12 hours'], ['13 hours'], ['14 hours'],
+                                                ['15 hours'], ['16 hours'], ['17 hours'],
+                                                ['18 hours'], ['19 hours'], ['20 hours'],
+                                                ['21 hours'], ['22 hours'], ['23 hours'],
+                                                ['24 hours']
+                                            ]), {}, {required: true, autofocus: true, :class => 'form-control color-black'} %>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_elevator_needed_for_the_building %>
+                                            <br>
+                                            <%= f.text_field :total_elev, :class => 'form-control', :disabled => true, :placeholder => 'Nb. Elevator' %>
+                                        </div>
+                                    </div>
+								</div>
+                                
+                                <div class="text-center">
+
+                                    <h4 class="fs-20">Select Your Product Line : </h4>
+
+                                    <div class="row text-center"> 
+                                        <div class="col-md-4">
+                                            <%= radio_button_tag :prod, 'prodLine-1' %>
+                                            <%= label_tag :Standard, "Standard: $7,565 per elevator", :class => 'fs-15 text-center' %>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <%= radio_button_tag :prod, 'prodLine-2' %>
+                                            <%= label_tag :Premium, "Premium: $12,345 per elevator", :class => 'fs-15 text-center' %>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <%= radio_button_tag :prod, 'prodLine-3' %>
+                                            <%= label_tag :Excelium, "Excelium: $15,400 per elevator", :class => 'fs-15 text-center' %>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+								<div class="row">
+                                    <div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :Price_for_all_the_elevators %>
+                                            <br>
+                                            <%= f.text_field :total_elev_cost, :class => 'form-control', :disabled => true, :placeholder => 'Elevator Cost' %>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :Price_for_all_the_installation_fee %>
+                                            <br>
+                                            <%= f.text_field :total_elev, :class => 'form-control', :disabled => true, :placeholder => 'Installation Fee' %>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="row m-5 mtop-10">
+                                            <%= f.label :Final_price %>
+                                            <br>
+                                            <%= f.text_field :total_elev, :class => 'form-control', :disabled => true, :placeholder => 'Total Cost' %>
+                                        </div>
+                                    </div>
+								</div>
+
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-lg btn-default">Reset</button>
+                                    <span class="fs-20">&#160; OR &#160;</span>
+                                    <button type="button" onclick="offer()" class="btn btn-lg btn-red">Submit</button>
+							    </div>
+
+							</div>
+						</div>
+                        <% end %>
+                    </div>
+                    <!-- Accordion card -->
+
+
+			</div>
+			<!--/.Accordion wrapper-->
+	    </div>
+	</section>
+
+
+	<section class="info-bar info-bar-color">
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col-sm-4 text-center">
+					<h3>BUISNESS WORLDWIDE</h3>
+					<p>We do business all over the world</p>
+				</div>
+
+				<div class="col-sm-4 text-center">
+					<h3>SATISFACTION GUARANTEE</h3>
+					<p>Peace of mind with us</p>
+				</div>
+
+				<div class="col-sm-4 text-center">
+					<h3>ONLINE SUPPORT 24/7</h3>
+					<p>We're here for you</p>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+	<!-- /INFO BAR -->
+
+    <footer id="footer">
+        <div class="container mb-10 pt-30">
+
+
+            <div class="row">
+
+                <!-- col #1 -->
+                <div class="col-md-7">
+
+                    <h3 class="letter-spacing-1 mb-25">WHY US?</h3>
+
+                    <!-- Small Description -->
+                    <p class="mb-20">
+                        Our mission is to make you go up. We are number one in the domain, and we supply everyone with the best elevators there are, from your Grandparents to Google. We take good care of all of your requests and we are conscientious to achieve your goals.
+                    </p>
+                    <h2 class="mb-0">(581) 701-0303</h2>
+                </div>
+                <!-- /col #1 -->
+
+                <!-- col #2 -->
+                <div class="col-md-5">
+                    <h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
+
+                    <!-- Newsletter Form -->
+                    <p>Subscribe to Our Newsletter to get Important News & Offers</p>
+
+                    <form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            <input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
+                            <span class="input-group-btn">
+                                <button class="btn btn-red btn-red-click" type="submit">Subscribe</button>
+                            </span>
+                        </div>
+                    </form>
+                    <!-- /Newsletter Form -->
+
+
+                </div>
+                <!-- /col #2 -->
+
+            </div>
+
+
+        </div>
+
+        <div class="copyright p-10">
+            <div class="container">
+                <ul class="float-right m-0 list-inline mobile-block">
+                    <li><a href="#">Terms &amp; Conditions</a></li>
+                    <li>&bull;</li>
+                    <li><a href="#">Privacy</a></li>
+                </ul>
+                &copy; All Rights Reserved, RocketElevator LTD
+            </div>
+        </div>
+
+    </footer>
+    <!-- /FOOTER -->
+
+    <script>plugin_path = '../assets/';</script>

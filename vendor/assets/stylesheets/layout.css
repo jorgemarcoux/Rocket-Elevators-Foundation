@@ -1031,7 +1031,7 @@ section.page-header .breadcrumb {
 	z-index:10;
 }
 section.page-header .breadcrumb>li+li:before {
-	content:"•";
+	content:"";
 }
 section.page-header .breadcrumb a {
 	color:#333;
