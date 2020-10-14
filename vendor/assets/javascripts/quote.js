@@ -4,7 +4,7 @@
 *
 * Program name      : custom.js
 *
-* Author            : LOÏC RICO
+* Author            : LOIC RICO
 *
 * Date created      : 2020/09/02
 *
@@ -13,7 +13,7 @@
 * Revision History  :
 *
 * Date          Author         Ref
-* 2020/09/16    LOÏC RICO      undefined/lets say 1
+* 2020/09/16    LOIC RICO      undefined/lets say 1
 *
 ***********************************************************************/
 

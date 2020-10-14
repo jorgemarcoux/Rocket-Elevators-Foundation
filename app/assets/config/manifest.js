@@ -1,4 +1,6 @@
 //= link_tree ../images
+
+
 //= link_directory ../javascripts .js
 //= link_directory ../stylesheets .css
 
@@ -10,11 +12,17 @@
 //= link custom.css
 //= link header.css
 //= link red.css
+//= link owl.carousel.css
+//= link owl.pack.css
+//= link owl.theme.css
+//= link owl.transitions.css
 
 //= link jquery-3.3.1.min.js
+//= link bootstrap.min.js
+//= link owl.carousel.js
+//= link owl.carousel.min.js
 //= link scripts
 //= link jquery.themepunch.tools.min
 //= link jquery.themepunch.revolution.min
 //= link demo.revolution_slider.js
 //= link contact
-//= link quote
