@@ -1,2 +1,745 @@
-<h1>StaticPages#quote</h1>
-<p>Find me in app/views/static_pages/quote.html.erb</p>
+
+	    <div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+
+        <!-- TOP NAV -->
+        <header id="topNav">
+            <div class="container">
+
+                <!-- Mobile Menu Button -->
+                <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+                <!-- Logo -->
+                <a class="logo float-left scrollTo" href="#">
+                    <%= image_tag("logo/R2.png", :alt => "logo") %>
+                </a>
+
+                <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+                    <nav class="nav-main">
+
+                        <ul id="topMain" class="nav nav-pills nav-main nav-hover nav-onepage">
+                            <li class="active"><!-- HOME -->
+                                <a href="#">
+                                    HOME
+                                </a>
+                            </li>
+                            <li class="dropdown nav-animate-fadeIn resp-active"><!-- SERVICES -->
+                                <a href="#services">
+                                    SERVICES
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown">
+                                        <a href="/static_pages/residential">RESIDENTIAL SERVICES</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="/static_pages/corporate">CORPORATE SERVICES</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="/static_pages/quote">GET A QUOTE</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><!-- PORTFOLIO -->
+                                <a href="#portfolio">
+                                    PORTFOLIO
+                                </a>
+                            </li>
+                            <li><!-- NEWS -->
+                                <a href="#news">
+                                    NEWS
+                                </a>
+                            </li>
+                            <li><!-- CLIENTS -->
+                                <a href="#clients">
+                                    CLIENTS
+                                </a>
+                            </li>
+                            <li><!-- CONTACT -->
+                                <a href="#contact">
+                                    CONTACT
+                                </a>
+                            </li>
+                        </ul>
+
+                    </nav>
+                </div>
+
+            </div>
+        </header>
+        <!-- /Top Nav -->
+
+    </div>
+
+	<!-- Parallax -->
+		<section class="parallax parallax-1" id="parallax-quote-1" >
+			<div class="overlay dark-5">
+				<!-- dark overlay [1 to 9 opacity] -->
+			</div>
+
+			<div class="container">
+
+				<div class="text-center">
+					<h2 class="fs-90 fw-300">GET A SUBMISSION</h2>
+					<a class="btn btn-lg btn-default btn-lg" href="/">HOME <i class="fa fa-angle-right"></i></a>
+					&nbsp; OR &nbsp;
+					<a class="btn btn-lg btn-red" href="index.html#contact">CONTACT US <i
+							class="fa fa-angle-right"></i></a>
+				</div>
+
+			</div>
+		</section>
+		<!-- /Parallax -->
+
+		<section style="padding-top: 20px;">
+
+
+			<div>
+
+				<div class="heading-title heading-dotted text-center">
+					<h3 class="fs-50">Select the type <span> of building</span></h3>
+				</div>
+				<br>
+
+				<!--Accordion wrapper-->
+				<div class="accordion md-accordion accordion-4" id="accordionEx2" role="tablist" aria-multiselectable="true">
+
+					<!-- Accordion card -->
+					<div class="card">
+                        <%= form_with do |f| %>
+
+						<!-- Card header -->
+						<div class="card-header z-depth-1 teal lighten-4" role="tab" id="heading10">
+							<a data-toggle="collapse" data-parent="#accordionEx2" href="#collapse10"
+								aria-expanded="true" aria-controls="collapse10">
+								<div button type="button" onclick="reset()"
+									class="btn btn-fullwidth btn-outline-danger text-center font-weight-bold"
+                                    style="width: 100%;">
+										Residential
+								</div>
+							</a>
+						</div>
+
+						<!-- Card body -->
+						<div id="collapse10" class="collapse" role="tabpanel" aria-labelledby="heading10"
+							data-parent="#accordionEx2">
+							<div class="card-body rgba-teal-strong white-text">
+
+								<%# <p class="text-center">Please fill the requested information :</p> %>
+
+								<div class="row">
+									<div class="col-md-3">
+                                        <%# <label for="Q1">The number of apartments the building offers</label>
+										<input name="Q1"
+                                            type="number"
+                                            id="Q1"
+                                            oninput="myFunction1()"
+                                            class="form-control"
+                                            placeholder="Nb. Appartments"
+                                            onkeydown="return event.keyCode !== 69 && event.keyCode !== 189"
+                                            min="1"> %>
+
+                                        <div id="apartments-div" class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_apartments_the_building_offers %>
+                                            <br>
+                                            <%= f.text_field :apartments, :class => 'form-control', :placeholder => 'Nb. Appartments',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+
+									<div class="col-md-3">
+                                        <%# <label for="Q2">The number of floors in the building</label>
+										<input name=""
+                                            type="number"
+                                            id="Q2"
+                                            oninput="myFunction1()"
+                                            class="form-control"
+                                            placeholder="Nb. Floor"
+                                            onkeydown="return event.keyCode !== 69 && event.keyCode !== 189"
+                                            min="1"> %>
+
+                                        <div id="floors-div" class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_floors_in_the_building %>
+                                            <br>
+                                            <%= f.text_field :floors, :class => 'form-control', :placeholder => 'Nb. Floor',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+
+									<div class="col-md-3">
+                                        <%# <label for="Q3">The number of basements in the building</label>
+										<input name="Q3"
+                                            type="number"
+                                            id="Q3"
+                                            oninput="myFunction1()"
+                                            class="form-control"
+                                            placeholder="Nb. Basements"
+                                            onkeydown="return event.keyCode !== 69 && event.keyCode !== 189"
+                                            min="1"> %>
+
+                                        <div id="floors-div" class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_basements_in_the_building %>
+                                            <br>
+                                            <%= f.text_field :basements, :class => 'form-control', :placeholder => 'Nb. Basements',
+                                            :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
+                                            :min => '1' %>
+                                        </div>
+									</div>
+                                    
+                                    <div class="col-md-3">
+                                    	<%# <label for="nmbElevator1">The Number of Elevator needed for the building :</label>
+									    <input name="nmbElevator1" class="form-control" id="nmbElevator1" type="number" value disabled> %>
+        
+                                        <div id="floors-div" class="row m-5 mtop-10">
+                                            <%= f.label :The_number_of_elevator_needed_for_the_building %>
+                                            <br>
+                                            <%= f.text_field :total_elev, :class => 'form-control', :disabled => true, :placeholder => 'Nb. Elevator' %>
+                                        </div>
+                                    </div>
+
+								</div>
+
+								<br>
+
+                                <div class="text-center">
+
+                                    <h4 class="fs-20">Select Your Product Line : </h4>
+
+                                    <div class="row text-center"> 
+                                        <%# <div>
+                                            <input type="radio" id="standard1" name="drone" value="standard1"
+                                                onchange="prix()">
+
+                                            <label for="standard1">Standard </label>
+                                        </div> &#160 &#160 &#160
+
+                                        <div>
+                                            <input type="radio" id="premium1" name="drone" value="premium1"
+                                                onchange="prix()">
+                                            <label for="premium1">Premium </label>
+                                        </div> &#160 &#160 &#160
+
+                                        <div>
+                                            <input type="radio" id="excelium1" name="drone" value="excelium1"
+                                                onchange="prix()">
+                                            <label for="excelium1">Excelium </label>
+                                        </div> &#160 &#160 &#160 %>
+
+                                            <div class="col-md-4">
+                                                <%= radio_button_tag :product_line, :id => 'prodLine-1', :name => 'prodLine' %>
+                                                <%= label_tag :Standard, "Standard: $7,565 per elevator", :class => 'fs-15 text-center' %>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <%= radio_button_tag :product_line, :id => 'prodLine-2', :name => 'prodLine' %>
+                                                <%= label_tag :Premium, "Premium: $12,345 per elevator", :class => 'fs-15 text-center' %>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <%= radio_button_tag :product_line, :id => 'prodLine-3', :name => 'prodLine' %>
+                                                <%= label_tag :Excelium, "Premium: $15,400 per elevator", :class => 'fs-15 text-center' %>
+                                            </div>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+								<div class="row">
+
+
+									<%# <p>
+										<stong> The Price of an Elevator : </stong>
+										<input id="price1" class="rightAligned" type="number" name value disabled> $
+										&#160 &#160 &#160
+									</p> &#160
+
+
+									<p>
+										<stong>Installation costs : </stong>
+										<input id="price2" class="rightAligned" type="number" name value disabled> $
+										&#160 &#160 &#160
+									</p> &#160
+
+									<p>
+										<stong>The Total Cost : </stong>
+										<input id="price3" class="rightAligned" type="number" name value disabled> $
+									</p> %>
+
+                                    <div class="col-md-4">
+                                        <div id="floors-div" class="row m-5 mtop-10">
+                                            <%= f.label :Price_for_all_the_elevators %>
+                                            <br>
+                                            <%= f.text_field :total_elev_cost, :class => 'form-control', :disabled => true, :placeholder => 'Elevator Cost' %>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div id="floors-div" class="row m-5 mtop-10">
+                                            <%= f.label :Price_for_all_the_installation_fee %>
+                                            <br>
+                                            <%= f.text_field :total_elev, :class => 'form-control', :disabled => true, :placeholder => 'Installation Fee' %>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div id="floors-div" class="row m-5 mtop-10">
+                                            <%= f.label :Final_price %>
+                                            <br>
+                                            <%= f.text_field :total_elev, :class => 'form-control', :disabled => true, :placeholder => 'Total Cost' %>
+                                        </div>
+                                    </div>
+								</div>
+							</div>
+                            <div class="text-center">
+                                <button type="button" onclick="reset()" class="btn btn-lg btn-default">Reset</button>
+                                <span class="fs-20"> OR </span>
+                                <button type="button" onclick="offer()" class="btn btn-lg btn-red">Submit</button>
+							</div>
+						</div>
+                        <% end %>
+					</div>
+					<!-- Accordion card -->
+
+					<!-- Accordion card -->
+					<div class="card">
+
+						<!-- Card header -->
+						<div class="card-header z-depth-1 teal lighten-3" role="tab" id="heading11">
+							<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx2" href="#collapse11"
+								aria-expanded="false" aria-controls="collapse11">
+								<div class="text-center">
+									<h4 button type="button" onclick="reset()"
+										class="btn btn-round btn-outline-info btn-lg font-weight-bold">
+										Commercial </h4>
+								</div>
+							</a>
+						</div>
+
+						<!-- Card body -->
+						<div id="collapse11" class="collapse" role="tabpanel" aria-labelledby="heading11"
+							data-parent="#accordionEx2">
+							<div class="card-body rgba-teal-strong white-text">
+								<p><strong> Please fill the requested information :</strong>
+								</p>
+								<!-- Commercial-->
+
+								<div class="row">
+									<div class="col-md-4">
+										<input type="number" id="Q4" oninput="myFunction2()" class="form-control"
+											placeholder="The number of distinct businesses"
+											onkeydown="return event.keyCode !== 69 && event.keyCode !== 189" min="1">
+									</div>
+
+									<div class="col-md-4">
+										<input type="number" id="Q5" oninput="myFunction2()" class="form-control"
+											placeholder="The number of floors in the building"
+											onkeydown="return event.keyCode !== 69 && event.keyCode !== 189" min="1">
+									</div>
+
+									<div class="col-md-4">
+										<input type="number" id="Q6" oninput="myFunction2()" class="form-control"
+											placeholder="The number of basements in the building"
+											onkeydown="return event.keyCode !== 69 && event.keyCode !== 189" min="1">
+									</div>
+
+									<div class="col-md-4">
+										<input type="number" id="Q7" oninput="myFunction2()" class="form-control"
+											placeholder="The number of parking spaces available"
+											onkeydown="return event.keyCode !== 69 && event.keyCode !== 189" min="1">
+									</div>
+
+									<div class="col-md-4">
+										<input type="number" id="Q8" oninput="myFunction2()" class="form-control"
+											placeholder="The number of elevator shafts to deploy"
+											onkeydown="return event.keyCode !== 69 && event.keyCode !== 189" min="1">
+									</div>
+
+								</div><br>
+
+								<p>
+									<stong>The Number of Elevator that you need : </stong>
+									<input id="nmbElevator2" type="number" name value disabled>
+								</p> &#160
+
+								<p><strong> Which product line do you prefer :</strong></p>
+
+
+								<div class="row">
+									<div>
+										<input type="radio" id="standard2" name="drone" value="standard2"
+											onchange="prix2()">
+
+										<label for="standard2">Standard </label>
+									</div> &#160 &#160 &#160
+
+									<div>
+										<input type="radio" id="premium2" name="drone" value="premium2"
+											onchange="prix2()">
+										<label for="premium2">Premium </label>
+									</div> &#160 &#160 &#160
+
+									<div>
+										<input type="radio" id="excelium2" name="drone" value="excelium2"
+											onchange="prix2()">
+										<label for="excelium2">Excelium </label>
+									</div> &#160 &#160 &#160
+								</div> <br>
+
+								<div class="row">
+
+									<p>
+										<stong> The Price of an Elevator : </stong>
+										<input id="price4" class="rightAligned" type="number" name value disabled> $
+										&#160 &#160 &#160
+									</p> &#160
+
+
+									<p>
+										<stong>Installation costs : </stong>
+										<input id="price5" class="rightAligned" type="number" name value disabled> $
+										&#160 &#160 &#160
+									</p> &#160
+
+									<p>
+										<stong>The Total Cost : </stong>
+										<input id="price6" class="rightAligned" type="number" name value disabled> $
+									</p>
+								</div>
+								<br>
+
+								<div class="col-md-12 text-center">
+									<button type="button" onclick="reset()" class="btn btn-danger">Reset</button>
+									<button type="button" onclick="offer2()" class="btn btn-info">Click to receive this
+										offer </button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Accordion card -->
+
+					<!-- Accordion card -->
+					<div class="card">
+
+						<!-- Card header -->
+						<div class="card-header z-depth-1 teal lighten-2" role="tab" id="heading12">
+							<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx2" href="#collapse12"
+								aria-expanded="false" aria-controls="collapse12">
+								<div class="text-center">
+									<h4 button type="button" onclick="reset()"
+										class="btn btn-round btn-outline-danger btn-lg font-weight-bold">
+										Corporate </h4>
+								</div>
+							</a>
+						</div>
+
+						<!-- Card body -->
+						<div id="collapse12" class="collapse" role="tabpanel" aria-labelledby="heading12"
+							data-parent="#accordionEx2">
+							<div class="card-body rgba-teal-strong white-text">
+
+								<p><strong> Please fill the requested information :</strong>
+								</p>
+
+								<div class="row">
+									<div class="col-md-4">
+										<input type="number" id="Q9" oninput="myFunction3()" class="form-control"
+											placeholder="The number of separate tenant companies"
+											onkeydown="return event.keyCode !== 69 && event.keyCode !== 189" min="1">
+									</div>
+
+									<div class="col-md-4">
+										<input type="number" id="Q10" oninput="myFunction3()" class="form-control"
+											placeholder="The number of floors in the building"
+											onkeydown="return event.keyCode !== 69 && event.keyCode !== 189" min="1">
+									</div>
+
+									<div class="col-md-4">
+										<input type="number" id="Q11" oninput="myFunction3()" class="form-control"
+											placeholder="The number of basements in the building"
+											onkeydown="return event.keyCode !== 69 && event.keyCode !== 189" min="1">
+									</div>
+
+									<div class="col-md-4">
+										<input type="number" id="Q12" oninput="myFunction3()" class="form-control"
+											placeholder="The number of parking spaces available"
+											onkeydown="return event.keyCode !== 69 && event.keyCode !== 189" min="1">
+									</div>
+
+									<div class="col-md-4">
+										<input type="number" id="Q13" oninput="myFunction3()" class="form-control"
+											placeholder="The maximum number of occupants per floor"
+											onkeydown="return event.keyCode !== 69 && event.keyCode !== 189" min="1">
+									</div>
+
+								</div><br>
+
+								<p>
+									<stong>The Number of Elevator that you need : </stong>
+									<input id="nmbElevator3" type="number" name value disabled>
+								</p> &#160
+								<p><strong> Which product line do you prefer :</strong></p>
+
+
+
+								<div class="row">
+									<div>
+										<input type="radio" id="standard3" name="drone" value="standard3"
+											onchange="prix3()">
+
+										<label for="standard3">Standard </label>
+									</div> &#160 &#160 &#160
+
+									<div>
+										<input type="radio" id="premium3" name="drone" value="premium3"
+											onchange="prix3()">
+										<label for="premium3">Premium </label>
+									</div> &#160 &#160 &#160
+
+									<div>
+										<input type="radio" id="excelium3" name="drone" value="excelium3"
+											onchange="prix3()">
+										<label for="excelium3">Excelium </label>
+									</div> &#160 &#160 &#160
+								</div> <br>
+
+								<div class="row">
+
+
+									<p>
+										<stong> The Price of an Elevator : </stong>
+										<input id="price7" class="rightAligned" type="number" name value disabled> $
+										&#160 &#160 &#160
+									</p> &#160
+
+
+									<p>
+										<stong>Installation costs </stong>
+										<input id="price8" class="rightAligned" type="number" name value disabled> $
+										&#160 &#160 &#160
+									</p> &#160
+
+									<p>
+										<stong>The Total Cost : </stong>
+										<input id="price9" class="rightAligned" type="number" name value disabled> $
+									</p>
+								</div>
+								<br>
+								<div class="col-md-12 text-center">
+									<button type="button" onclick="reset()" class="btn btn-info">Reset</button>
+									<button type="button" onclick="offer3()" class="btn btn-danger">Click to receive
+										this offer
+									</button>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+					<!-- Accordion card -->
+
+					<!-- Accordion card -->
+					<div class="card">
+
+						<!-- Card header -->
+						<div class="card-header z-depth-1 teal lighten-1" role="tab" id="heading13">
+							<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx2" href="#collapse13"
+								aria-expanded="true" aria-controls="collapse13">
+								<div class="text-center">
+									<h4 button type="button" onclick="reset()"
+										class="btn btn-round btn-outline-info btn-lg font-weight-bold">
+										Hybrid </h4>
+								</div>
+
+							</a>
+						</div>
+
+						<!-- Card body -->
+						<div id="collapse13" class="collapse" role="tabpanel" aria-labelledby="heading13"
+							data-parent="#accordionEx2">
+							<div class="card-body rgba-teal-strong white-text">
+
+								<p><strong> Please fill the requested information :</strong>
+								</p>
+
+								<div class="row">
+									<div class="col-md-4">
+										<input type="number" id="Q14" oninput="myFunction4()" class="form-control"
+											placeholder="The number of distinct businesses"
+											onkeydown="return event.keyCode !== 69 && event.keyCode !== 189" min="1">
+									</div>
+
+									<div class="col-md-4">
+										<input type="number" id="Q15" oninput="myFunction4()" class="form-control"
+											placeholder="The number of floors in the building"
+											onkeydown="return event.keyCode !== 69 && event.keyCode !== 189" min="1">
+									</div>
+
+									<div class="col-md-4">
+										<input type="number" id="Q16" oninput="myFunction4()" class="form-control"
+											placeholder="The number of basements in the building"
+											onkeydown="return event.keyCode !== 69 && event.keyCode !== 189" min="1">
+									</div>
+
+									<div class="col-md-4">
+										<input type="number" id="Q17" oninput="myFunction4()" class="form-control"
+											placeholder="The number of parking spaces available"
+											onkeydown="return event.keyCode !== 69 && event.keyCode !== 189" min="1">
+									</div>
+
+									<div class="col-md-4">
+										<input type="number" id="Q18" oninput="myFunction4()" class="form-control"
+											placeholder="The maximum number of occupants per floor"
+											onkeydown="return event.keyCode !== 69 && event.keyCode !== 189" min="1">
+									</div>
+
+
+									<div class="col-md-4">
+										<input type="number" id="Q19" oninput="myFunction4()" class="form-control"
+											placeholder="The number of hours of activity of the building" min="1"
+											max="24" onkeydown="return event.keyCode !== 69 && event.keyCode !== 189">
+									</div>
+
+
+								</div><br>
+
+								<p>
+									<stong>The Number of Elevator that you need : </stong>
+									<input id="nmbElevator4" type="number" name value disabled>
+								</p> &#160
+
+
+
+								<p><strong> Which product line do you prefer :</strong></p>
+
+
+								<div class="row">
+									<div>
+										<input type="radio" id="standard4" name="drone" value="standard4"
+											onchange="prix4()">
+
+										<label for="standard4">Standard </label>
+									</div> &#160 &#160 &#160
+
+									<div>
+										<input type="radio" id="premium4" name="drone" value="premium4"
+											onchange="prix4()">
+										<label for="premium4">Premium </label>
+									</div> &#160 &#160 &#160
+
+									<div>
+										<input type="radio" id="excelium4" name="drone" value="excelium4"
+											onchange="prix4()">
+										<label for="excelium4">Excelium </label>
+									</div> &#160 &#160 &#160
+								</div> <br>
+
+
+								<div class="row">
+
+									<p>
+										<stong> The Price of an Elevator :
+											<input id="price10" class="rightAligned" type="number" name value disabled>
+											$ &#160 &#160 &#160
+									</p>
+									</stong>&#160
+
+
+									<p>
+										<stong>Installation costs :
+											<input id="price11" class="rightAligned" type="number" name value disabled>
+											$ &#160 &#160 &#160
+									</p>
+									</stong>&#160
+
+									<p>
+										<stong>The Total Cost :
+											<input id="price12" class="rightAligned" type="number" name value disabled>
+											$
+									</p>
+									</stong>
+								</div>
+
+								<br>
+								<div class="col-md-12 text-center">
+									<button type="button" onclick="reset()" class="btn btn-danger">Reset</button>
+									<button type="button" onclick="offer4()" class="btn btn-info">Click to receive this
+										offer
+									</button>
+								</div>
+
+
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<!-- Accordion card -->
+
+
+			</div>
+			<!--/.Accordion wrapper-->
+
+
+
+
+
+
+
+	</div>
+	</section>
+
+
+	<section class="info-bar info-bar-color">
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col-sm-4">
+					<i class="glyphicon glyphicon-globe"></i>
+					<h3>BUISNESS WORLDWIDE</h3>
+					<p>We do business all over the world</p>
+				</div>
+
+				<div class="col-sm-4">
+					<i class="glyphicon glyphicon-usd"></i>
+					<h3>SATISFACTION GUARANTEE</h3>
+					<p>Peace of mind with us</p>
+				</div>
+
+				<div class="col-sm-4">
+					<i class="glyphicon glyphicon-flag"></i>
+					<h3>ONLINE SUPPORT 24/7</h3>
+					<p>We're here for you</p>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+	<!-- /INFO BAR -->
+
+
+
+
+
+	<section class="alternate">
+		<div class="container">
+
+			<div class="text-center">
+				<h2 class="wow fadeInUp m-0" data-wow-delay="0.3s">DOES ROCKET ELEVATORS CONVINCED YOU?</h2>
+
+				<p class="lead font-lato fs-30 wow fadeInUp mb-60" data-wow-delay="0.5s">What are you waiting for</p>
+
+				<div class="mt-30">
+					<a href="index.html#contact" class="btn btn-3d btn-lg wow fadeInUp btn-teal" data-wow-delay="0.7"><i
+							class="glyphicon glyphicon-th-large"></i>CONTACT US</a>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+    <script>plugin_path = '../assets/';</script>

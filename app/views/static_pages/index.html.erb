@@ -280,7 +280,7 @@
                     <%= image_tag("services/elevator_3_1920x1000.png", :alt => "image", :class => "img-fluid") %>
                     <h3 class="mt-10">Award Winning Elevators!</h3>
                     <p>Rocket Elevators has gained many prices over the years, notably the 2020 golden gear award. Read more below !</p>
-                    <a href="#portfolio" class="btn btn-default">OUR SUCCESS !</a>
+                    <a href="#portfolio" class="btn btn-lg btn-default">OUR SUCCESS !</a>
                 </div>
 
                 <div class="col-lg-4 col-md-6 col-12 text-center">
@@ -380,9 +380,9 @@
                                     <span class="inner">
 
                                         <!-- lightbox -->
-                                        <a class="ico-rounded lightbox" href="../../assets/images/portfolio/portfolio_5_con.png" data-plugin-options='{"type":"image"}'>
-                                            <span class="fa fa-plus fs-20"></span>
-                                        </a>
+                                        <%= link_to 'portfolio/portfolio_5_con.png', :class => 'ico-rounded lightbox', :data_plugin_options => "{'type':'image'}" do %>
+                                            <%= content_tag :span, '', :class => "fa fa-plus fs-20" %>
+                                        <% end %>
 
                                     </span>
                                 </span>
@@ -412,9 +412,9 @@
                                     <span class="inner">
 
                                         <!-- lightbox -->
-                                        <a class="ico-rounded lightbox" href="../../assets/images/portfolio/portfolio_6_con.png" data-plugin-options='{"type":"image"}'>
-                                            <span class="fa fa-plus fs-20"></span>
-                                        </a>
+                                        <%= link_to 'portfolio/portfolio_6_con.png', :class => 'ico-rounded lightbox', :data_plugin_options => "{'type':'image'}" do %>
+                                            <%= content_tag :span, '', :class => "fa fa-plus fs-20" %>
+                                        <% end %>
 
                                     </span>
                                 </span>
@@ -444,9 +444,9 @@
                                     <span class="inner">
 
                                         <!-- lightbox -->
-                                        <a class="ico-rounded lightbox" href="../../assets/images/portfolio/portfolio_14_con.png" data-plugin-options='{"type":"image"}'>
-                                            <span class="fa fa-plus fs-20"></span>
-                                        </a>
+                                        <%= link_to 'portfolio/portfolio_14_con.png', :class => 'ico-rounded lightbox', :data_plugin_options => "{'type':'image'}" do %>
+                                            <%= content_tag :span, '', :class => "fa fa-plus fs-20" %>
+                                        <% end %>
 
                                     </span>
                                 </span>
@@ -730,16 +730,42 @@
     <section class="section-xs dark">
         <div class="container">
 
-            <div class="owl-carousel text-center owl-testimonial m-0" data-plugin-options='{"singleItem": true, "autoPlay": 3500, "navigation": false, "pagination": true, "transitionStyle":"fade"}'>
+            <div class="owl-carousel text-center owl-testimonial m-0" data_plugin_options='{"singleItem": true, "autoPlay": 3500, "navigation": false, "pagination": true, "transitionStyle":"fade"}'>
                 <div class="testimonial">
                     <figure>
-                        <%= image_tag("CEO/mathieu_houle.png", :alt => "image", :class => "rounded") %>
+                        <%= image_tag("CEO/Serge_Savoie.png", :alt => "image", :class => "rounded") %>
                     </figure>
                     <div class="testimonial-content p-0">
                         <p class="lead">Rocket Elevator is <b><em>the</em></b> number one reference in Elevators around the world since 1976 !</p>
                         <cite>
-                            Mathieu Houle
+                            Serge Savoie
                             <span>Company CEO.</span>
+                        </cite>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <figure>
+                        <%= image_tag("CEO/William_Sinclair.png", :alt => "image", :class => "rounded") %>
+                    </figure>
+                    <div class="testimonial-content p-0">
+                        <p class="lead">"Hi There !"</p> <%# William should be editing this line %>
+                        <cite>
+                            William Sinclair
+                            <span>Rocket Elevators' Employee</span>
+                        </cite>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <figure>
+                        <%= image_tag("CEO/Frimina_Zaddi.jpg", :alt => "image", :class => "rounded") %>
+                    </figure>
+                    <div class="testimonial-content p-0">
+                        <p class="lead">"Hi There !"</p> <%# William should be editing this line %>
+                        <cite>
+                            Frimina Zaddi
+                            <span>Rocket Elevators' Employee</span>
                         </cite>
                     </div>
                 </div>
@@ -756,19 +782,6 @@
                         </cite>
                     </div>
                 </div>
-
-                <div class="testimonial">
-                    <figure>
-                        <%= image_tag("CEO/alexis_grenier.png", :alt => "image", :class => "rounded") %>
-                    </figure>
-                    <div class="testimonial-content p-0">
-                        <p class="lead">"We get free donuts every morning !"</p>
-                        <cite>
-                            Alexis Grenier
-                            <span>Rocket Elevators' Employee</span>
-                        </cite>
-                    </div>
-                </div>
             </div>
 
         </div>
@@ -782,7 +795,7 @@
                 <h2>Recent News</h2>
             </div>
 
-            <div class="owl-carousel owl-padding-10 buttons-autohide controlls-over" data-plugin-options='{"singleItem": false, "items":"3", "autoPlay": 7000, "navigation": true, "pagination": false}'>
+            <div class="owl-carousel owl-padding-10 buttons-autohide controlls-over" data_plugin_options='{"singleItem": false, "items":"3", "autoPlay": 7000, "navigation": true, "pagination": false, "progressBar": true}'>
 
                 <div class="img-hover">
                     <%= image_tag("news/news_1_com.png", :alt => "image", :class => "image-fluid") %>
@@ -1155,4 +1168,4 @@
         </div>
     </div><!-- /PRELOADER --> %>
 
-    <script>plugin_path = 'assets/';</script>
+    <script>plugin_path = '../assets/';</script>

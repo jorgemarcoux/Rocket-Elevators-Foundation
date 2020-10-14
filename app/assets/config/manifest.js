@@ -19,9 +19,9 @@
 
 //= link jquery-3.3.1.min.js
 //= link bootstrap.min.js
+//= link scripts
 //= link owl.carousel.js
 //= link owl.carousel.min.js
-//= link scripts
 //= link jquery.themepunch.tools.min
 //= link jquery.themepunch.revolution.min
 //= link demo.revolution_slider.js
