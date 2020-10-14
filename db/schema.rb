@@ -10,6 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_10_14_165246) do
+
+  create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "User_ID"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "function"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "number_apartments"
+    t.integer "number_floors"
+    t.integer "number_basements"
+    t.integer "distinct_business"
+    t.integer "number_elevator_shaft"
+    t.integer "number_parking"
+    t.integer "maximum_occupant"
+    t.integer "hours_activity"
+    t.integer "gamme"
+    t.integer "total_price"
+    t.integer "price_unit"
+    t.integer "number_elevator"
+  end
+
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "UserID"
+    t.string "firstname"
+    t.string "lastname"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.boolean "admin", default: false
+    t.boolean "employee", default: false
+    t.boolean "user", default: true
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
 
 end

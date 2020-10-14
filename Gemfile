@@ -27,11 +27,18 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# USER RELATED
+gem 'devise'
+# FOR NOTIFICATIONS
+gem 'toastr-rails', '~> 1.0'
+gem 'jquery-rails'
+# ADMIN SECTION
+gem 'rails_admin', '~> 2.0'
+# PERMISSIONS
+gem 'cancancan'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -48,6 +55,12 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+# CAPISTRANO
+  gem 'capistrano', '~> 3.10', require: false
+  gem 'capistrano-rails', '~> 1.4', require: false
+  gem 'capistrano-bundler', '>= 1.1.0'
+  gem 'rvm1-capistrano3', require: false
+  gem 'capistrano3-puma'
 end
 
 group :test do
