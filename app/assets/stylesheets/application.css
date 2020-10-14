@@ -12,7 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ *= require toastr
  */
+ 
+
+
 
  .unselectable {
     -webkit-touch-callout: none;
@@ -27,3 +31,4 @@
   width: 20px; 
   height: 20px; 
 }
+
