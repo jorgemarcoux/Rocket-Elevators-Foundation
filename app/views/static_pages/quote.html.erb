@@ -104,14 +104,14 @@
 				<div class="accordion md-accordion accordion-4" id="accordionEx2" role="tablist" aria-multiselectable="true">
 
 					<!-- Accordion card -->
-					<div class="card" style="margin-bottom: 0;">
+					<div class="card mb-0" id="res">
                         <%= form_with do |f| %>
 
 						<!-- Card header -->
 						<div class="card-header z-depth-1 teal lighten-4" role="tab" id="heading10">
 							<a data-toggle="collapse" data-parent="#accordionEx2" href="#collapse10"
 								aria-expanded="true" aria-controls="collapse10">
-								<div button type="button" onclick="reset()"
+								<div button type="button"
 									class="btn btn-fullwidth btn-outline-danger text-center font-weight-bold"
                                     style="width: 100%;">
 										Residential
@@ -170,17 +170,17 @@
 
                                     <div class="row text-center"> 
                                         <div class="col-md-4">
-                                            <%= radio_button_tag :product_line, :id => 'prodLine-1', :name => 'prodLine' %>
+                                            <%= radio_button_tag :prod, 'prodLine-1' %>
                                             <%= label_tag :Standard, "Standard: $7,565 per elevator", :class => 'fs-15 text-center' %>
                                         </div>
 
                                         <div class="col-md-4">
-                                            <%= radio_button_tag :product_line, :id => 'prodLine-2', :name => 'prodLine' %>
+                                            <%= radio_button_tag :prod, 'prodLine-2' %>
                                             <%= label_tag :Premium, "Premium: $12,345 per elevator", :class => 'fs-15 text-center' %>
                                         </div>
 
                                         <div class="col-md-4">
-                                            <%= radio_button_tag :product_line, :id => 'prodLine-3', :name => 'prodLine' %>
+                                            <%= radio_button_tag :prod, 'prodLine-3' %>
                                             <%= label_tag :Excelium, "Excelium: $15,400 per elevator", :class => 'fs-15 text-center' %>
                                         </div>
                                     </div>
@@ -215,7 +215,7 @@
 								</div>
 
                                 <div class="text-center">
-                                    <button type="button" onclick="reset()" class="btn btn-lg btn-default">Reset</button>
+                                    <button type="button" class="btn btn-lg btn-default">Reset</button>
                                     <span class="fs-20">&#160; OR &#160;</span>
                                     <button type="button" onclick="offer()" class="btn btn-lg btn-red">Submit</button>
                                 </div>
@@ -227,14 +227,14 @@
 					<!-- Accordion card -->
 
 					<!-- Accordion card -->
-					<div class="card" style="margin-bottom: 0;">
+					<div class="card mb-0" id="com">
                         <%= form_with do |f| %>
 
 						<!-- Card header -->
 						<div class="card-header z-depth-1 teal lighten-3" role="tab" id="heading11">
 							<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx2" href="#collapse11"
 								aria-expanded="false" aria-controls="collapse11">
-								<div button type="button" onclick="reset()"
+								<div button type="button"
 									class="btn btn-fullwidth btn-outline-info text-center font-weight-bold"
                                     style="width: 100%;">
 										Commercial
@@ -313,17 +313,17 @@
 
                                     <div class="row text-center"> 
                                         <div class="col-md-4">
-                                            <%= radio_button_tag :product_line, :id => 'prodLine-1', :name => 'prodLine' %>
+                                            <%= radio_button_tag :prod, 'prodLine-1' %>
                                             <%= label_tag :Standard, "Standard: $7,565 per elevator", :class => 'fs-15 text-center' %>
                                         </div>
 
                                         <div class="col-md-4">
-                                            <%= radio_button_tag :product_line, :id => 'prodLine-2', :name => 'prodLine' %>
+                                            <%= radio_button_tag :prod, 'prodLine-2' %>
                                             <%= label_tag :Premium, "Premium: $12,345 per elevator", :class => 'fs-15 text-center' %>
                                         </div>
 
                                         <div class="col-md-4">
-                                            <%= radio_button_tag :product_line, :id => 'prodLine-3', :name => 'prodLine' %>
+                                            <%= radio_button_tag :prod, 'prodLine-3' %>
                                             <%= label_tag :Excelium, "Excelium: $15,400 per elevator", :class => 'fs-15 text-center' %>
                                         </div>
                                     </div>
@@ -358,7 +358,7 @@
 								</div>
 
                                 <div class="text-center">
-                                    <button type="button" onclick="reset()" class="btn btn-lg btn-default">Reset</button>
+                                    <button type="button" class="btn btn-lg btn-default">Reset</button>
                                     <span class="fs-20">&#160; OR &#160;</span>
                                     <button type="button" onclick="offer()" class="btn btn-lg btn-red">Submit</button>
 							    </div>
@@ -370,14 +370,14 @@
 					<!-- Accordion card -->
 
 					<!-- Accordion card -->
-					<div class="card" style="margin-bottom: 0;">
+					<div class="card mb-0" id="cor">
                         <%= form_with do |f| %>
 
 						<!-- Card header -->
 						<div class="card-header z-depth-1 teal lighten-2" role="tab" id="heading12">
 							<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx2" href="#collapse12"
 								aria-expanded="false" aria-controls="collapse12">
-								<div button type="button" onclick="reset()"
+								<div button type="button"
 									class="btn btn-fullwidth btn-outline-danger text-center font-weight-bold"
                                     style="width: 100%;">
 										Corporate
@@ -456,17 +456,17 @@
 
                                     <div class="row text-center"> 
                                         <div class="col-md-4">
-                                            <%= radio_button_tag :product_line, :id => 'prodLine-1', :name => 'prodLine' %>
+                                            <%= radio_button_tag :prod, 'prodLine-1' %>
                                             <%= label_tag :Standard, "Standard: $7,565 per elevator", :class => 'fs-15 text-center' %>
                                         </div>
 
                                         <div class="col-md-4">
-                                            <%= radio_button_tag :product_line, :id => 'prodLine-2', :name => 'prodLine' %>
+                                            <%= radio_button_tag :prod, 'prodLine-2' %>
                                             <%= label_tag :Premium, "Premium: $12,345 per elevator", :class => 'fs-15 text-center' %>
                                         </div>
 
                                         <div class="col-md-4">
-                                            <%= radio_button_tag :product_line, :id => 'prodLine-3', :name => 'prodLine' %>
+                                            <%= radio_button_tag :prod, 'prodLine-3' %>
                                             <%= label_tag :Excelium, "Excelium: $15,400 per elevator", :class => 'fs-15 text-center' %>
                                         </div>
                                     </div>
@@ -501,7 +501,7 @@
 								</div>
 
                                 <div class="text-center">
-                                    <button type="button" onclick="reset()" class="btn btn-lg btn-default">Reset</button>
+                                    <button type="button" class="btn btn-lg btn-default">Reset</button>
                                     <span class="fs-20">&#160; OR &#160;</span>
                                     <button type="button" onclick="offer()" class="btn btn-lg btn-red">Submit</button>
 							    </div>
@@ -513,14 +513,14 @@
 					<!-- Accordion card -->
 
 					<!-- Accordion card -->
-					<div class="card mb-0">
+					<div class="card mb-0" id="hyb">
                         <%= form_with do |f| %>
 
 						<!-- Card header -->
 						<div class="card-header z-depth-1 teal lighten-1" role="tab" id="heading13">
 							<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx2" href="#collapse13"
 								aria-expanded="true" aria-controls="collapse13">
-								<div button type="button" onclick="reset()"
+								<div button type="button"
 									class="btn btn-fullwidth btn-outline-info text-center font-weight-bold"
                                     style="width: 100%;">
 										Hybrid
@@ -617,17 +617,17 @@
 
                                     <div class="row text-center"> 
                                         <div class="col-md-4">
-                                            <%= radio_button_tag :product_line, :id => 'prodLine-1', :name => 'prodLine' %>
+                                            <%= radio_button_tag :prod, 'prodLine-1' %>
                                             <%= label_tag :Standard, "Standard: $7,565 per elevator", :class => 'fs-15 text-center' %>
                                         </div>
 
                                         <div class="col-md-4">
-                                            <%= radio_button_tag :product_line, :id => 'prodLine-2', :name => 'prodLine' %>
+                                            <%= radio_button_tag :prod, 'prodLine-2' %>
                                             <%= label_tag :Premium, "Premium: $12,345 per elevator", :class => 'fs-15 text-center' %>
                                         </div>
 
                                         <div class="col-md-4">
-                                            <%= radio_button_tag :product_line, :id => 'prodLine-3', :name => 'prodLine' %>
+                                            <%= radio_button_tag :prod, 'prodLine-3' %>
                                             <%= label_tag :Excelium, "Excelium: $15,400 per elevator", :class => 'fs-15 text-center' %>
                                         </div>
                                     </div>
@@ -662,7 +662,7 @@
 								</div>
 
                                 <div class="text-center">
-                                    <button type="button" onclick="reset()" class="btn btn-lg btn-default">Reset</button>
+                                    <button type="button" class="btn btn-lg btn-default">Reset</button>
                                     <span class="fs-20">&#160; OR &#160;</span>
                                     <button type="button" onclick="offer()" class="btn btn-lg btn-red">Submit</button>
 							    </div>

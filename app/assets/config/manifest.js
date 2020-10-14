@@ -26,3 +26,4 @@
 //= link jquery.themepunch.revolution.min
 //= link demo.revolution_slider.js
 //= link contact
+//= link quote.js
