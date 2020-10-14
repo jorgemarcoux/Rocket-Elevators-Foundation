@@ -30,9 +30,6 @@
                 </li>
               </ul>
             </li>
-            <% if can? :manage, User %>
-              <p>Visible only for superadmins and supervisors! </p>
-            <% end %>
             <li><!-- PORTFOLIO -->
               <%= link_to 'PORTFOLIO', root_path(anchor: "portfolio") %>
             </li>
@@ -45,6 +42,11 @@
             <li><!-- CONTACT -->
               <%= link_to 'CONTACT', root_path(anchor: "contact") %>
             </li>
+            <% if can? :read, Quote %>
+              <li><!-- BACKOFFICE -->
+                <%= link_to 'BACKOFFICE', rails_admin_path %>
+              </li>
+            <% end %>
             <% if user_signed_in? %>
               <li><!-- SIGN OUT -->
                 <%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %>

@@ -11,8 +11,9 @@ class Ability
       can :access, :rails_admin
     end
     if user.employee?
-      can :manage, User
-      can :manage, Quote
+      can :read, Quote
+      can :read, User
+      can :read, :dashboard
       can :access, :rails_admin
     end
   end
