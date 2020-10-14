@@ -42,9 +42,18 @@
             <li><!-- CONTACT -->
               <%= link_to 'CONTACT', root_path(anchor: "contact") %>
             </li>
-            <li><!-- LOGIN -->
-              <%= link_to 'LOGIN', "/static_pages/login" %>
-            </li>
+            <% if user_signed_in? %>
+              <li><!-- SIGN OUT -->
+                <%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %>
+              </li>
+            <% else %>
+              <li><!-- REGISTER -->
+                <%= link_to 'REGISTER', new_user_registration_path %>
+              </li>
+              <li><!-- SIGN IN -->
+                <%= link_to 'SIGN IN', new_user_session_path %>
+              </li>
+            <% end %>
           </ul>
         </nav>
       </div>
