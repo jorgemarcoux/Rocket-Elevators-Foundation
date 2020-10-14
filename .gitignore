@@ -27,3 +27,5 @@
 /config/master.key
 
 *.Identifier
+
+config/database.yml
