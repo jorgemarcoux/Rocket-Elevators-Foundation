@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_12_232635) do
+ActiveRecord::Schema.define(version: 2020_10_13_230256) do
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "User_ID"
@@ -41,10 +41,16 @@ ActiveRecord::Schema.define(version: 2020_10_12_232635) do
     t.string "firstname"
     t.string "lastname"
     t.string "title"
-    t.string "email_address", limit: 50, null: false
-    t.string "passwords", limit: 30, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.boolean "admin"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

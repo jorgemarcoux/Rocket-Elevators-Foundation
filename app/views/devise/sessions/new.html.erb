@@ -1,0 +1,38 @@
+<section>
+  <div class="container">
+    <div class="text-center">
+      <div class="m-20">
+        <img  src="https://raw.githubusercontent.com/WilliamSinclairF/RocketElevatorsDigitalPresence-frontend/master/src/assets/RE_assets/RE_logo.png" alt=""  height="300">
+      </div>
+      <div class="m-20">
+        <h1 class="text-blue fw-300">Log In</h1>
+      </div>
+    </div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <form class="form-signin d-flex justify-content-center flex-wrap">
+        <div class="w-100p m-5">
+          <%= f.label :email, class: "text-center fs-30"%>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control w-75p ml-auto mr-auto" %>
+        </div>
+        <div class="w-100p m-5">
+          <%= f.label :password, class: "text-center fs-30"%>
+          <%= f.password_field :password, autocomplete: "current-password", class: "form-control w-75p ml-auto mr-auto" %>
+        </div>
+        <% if devise_mapping.rememberable? %>
+          <div class="d-flex justify-content-center m-20">
+            <label for="remember-me" class="fs-25 unselectable">
+              <%= f.check_box :remember_me, id: "remember-me" %>
+              <strong>Remember me</strong>
+            </label>
+          </div>
+        <% end %>
+        <div class="actions actions d-flex justify-content-center"  data-no-turbolink>
+          <%= f.submit "Log in", class: "btn btn-lg btn-primary btn-block w-50p" %> <br />
+        </div>
+      </form>
+    <% end %>
+    <div class="m-20">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</section>
