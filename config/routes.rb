@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  mount RailsAdmin::Engine => '/backoffice', as: 'rails_admin'
+
   root to: 'static_pages#index'
   get 'static_pages/quote'
   get 'static_pages/residential'
@@ -9,14 +11,12 @@ Rails.application.routes.draw do
 
   devise_for :users,
   :path_prefix => '',
-  path: '',
+  path: 'u',
   path_names: {
-    sign_in: 'signin',
-    sign_out: 'signout',
-    password: 'secret',
-    confirmation: 'verification',
-    registration: 'register',
-    sign_up: 'signup'
+    sign_in: 'sign_in',
+    sign_out: 'sign_out',
+    password: 's',
+    confirmation: 'v'
   }
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

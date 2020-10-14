@@ -30,6 +30,9 @@
                 </li>
               </ul>
             </li>
+            <% if can? :manage, User %>
+              <p>Visible only for superadmins and supervisors! </p>
+            <% end %>
             <li><!-- PORTFOLIO -->
               <%= link_to 'PORTFOLIO', root_path(anchor: "portfolio") %>
             </li>
