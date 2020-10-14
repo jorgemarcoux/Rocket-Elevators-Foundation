@@ -13,7 +13,5 @@ class StaticPagesController < ApplicationController
 
   def login
   end
-
-  def backoffice
-  end
+  
 end
