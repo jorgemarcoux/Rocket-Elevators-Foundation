@@ -1,7 +1,3 @@
-console.log('hi');
-
-const inputEvery = $('#basements, #occupants, #floors, #apartments, #cages, #prod_prodLine-1, #prod_prodLine-2, #prod_prodLine-3');
-
 var fee, price, totalElev, totalCost, elevatorCostFee, elevatorCost;
 
 var apartments, floors, basements, cages, occupants, type, prodLine;
@@ -10,7 +6,6 @@ function calc1() {
     
     // calculate avg apart per floor
     let avg = Math.ceil(apartments / floors);
-    console.log(floors);
 
     // calculate num elevator initial
     let elevatorInit = Math.ceil(avg / 6);
@@ -60,8 +55,6 @@ function calc3() {
 
 function calcPrice() {
     // cal cost for elev * price (7565, 12345, 15400)
-    console.log("total elev calc_cost :", totalElev);
-
     elevatorCost = totalElev * price;
 
     // cal fee for select opt
@@ -75,7 +68,7 @@ function prodLineCheck () {
     if ($(type + " #prod_prodLine-1").prop("checked")) {
         fee = 0.1;
         price = 7565;
-    } else if (type + $(" #prod_prodLine-2").prop("checked")) {
+    } else if ($(type + " #prod_prodLine-2").prop("checked")) {
         fee = 0.13;
         price = 12345;
     } else if ($(type + " #prod_prodLine-3").prop("checked")) {
@@ -105,8 +98,6 @@ function findCalc() {
 
 function infoUpdate () {
     apartments = parseInt($(type + ' #apartments').val(), 10);
-    console.log("apart :", apartments);
-    console.log("$ apart id :", $(type + ' #apartments'));
     floors = parseInt($(type + ' #floors').val(), 10);
     basements = parseInt($(type + ' #basements').val(), 10);
     cages = parseInt($(type + ' #cages').val(), 10);
@@ -128,27 +119,40 @@ function findType() {
 
     } else {
         type = '0';
-        $('input').val('');
     }
 }
 
 function setResult() {
+    nan();
     $(type + ' #total_elev').val(totalElev);
-    $(type + ' #total_elev_cost').val(elevatorCost);
-    $(type + ' #fees').val(elevatorCostFee);
-    $(type + ' #total_cost').val(totalCost);
+    $(type + ' #total_elev_cost').val(elevatorCost.toFixed(2) + '$');
+    $(type + ' #fees').val(elevatorCostFee.toFixed(2) + '$');
+    $(type + ' #total_cost').val(totalCost.toFixed(2) + '$');
 }
 
-function main() {
+function nan() {
+    if (isNaN(totalElev)) {
+        totalElev = 0;
+    }
+
+    if (isNaN(totalCost)) {
+        totalCost = 0;
+    }
+
+    if (isNaN(elevatorCost)) {
+        elevatorCost = 0;
+    }
+
+    if (isNaN(elevatorCostFee)) {
+        elevatorCostFee = 0;
+    }
+}
+
+$('input').on('keyup change', () => {
     findType();
     infoUpdate();
     prodLineCheck();
     findCalc();
     calcPrice();
     setResult();
-}
-
-$('input').on('keyup change', () => {
-    main();
-    console.log(type);
-})
+});
