@@ -48,21 +48,31 @@
               </li>
             <% end %>
             <% if user_signed_in? %>
-              <li><!-- SIGN OUT -->
-                <%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %>
-              </li>
-            <% else %>
-              <li><!-- REGISTER -->
-                <%= link_to 'REGISTER', new_user_registration_path %>
-              </li>
-              <li><!-- SIGN IN -->
-                <%= link_to 'SIGN IN', new_user_session_path %>
-              </li>
-            <% end %>
-          </ul>
-        </nav>
-      </div>
+              <!-- ACCOUNT DROPDOWN -->
+              <li class="dropdown nav-animate-fadeIn resp-active">
+                <%= link_to 'MY ACCOUNT', edit_user_registration_path %>
+                <ul class="dropdown-menu">
+                  <li class="dropdown">
+                    <%= link_to 'MY ACCOUNT', edit_user_registration_path %>
+                  </li>
+                  <li class="dropdown">
+                    <%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %>
+                  </li>
+                </li>
+              <% else %>
+                <li><!-- REGISTER -->
+                  <%= link_to 'REGISTER', new_user_registration_path %>
+                </li>
+                <li><!-- SIGN IN -->
+                  <%= link_to 'SIGN IN', new_user_session_path %>
+                </li>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+      </nav>
     </div>
-  </header>
+  </div>
+</header>
 </div>
 <!-- /Top Nav -->
