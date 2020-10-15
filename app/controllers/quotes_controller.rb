@@ -1,6 +1,6 @@
 class QuotesController < ApplicationController
 
-  def show
-    @quotes = @current_user.quotes
+  def index
+    @quotes = Quote.where(:user_id => current_user.id)
   end
 end
