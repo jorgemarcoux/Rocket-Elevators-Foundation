@@ -1,4 +1,6 @@
+
 <!-- Parallax -->
+
 <section class="parallax parallax-1" id="parallax-quote-1" >
   <div class="overlay dark-5">
     <!-- dark overlay [1 to 9 opacity] -->
@@ -23,7 +25,11 @@
     <div class="accordion md-accordion accordion-4" id="accordionEx2" role="tablist" aria-multiselectable="true">
       <!-- Accordion card -->
       <div class="card mb-0" id="res">
-        <%= form_with do |f| %>
+
+        <!-- begin form for DB -->
+      
+
+        <%= form_for @quotes, url: { action: "create" } do |f| %>
           <!-- Card header -->
           <div class="card-header z-depth-1 teal lighten-4" role="tab" id="heading10">
             <a data-toggle="collapse" data-parent="#accordionEx2" href="#collapse10"
@@ -44,7 +50,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_apartments_the_building_offers %>
                     <br>
-                    <%= f.text_field :apartments, :class => 'form-control', :placeholder => 'Nb. Appartments',
+                    <%= f.text_field :number_apartments, :class => 'form-control', :placeholder => 'Nb. Appartments',
                                             :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
                                             :min => '1' %>
                   </div>
@@ -53,7 +59,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_floors_in_the_building %>
                     <br>
-                    <%= f.text_field :floors, :class => 'form-control', :placeholder => 'Nb. Floor',
+                    <%= f.text_field :number_floors, :class => 'form-control', :placeholder => 'Nb. Floor',
                                             :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
                                             :min => '1' %>
                   </div>
@@ -62,7 +68,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_basements_in_the_building %>
                     <br>
-                    <%= f.text_field :basements, :class => 'form-control', :placeholder => 'Nb. Basements',
+                    <%= f.text_field :number_basements, :class => 'form-control', :placeholder => 'Nb. Basements',
                                             :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
                                             :min => '1' %>
                   </div>
@@ -71,7 +77,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_elevator_needed_for_the_building %>
                     <br>
-                    <%= f.text_field :total_elev, :class => 'form-control', :disabled => true, :placeholder => 'Nb. Elevator' %>
+                    <%= f.text_field :number_elevator_shaft, :class => 'form-control', :disabled => true, :placeholder => 'Nb. Elevator' %>
                   </div>
                 </div>
               </div>
@@ -98,27 +104,28 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :Price_for_all_the_elevators %>
                     <br>
-                    <%= f.text_field :total_elev_cost, :class => 'form-control', :disabled => true, :placeholder => 'Elevator Cost' %>
+                    <%= f.text_field :price_unit, :class => 'form-control', :disabled => true, :placeholder => 'Elevator Cost' %>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="row m-5 mtop-10">
                     <%= f.label :Price_for_all_the_installation_fee %>
                     <br>
-                    <%= f.text_field :fees, :class => 'form-control', :disabled => true, :placeholder => 'Installation Fee' %>
+                    <%= f.text_field :install_fee, :class => 'form-control', :disabled => true, :placeholder => 'Installation Fee' %>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="row m-5 mtop-10">
                     <%= f.label :Final_price %>
                     <br>
-                    <%= f.text_field :total_cost, :class => 'form-control', :disabled => true, :placeholder => 'Total Cost' %>
+                    <%= f.text_field :total_price , :class => 'form-control', :disabled => true, :placeholder => 'Total Cost' %>
                   </div>
                 </div>
               </div>
               <div class="text-center">
                 <button type="button" class="btn btn-lg btn-default">Reset</button>
                 <span class="fs-20">&#160; OR &#160;</span>
+                 <%= f.submit %>
                 <button type="button" onclick="offer()" class="btn btn-lg btn-red">Submit</button>
               </div>
             </div>
@@ -128,7 +135,7 @@
       <!-- Accordion card -->
       <!-- Accordion card -->
       <div class="card mb-0" id="com">
-        <%= form_with do |f| %>
+        <%= form_for @quotes, url: { action: "create" } do |f| %>
           <!-- Card header -->
           <div class="card-header z-depth-1 teal lighten-3" role="tab" id="heading11">
             <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx2" href="#collapse11"
@@ -149,16 +156,16 @@
                   <div id="businesses-div" class="row m-5 mtop-10">
                     <%= f.label :The_number_of_distinct_businesses %>
                     <br>
-                    <%= f.text_field :businesses, :class => 'form-control', :placeholder => 'Nb. Businesses',
+                    <%= f.text_field :distinct_business, :class => 'form-control', :placeholder => 'Nb. Businesses',
                                             :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
                                             :min => '1' %>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="row m-5 mtop-10">
-                    <%= f.label :The_number_of_floors_in_the_building %>
+                    <%= f.label :number_floors %>
                     <br>
-                    <%= f.text_field :floor, :class => 'form-control', :placeholder => 'Nb. Floors',
+                    <%= f.text_field :number_floors , :class => 'form-control', :placeholder => 'Nb. Floors',
                                             :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
                                             :min => '1' %>
                   </div>
@@ -167,7 +174,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_basements_in_the_building %>
                     <br>
-                    <%= f.text_field :basements, :class => 'form-control', :placeholder => 'Nb. Basements',
+                    <%= f.text_field :number_basements, :class => 'form-control', :placeholder => 'Nb. Basements',
                                             :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
                                             :min => '1' %>
                   </div>
@@ -176,7 +183,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_parking_space_available %>
                     <br>
-                    <%= f.text_field :parking, :class => 'form-control', :placeholder => 'Nb. Parking Space',
+                    <%= f.text_field :number_parking, :class => 'form-control', :placeholder => 'Nb. Parking Space',
                                             :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
                                             :min => '1' %>
                   </div>
@@ -185,7 +192,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_elevator_cages_to_deploy %>
                     <br>
-                    <%= f.text_field :cages, :class => 'form-control', :placeholder => 'Nb. Cages',
+                    <%= f.text_field :number_elevator_shaft, :class => 'form-control', :placeholder => 'Nb. Cages',
                                             :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
                                             :min => '1' %>
                   </div>
@@ -194,7 +201,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_elevator_needed_for_the_building %>
                     <br>
-                    <%= f.text_field :total_cost, :class => 'form-control', :disabled => true, :placeholder => 'Nb. Elevator' %>
+                    <%= f.text_field :number_elevator, :class => 'form-control', :disabled => true, :placeholder => 'Nb. Elevator' %>
                   </div>
                 </div>
               </div>
@@ -221,27 +228,28 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :Price_for_all_the_elevators %>
                     <br>
-                    <%= f.text_field :total_elev_cost, :class => 'form-control', :disabled => true, :placeholder => 'Elevator Cost' %>
+                    <%= f.text_field :price_unit, :class => 'form-control', :disabled => true, :placeholder => 'Elevator Cost' %>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="row m-5 mtop-10">
                     <%= f.label :Price_for_all_the_installation_fee %>
                     <br>
-                    <%= f.text_field :fees, :class => 'form-control', :disabled => true, :placeholder => 'Installation Fee' %>
+                    <%= f.text_field :install_fee, :class => 'form-control', :disabled => true, :placeholder => 'Installation Fee' %>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="row m-5 mtop-10">
                     <%= f.label :Final_price %>
                     <br>
-                    <%= f.text_field :total_cost, :class => 'form-control', :disabled => true, :placeholder => 'Total Cost' %>
+                    <%= f.text_field :total_price , :class => 'form-control', :disabled => true, :placeholder => 'Total Cost' %>
                   </div>
                 </div>
               </div>
               <div class="text-center">
                 <button type="button" class="btn btn-lg btn-default">Reset</button>
                 <span class="fs-20">&#160; OR &#160;</span>
+                <%= f.submit %>
                 <button type="button" onclick="offer()" class="btn btn-lg btn-red">Submit</button>
               </div>
             </div>
@@ -251,7 +259,7 @@
       <!-- Accordion card -->
       <!-- Accordion card -->
       <div class="card mb-0" id="cor">
-        <%= form_with do |f| %>
+        <%= form_for @quotes, url: { action: "create" } do |f| %>
           <!-- Card header -->
           <div class="card-header z-depth-1 teal lighten-2" role="tab" id="heading12">
             <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx2" href="#collapse12"
@@ -272,7 +280,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_separate_tenant_companies %>
                     <br>
-                    <%= f.text_field :companies, :class => 'form-control', :placeholder => 'Nb. Companies',
+                    <%= f.text_field :distinct_business, :class => 'form-control', :placeholder => 'Nb. Companies',
                                             :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
                                             :min => '1' %>
                   </div>
@@ -281,7 +289,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_floors_in_the_building %>
                     <br>
-                    <%= f.text_field :floors, :class => 'form-control', :placeholder => 'Nb. Floors',
+                    <%= f.text_field :number_floors, :class => 'form-control', :placeholder => 'Nb. Floors',
                                             :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
                                             :min => '1' %>
                   </div>
@@ -290,7 +298,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_basements_in_the_building %>
                     <br>
-                    <%= f.text_field :Basements, :class => 'form-control', :placeholder => 'Nb. Basements',
+                    <%= f.text_field :number_basements, :class => 'form-control', :placeholder => 'Nb. Basements',
                                             :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
                                             :min => '1' %>
                   </div>
@@ -299,7 +307,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_parking_space_available %>
                     <br>
-                    <%= f.text_field :parking, :class => 'form-control', :placeholder => 'Nb. Parking Space',
+                    <%= f.text_field :number_parking , :class => 'form-control', :placeholder => 'Nb. Parking Space',
                                             :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
                                             :min => '1' %>
                   </div>
@@ -308,7 +316,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_occupants_per_floor %>
                     <br>
-                    <%= f.text_field :ocuupants, :class => 'form-control', :placeholder => 'Nb. Occupants per Floor',
+                    <%= f.text_field :maximum_occupant, :class => 'form-control', :placeholder => 'Nb. Occupants per Floor',
                                             :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
                                             :min => '1' %>
                   </div>
@@ -317,7 +325,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_elevator_needed_for_the_building %>
                     <br>
-                    <%= f.text_field :total_cost, :class => 'form-control', :disabled => true, :placeholder => 'Nb. Elevator' %>
+                    <%= f.text_field :number_elevator, :class => 'form-control', :disabled => true, :placeholder => 'Nb. Elevator' %>
                   </div>
                 </div>
               </div>
@@ -344,27 +352,28 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :Price_for_all_the_elevators %>
                     <br>
-                    <%= f.text_field :total_elev_cost, :class => 'form-control', :disabled => true, :placeholder => 'Elevator Cost' %>
+                    <%= f.text_field :price_unit, :class => 'form-control', :disabled => true, :placeholder => 'Elevator Cost' %>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="row m-5 mtop-10">
                     <%= f.label :Price_for_all_the_installation_fee %>
                     <br>
-                    <%= f.text_field :fees, :class => 'form-control', :disabled => true, :placeholder => 'Installation Fee' %>
+                    <%= f.text_field :install_fee, :class => 'form-control', :disabled => true, :placeholder => 'Installation Fee' %>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="row m-5 mtop-10">
                     <%= f.label :Final_price %>
                     <br>
-                    <%= f.text_field :total_cost, :class => 'form-control', :disabled => true, :placeholder => 'Total Cost' %>
+                    <%= f.text_field :total_price, :class => 'form-control', :disabled => true, :placeholder => 'Total Cost' %>
                   </div>
                 </div>
               </div>
               <div class="text-center">
                 <button type="button" class="btn btn-lg btn-default">Reset</button>
                 <span class="fs-20">&#160; OR &#160;</span>
+                <%= f.submit %>
                 <button type="button" onclick="offer()" class="btn btn-lg btn-red">Submit</button>
               </div>
             </div>
@@ -374,7 +383,7 @@
       <!-- Accordion card -->
       <!-- Accordion card -->
       <div class="card mb-0" id="hyb">
-        <%= form_with do |f| %>
+        <%= form_for @quotes, url: { action: "create" } do |f| %>
           <!-- Card header -->
           <div class="card-header z-depth-1 teal lighten-1" role="tab" id="heading13">
             <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx2" href="#collapse13"
@@ -395,7 +404,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_separate_tenant_companies %>
                     <br>
-                    <%= f.text_field :companies, :class => 'form-control', :placeholder => 'Nb. Companies',
+                    <%= f.text_field :distinct_business, :class => 'form-control', :placeholder => 'Nb. Companies',
                                             :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
                                             :min => '1' %>
                   </div>
@@ -404,7 +413,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_floors_in_the_building %>
                     <br>
-                    <%= f.text_field :floors, :class => 'form-control', :placeholder => 'Nb. Floors',
+                    <%= f.text_field :number_floors, :class => 'form-control', :placeholder => 'Nb. Floors',
                                             :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
                                             :min => '1' %>
                   </div>
@@ -413,7 +422,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_basements_in_the_building %>
                     <br>
-                    <%= f.text_field :Basements, :class => 'form-control', :placeholder => 'Nb. Basements',
+                    <%= f.text_field :number_basements, :class => 'form-control', :placeholder => 'Nb. Basements',
                                             :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
                                             :min => '1' %>
                   </div>
@@ -422,7 +431,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_parking_space_available %>
                     <br>
-                    <%= f.text_field :parking, :class => 'form-control', :placeholder => 'Nb. Parking Space',
+                    <%= f.text_field :number_parking, :class => 'form-control', :placeholder => 'Nb. Parking Space',
                                             :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
                                             :min => '1' %>
                   </div>
@@ -431,7 +440,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_occupants_per_floor %>
                     <br>
-                    <%= f.text_field :ocuupants, :class => 'form-control', :placeholder => 'Nb. Occupants per Floor',
+                    <%= f.text_field :maximum_occupant, :class => 'form-control', :placeholder => 'Nb. Occupants per Floor',
                                             :type => 'number', :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189',
                                             :min => '1' %>
                   </div>
@@ -440,7 +449,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_hours_of_activity %>
                     <br>
-                    <%= f.select :hours_of_activity, options_for_select([
+                    <%= f.select :hours_activity, options_for_select([
                                                 ['0 hours'], ['1 hours'], ['2 hours'],
                                                 ['3 hours'], ['4 hours'], ['5 hours'],
                                                 ['6 hours'], ['7 hours'], ['8 hours'],
@@ -457,7 +466,7 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :The_number_of_elevator_needed_for_the_building %>
                     <br>
-                    <%= f.text_field :total_elev, :class => 'form-control', :disabled => true, :placeholder => 'Nb. Elevator' %>
+                    <%= f.text_field :number_elevator, :class => 'form-control', :disabled => true, :placeholder => 'Nb. Elevator' %>
                   </div>
                 </div>
               </div>
@@ -484,27 +493,28 @@
                   <div class="row m-5 mtop-10">
                     <%= f.label :Price_for_all_the_elevators %>
                     <br>
-                    <%= f.text_field :total_elev_cost, :class => 'form-control', :disabled => true, :placeholder => 'Elevator Cost' %>
+                    <%= f.text_field :price_unit, :class => 'form-control', :disabled => true, :placeholder => 'Elevator Cost' %>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="row m-5 mtop-10">
                     <%= f.label :Price_for_all_the_installation_fee %>
                     <br>
-                    <%= f.text_field :fees, :class => 'form-control', :disabled => true, :placeholder => 'Installation Fee' %>
+                    <%= f.text_field :install_fee, :class => 'form-control', :disabled => true, :placeholder => 'Installation Fee' %>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="row m-5 mtop-10">
                     <%= f.label :Final_price %>
                     <br>
-                    <%= f.text_field :total_elev, :class => 'form-control', :disabled => true, :placeholder => 'Total Cost' %>
+                    <%= f.text_field :total_price, :class => 'form-control', :disabled => true, :placeholder => 'Total Cost' %>
                   </div>
                 </div>
               </div>
               <div class="text-center">
                 <button type="button" class="btn btn-lg btn-default">Reset</button>
                 <span class="fs-20">&#160; OR &#160;</span>
+                <%= f.submit %>
                 <button type="button" onclick="offer()" class="btn btn-lg btn-red">Submit</button>
               </div>
             </div>
