@@ -4,5 +4,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+   
+    # validates_uniqueness_of :email 
+    # validates_presence_of :email
+    # validates_uniqueness_of :email
+    # validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, presence: True
+    # validate :password, presence: true
+    # validate :password, confirmation: { case_sensitive: true }
+
 
 end

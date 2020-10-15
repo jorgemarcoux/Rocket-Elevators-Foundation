@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'static_pages/residential'
   get 'static_pages/corporate'
   get 'static_pages/login'
+  resources :static_pages
+
 
 
   devise_for :users,
