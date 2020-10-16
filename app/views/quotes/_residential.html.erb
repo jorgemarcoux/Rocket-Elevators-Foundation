@@ -1,21 +1,22 @@
   <%= simple_form_for(@quote) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-  <div class="d-flex justify-content-center ml-auto mr-auto flex-wrap">
-    <div class="form-inputs">
-      <%= f.input :apartments, input_html: {id: "apartments"}, :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189' %>
-      <br />
+  <div class="container">
+    <div class="form-inputs row text-center">
+      <%= f.input :apartments, input_html: {id: "apartments"} %>
       <%= f.input :floors, input_html: {id: "floors"}, :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189' %>
-      <br />
       <%= f.input :basements, input_html: {id: "basements"}, :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189' %>
-      <br />
+    </div>
+
+    <div class="form-inputs row">
       <%= f.input :product_line, as: :radio_buttons, collection: [['0', 'Standard'], ['1', 'Premium'], ['2', 'Excelium']], label_method: :second, value_method: :first %>
-      <div class="form-actions text-center">
-        <%= f.button :submit, class: "btn btn-lg btn-red" %>
-        <input type="reset" class="btn btn-lg btn-default">
-        <hr />
-        <%= render 'quoteinfo' %>
-      </div>
+    </div>
+
+    <div class="form-actions text-center">
+      <%= f.button :submit, class: "btn btn-lg btn-red" %>
+      <input type="reset" class="btn btn-lg btn-default">
+      <hr />
+      <%= render 'quoteinfo' %>
     </div>
   </div>
 <% end %>

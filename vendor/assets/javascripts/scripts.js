@@ -1242,7 +1242,7 @@
 				_container.each(function() {
 
 					var slider 		= jQuery(this);
-					var options 	= slider.attr('data_plugin_options');
+					var options 	= slider.attr('data-plugin-options');
 
 					// Progress Bar
 					var $opt = eval('(' + options + ')');  // convert text to json
@@ -1400,7 +1400,7 @@
 
 				_container2.each(function() {
 					var _this 		= jQuery(this),
-						_options 	= _this.attr('data_plugin_options');
+						_options 	= _this.attr('data-plugin-options');
 
 					_defaults = {
 					    loop: 					true,
@@ -1584,7 +1584,7 @@
 				_el.each(function() {
 
 					var _t 			= jQuery(this),
-						options 	= _t.attr('data_plugin_options'),
+						options 	= _t.attr('data-plugin-options'),
 						config		= {},
 						defaults 	= {
 							type: 				'image',
@@ -1613,8 +1613,8 @@
 							},
 						};
 
-					if(_t.data("plugin_options")) {
-						config = jQuery.extend({}, defaults, options, _t.data("plugin_options"));
+					if(_t.data("plugin-options")) {
+						config = jQuery.extend({}, defaults, options, _t.data("plugin-options"));
 					}
 
 					jQuery(this).magnificPopup(config);
@@ -3805,7 +3805,7 @@
 
 
 /** Flickr Widget
-	<div class="widget-flickr clearfix lightbox margin-bottom-60" data-id="37304598@N02" data-limit="16" data_plugin_options='{"delegate": "a", "gallery": {"enabled": true}}'></div>
+	<div class="widget-flickr clearfix lightbox margin-bottom-60" data-id="37304598@N02" data-limit="16" data-plugin-options='{"delegate": "a", "gallery": {"enabled": true}}'></div>
  **************************************************************** **/
 	function _widget_flickr() {
 		var _container = jQuery('.widget-flickr');

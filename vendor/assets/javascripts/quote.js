@@ -156,3 +156,10 @@ $('input').on('keyup change', () => {
     calcPrice();
     setResult();
 });
+
+$('.form-actions').addClass('center')
+$('.form-group').addClass('col-4 mt-15')
+$('.form-group.radio_buttons').removeClass('col-4').addClass('col-12 row')
+$('.form-check').addClass('col-4').css('padding-left', '120px')
+$('.form-check-input').css('display', 'inline-block')
+$('.col-form-label').addClass('text-center')
