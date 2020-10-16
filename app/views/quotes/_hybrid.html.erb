@@ -1,0 +1,16 @@
+<%= simple_form_for(@quote) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="form-inputs">
+    <%= f.input :floors, input_html: {id: :floors} %>
+    <%= f.input :basements, input_html: {id: :basements} %>
+    <%= f.input :businesses %>
+    <%= f.input :parking_spaces %>
+    <%= f.input :occupants, input_html: {id: :occupants} %>
+    <%= f.input :opening_hours, collection: 1..24 %>
+    <%= f.input :product_line, as: :radio_buttons, collection: [['0', 'Standard'], ['1', 'Premium'], ['2', 'Excelium']], label_method: :second, value_method: :first %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

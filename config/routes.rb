@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
   
+  resources :quotes
   mount RailsAdmin::Engine => '/backoffice', as: 'rails_admin'
 
   root to: 'static_pages#index'
-  get 'static_pages/quote'
   get 'static_pages/residential'
   get 'static_pages/corporate'
-  get 'static_pages/login'
-  resources :static_pages
+
 
 
 

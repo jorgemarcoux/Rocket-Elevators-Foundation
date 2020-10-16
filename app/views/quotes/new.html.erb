@@ -1,0 +1,186 @@
+  <!-- Parallax -->
+<section class="parallax parallax-1" id="parallax-quote-1" >
+  <div class="overlay dark-5">
+    <!-- dark overlay [1 to 9 opacity] -->
+  </div>
+  <div class="container">
+    <div class="text-center">
+      <h2 class="fs-90 fw-300">GET A SUBMISSION</h2>
+      <a class="btn btn-lg btn-default btn-lg" href="/">HOME <i class="fa fa-angle-right"></i></a>
+      &nbsp; OR &nbsp;
+      <a class="btn btn-lg btn-red" href="/#contact">CONTACT US <i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+</section>
+<!-- /Parallax -->
+<section style="padding: 0;">
+  <div>
+    <div class="heading-title heading-dotted text-center mt-35">
+      <h3 class="fs-50">Select the type <span> of building</span></h3>
+    </div>
+    <!--Accordion wrapper-->
+    <div class="accordion md-accordion accordion-4" id="accordionEx2" role="tablist" aria-multiselectable="true">
+      <!-- Accordion card -->
+      <div class="card mb-0" id="res">
+        <!-- Card header -->
+        <div class="card-header z-depth-1 teal lighten-4" role="tab" id="heading10">
+          <a data-toggle="collapse" data-parent="#accordionEx2" href="#collapse10" aria-expanded="true" aria-controls="collapse10" class="d-flex justify-content-center">
+            <div button type="button"
+                class="btn btn-lg btn-outline-danger text-center bold"
+                style="width: 50%;">
+              Residential
+            </div>
+          </a>
+        </div>
+        <!-- Card body -->
+        <div id="collapse10" class="collapse" role="tabpanel" aria-labelledby="heading10"
+            data-parent="#accordionEx2">
+          <div class="card-body rgba-teal-strong white-text">
+            <div class="row">
+              <%= render 'residential' %>
+            </div>
+            <div class="text-center">
+              <h4 class="fs-20">Select Your Product Line : </h4>
+              <div class="row text-center">
+                <%= render 'radiobuttons' %>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <%= render 'quoteinfo' %>
+            </div>
+            <div class="text-center">
+              <button type="button" class="btn btn-lg btn-default">Reset</button>
+              <span class="fs-20">&#160; OR &#160;</span>
+              <button type="button" onclick="offer()" class="btn btn-lg btn-red">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Accordion card -->
+      <!-- Accordion card -->
+      <div class="card mb-0" id="com">
+        <!-- Card header -->
+        <div class="card-header z-depth-1 teal lighten-3" role="tab" id="heading11">
+          <a data-toggle="collapse" data-parent="#accordionEx2" href="#collapse11" aria-expanded="false" aria-controls="collapse11" class="d-flex justify-content-center">
+            <div button type="button"
+                class="btn btn-lg btn-outline-info text-center bold" style="width: 50%;">
+              Commercial
+            </div>
+          </a>
+        </div>
+        <!-- Card body -->
+        <div id="collapse11" class="collapse" role="tabpanel" aria-labelledby="heading11"
+            data-parent="#accordionEx2">
+          <div class="card-body rgba-teal-strong white-text">
+            <div class="row">
+              <%= render 'commercial' %>
+            </div>
+            <div class="text-center">
+              <h4 class="fs-20">Select Your Product Line : </h4>
+              <div class="row text-center">
+                <%= render 'radiobuttons' %>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <%= render 'quoteinfo' %>
+            </div>
+            <div class="text-center">
+              <button type="button" class="btn btn-lg btn-default">Reset</button>
+              <span class="fs-20">&#160; OR &#160;</span>
+              <button type="button" onclick="offer()" class="btn btn-lg btn-red">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Accordion card -->
+      <!-- Accordion card -->
+      <div class="card mb-0" id="cor">
+        <!-- Card header -->
+        <div class="card-header z-depth-1 teal lighten-2" role="tab" id="heading12">
+          <a data-toggle="collapse" data-parent="#accordionEx2" href="#collapse12"
+              aria-expanded="false" aria-controls="collapse12" class="d-flex justify-content-center">
+            <div button type="button"
+                class="btn btn-lg btn-outline-danger text-center font-weight-bold"
+                style="width: 50%;">
+              Corporate
+            </div>
+          </a>
+        </div>
+        <!-- Card body -->
+        <div id="collapse12" class="collapse" role="tabpanel" aria-labelledby="heading12"
+            data-parent="#accordionEx2">
+          <div class="card-body rgba-teal-strong white-text">
+            <div class="row">
+              <%= render 'corporate' %>
+            </div>
+            <div class="text-center">
+              <h4 class="fs-20">Select Your Product Line : </h4>
+              <div class="row text-center">
+                <%= render 'radiobuttons' %>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <%= render 'quoteinfo' %>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion card -->
+        <!-- Accordion card -->
+        <div class="card mb-0" id="hyb">
+          <!-- Card header -->
+          <div class="card-header z-depth-1 teal lighten-1" role="tab" id="heading13">
+            <a data-toggle="collapse" data-parent="#accordionEx2" href="#collapse13"
+              aria-expanded="true" aria-controls="collapse13" class="d-flex justify-content-center">
+              <div button type="button"
+                class="btn btn-lg btn-outline-info text-center font-weight-bold"
+                style="width: 50%;">
+                Hybrid
+              </div>
+            </a>
+          </div>
+          <!-- Card body -->
+          <div id="collapse13" class="collapse" role="tabpanel" aria-labelledby="heading13"
+            data-parent="#accordionEx2">
+            <div class="card-body rgba-teal-strong white-text">
+              <div class="row">
+                <%= render 'hybrid' %>
+              </div>
+              <div class="text-center">
+                <h4 class="fs-20">Select Your Product Line : </h4>
+                <div class="row text-center">
+                  <%= render 'radiobuttons' %>
+                </div>
+              </div>
+              <hr />
+              <%= render 'quoteinfo' %>
+            </div>
+            <!-- Accordion card -->
+          </div>
+          <!--/.Accordion wrapper-->
+        </div>
+      </section>
+      <section class="info-bar info-bar-color">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4 text-center">
+              <h3>BUISNESS WORLDWIDE</h3>
+              <p>We do business all over the world</p>
+            </div>
+            <div class="col-sm-4 text-center">
+              <h3>SATISFACTION GUARANTEE</h3>
+              <p>Peace of mind with us</p>
+            </div>
+            <div class="col-sm-4 text-center">
+              <h3>ONLINE SUPPORT 24/7</h3>
+              <p>We're here for you</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /INFO BAR -->
+      <script>
+        plugin_path = '../assets/';
+      </script>

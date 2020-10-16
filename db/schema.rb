@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_15_171629) do
+ActiveRecord::Schema.define(version: 2020_10_15_230314) do
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "User_ID"
@@ -22,20 +22,22 @@ ActiveRecord::Schema.define(version: 2020_10_15_171629) do
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "number_apartments"
-    t.integer "number_floors"
-    t.integer "number_basements"
-    t.integer "distinct_business"
-    t.integer "number_elevator_shaft"
-    t.integer "number_parking"
-    t.integer "maximum_occupant"
-    t.integer "hours_activity"
-    t.integer "prod_line"
-    t.integer "total_price"
-    t.integer "price_unit"
-    t.integer "number_elevator"
-    t.integer "user_id"
+    t.integer "apartments"
+    t.integer "floors"
+    t.integer "basements"
+    t.integer "businesses"
+    t.integer "elevator_shafts"
+    t.integer "parking_spaces"
+    t.integer "occupants"
+    t.integer "opening_hours"
+    t.integer "product_line"
     t.decimal "install_fee", precision: 10
+    t.decimal "total_price", precision: 10
+    t.integer "unit_price"
+    t.integer "elevator_number"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
