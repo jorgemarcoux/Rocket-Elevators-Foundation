@@ -10,13 +10,15 @@
     </div>
   </div>
 </section>
+
 <section style="padding: 0;">
   <div class="heading-title heading-dotted text-center mt-35">
     <h3 class="fs-50">Select the type <span> of building</span></h3>
   </div>
   <div class="accordion md-accordion accordion-4" id="accordionEx2" role="tablist" aria-multiselectable="true">
-    <div class="card mb-0" id="res">
-      <div class="card-header z-depth-1 teal lighten-4" role="tab" id="heading10">
+    <div class="card mb-0" id="res-card">
+
+      <div class="card-header z-depth-1 teal lighten-4" role="tab" id="res">
         <a data-toggle="collapse" data-parent="#accordionEx2" href="#collapse10" aria-expanded="true" aria-controls="collapse10" class="d-flex justify-content-center">
           <div button type="button"
                 class="btn btn-lg btn-outline-danger text-center bold"
@@ -25,69 +27,83 @@
           </div>
         </a>
       </div>
-      <div id="collapse10" class="collapse" role="tabpanel" aria-labelledby="heading10"
+
+      <div id="collapse10" class="collapse" role="tabpanel" aria-labelledby="res"
             data-parent="#accordionEx2">
-        <div class="card-body rgba-teal-strong white-text">
+        <div class="rgba-teal-strong white-text">
           <%= render 'residential' %>
         </div>
       </div>
+
     </div>
-  </div>
-  <div class="card mb-0" id="com">
-    <div class="card-header z-depth-1 teal lighten-3" role="tab" id="heading11">
-      <a data-toggle="collapse" data-parent="#accordionEx2" href="#collapse11" aria-expanded="false" aria-controls="collapse11" class="d-flex justify-content-center">
-        <div button type="button"
-                class="btn btn-lg btn-outline-info text-center bold" style="width: 50%;">
-          Commercial
+
+    <div class="card mb-0" id="com-card">
+
+      <div class="card-header z-depth-1 teal lighten-3" role="tab" id="com">
+        <a data-toggle="collapse" data-parent="#accordionEx2" href="#collapse11" aria-expanded="false" aria-controls="collapse11" class="d-flex justify-content-center">
+          <div button type="button"
+                  class="btn btn-lg btn-outline-info text-center bold" style="width: 50%;">
+            Commercial
+          </div>
+        </a>
+      </div>
+
+      <div id="collapse11" class="collapse" role="tabpanel" aria-labelledby="com"
+              data-parent="#accordionEx2">
+        <div class="rgba-teal-strong white-text">
+          <%= render 'commercial' %>
         </div>
-      </a>
-    </div>
-    <div id="collapse11" class="collapse" role="tabpanel" aria-labelledby="heading11"
-            data-parent="#accordionEx2">
-      <div class="card-body rgba-teal-strong white-text">
-        <%= render 'commercial' %>
       </div>
     </div>
-  </div>
-  <div class="card mb-0" id="cor">
-    <div class="card-header z-depth-1 teal lighten-2" role="tab" id="heading12">
-      <a data-toggle="collapse" data-parent="#accordionEx2" href="#collapse12"
-              aria-expanded="false" aria-controls="collapse12" class="d-flex justify-content-center">
-        <div button type="button"
-                class="btn btn-lg btn-outline-danger text-center font-weight-bold"
-                style="width: 50%;">
-          Corporate
-        </div>
-      </a>
-    </div>
-    <div id="collapse12" class="collapse" role="tabpanel" aria-labelledby="heading12"
-            data-parent="#accordionEx2">
-      <div class="card-body rgba-teal-strong white-text">
-        <%= render 'corporate' %>
+
+    <div class="card mb-0" id="cor-card">
+
+      <div class="card-header z-depth-1 teal lighten-2" role="tab" id="cor">
+        <a data-toggle="collapse" data-parent="#accordionEx2" href="#collapse12"
+                aria-expanded="false" aria-controls="collapse12" class="d-flex justify-content-center">
+          <div button type="button"
+                  class="btn btn-lg btn-outline-danger text-center font-weight-bold"
+                  style="width: 50%;">
+            Corporate
+          </div>
+        </a>
       </div>
-    </div>
-  </div>
-  <div class="card mb-0" id="hyb">
-    <div class="card-header z-depth-1 teal lighten-1" role="tab" id="heading13">
-      <a data-toggle="collapse" data-parent="#accordionEx2" href="#collapse13"
-              aria-expanded="true" aria-controls="collapse13" class="d-flex justify-content-center">
-        <div button type="button"
-                class="btn btn-lg btn-outline-info text-center font-weight-bold"
-                style="width: 50%;">
-          Hybrid
-        </div>
-      </a>
-    </div>
-    <div id="collapse13" class="collapse" role="tabpanel" aria-labelledby="heading13"
-            data-parent="#accordionEx2">
-      <div class="card-body rgba-teal-strong white-text">
-        <div class="row">
-          <%= render 'hybrid' %>
+
+      <div id="collapse12" class="collapse" role="tabpanel" aria-labelledby="cor"
+              data-parent="#accordionEx2">
+        <div class="rgba-teal-strong white-text">
+          <%= render 'corporate' %>
         </div>
       </div>
+
+    </div>
+
+    <div class="card mb-0" id="hyb-card">
+
+      <div class="card-header z-depth-1 teal lighten-1" role="tab" id="hyb">
+        <a data-toggle="collapse" data-parent="#accordionEx2" href="#collapse13"
+                aria-expanded="true" aria-controls="collapse13" class="d-flex justify-content-center">
+          <div button type="button"
+                  class="btn btn-lg btn-outline-info text-center font-weight-bold"
+                  style="width: 50%;">
+            Hybrid
+          </div>
+        </a>
+      </div>
+
+      <div id="collapse13" class="collapse" role="tabpanel" aria-labelledby="hyb"
+              data-parent="#accordionEx2">
+        <div class="rgba-teal-strong white-text">
+          <div class="row">
+            <%= render 'hybrid' %>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+
 <section class="info-bar info-bar-color">
   <div class="container">
     <div class="row">
@@ -106,6 +122,7 @@
     </div>
   </div>
 </section>
+
 <script>
   plugin_path = '../assets/';
 </script>
