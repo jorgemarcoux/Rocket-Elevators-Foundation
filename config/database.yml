@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: root
+  password: le fichier du calcul pour le quote est dans le main folder sur cette branch et il est nommer quote.rb
   socket: /var/run/mysqld/mysqld.sock
 
 development:
