@@ -3685,10 +3685,10 @@ body.menu-vertical #mainMenu.sidebar-vertical .navbar-collapse>ul.nav.navbar-nav
 #toTop {
 	font-size:38px;
 	line-height:33px;
-	background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJpY29uIGljb24tdGFibGVyIGljb24tdGFibGVyLWFycm93LXVwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlPSIjRjQ0MzM2IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogIDxwYXRoIHN0cm9rZT0ibm9uZSIgZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPgogIDxsaW5lIHgxPSIxMiIgeTE9IjUiIHgyPSIxMiIgeTI9IjE5IiAvPgogIDxsaW5lIHgxPSIxOCIgeTE9IjExIiB4Mj0iMTIiIHkyPSI1IiAvPgogIDxsaW5lIHgxPSI2IiB5MT0iMTEiIHgyPSIxMiIgeTI9IjUiIC8+Cjwvc3ZnPg==");
+	background-color: rgba(0,0,0,0.3);
 	color: #FFF;
 	position: fixed;
-	height: 100px; width: 40px;
+	height: 35px; width: 40px;
 	right: 6px; bottom: 6px;
 	text-align: center;
 	text-transform: uppercase;
@@ -3708,13 +3708,7 @@ body.menu-vertical #mainMenu.sidebar-vertical .navbar-collapse>ul.nav.navbar-nav
 			transition: all 0.2s;
 }
 #toTop:hover {
-	/* background-color: rgba(0,0,0,0.7); */
-		background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJpY29uIGljb24tdGFibGVyIGljb24tdGFibGVyLWFycm93LXVwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlPSIjRjQ0MzM2IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogIDxwYXRoIHN0cm9rZT0ibm9uZSIgZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPgogIDxsaW5lIHgxPSIxMiIgeTE9IjUiIHgyPSIxMiIgeTI9IjE5IiAvPgogIDxsaW5lIHgxPSIxOCIgeTE9IjExIiB4Mj0iMTIiIHkyPSI1IiAvPgogIDxsaW5lIHgxPSI2IiB5MT0iMTEiIHgyPSIxMiIgeTI9IjUiIC8+Cjwvc3ZnPg==");
-
-}
-#toTop:before {
-	font-family: "fontawesome";
-	content: "\f102";
+	background-color: rgba(0,0,0,0.7);
 }
 
 
