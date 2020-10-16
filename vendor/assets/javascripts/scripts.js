@@ -1556,7 +1556,7 @@
 
 		if(_el.length > 0) {
 
-			loadScript(plugin_path + 'magnific-popup/jquery.magnific-popup.min.js', function() {
+			loadScript(plugin_path + 'jquery.magnific-popup.min.js', function() {
 
 				if(typeof(jQuery.magnificPopup) == "undefined") {
 					return false;
@@ -1796,7 +1796,7 @@
 		var _container = jQuery('.mix-grid');
 		
 		if(_container.length > 0) {
-			loadScript(plugin_path + 'mixitup/jquery.mixitup.min.js', function() {
+			loadScript(plugin_path + 'jquery.mixitup.min.js', function() {
 
 				if(jQuery().mixitup) {
 
@@ -2823,8 +2823,8 @@
 		 ************************ **/
 		if(jQuery('form.validate-plugin').length > 0) {
 
-			loadScript(plugin_path + 'form.validate/jquery.form.min.js', function() {
-				loadScript(plugin_path + 'form.validate/jquery.validation.min.js');
+			loadScript(plugin_path + 'jquery.form.min.js', function() {
+				loadScript(plugin_path + 'jquery.validation.min.js');
 			});
 
 		}
@@ -2835,8 +2835,8 @@
 		 ************************ **/
 		if(jQuery('form.validate').length > 0) {
 
-			loadScript(plugin_path + 'form.validate/jquery.form.min.js', function() {
-				loadScript(plugin_path + 'form.validate/jquery.validation.min.js', function() {
+			loadScript(plugin_path + 'jquery.form.min.js', function() {
+				loadScript(plugin_path + 'jquery.validation.min.js', function() {
 
 					if(jQuery().validate) {
 

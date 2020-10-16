@@ -107,36 +107,36 @@ function infoUpdate () {
 function findType() {
     if ($('#collapse10').hasClass('show')) {
         type = '#collapse10';
-        $('#quote_building_type').val('Residential');
+        $(type + ' .building_type').val('Residential');
 
     } else if ($('#collapse11').hasClass('show')) {
         type = '#collapse11';
-        $('#quote_building_type').val('Commercial');
+        $(type + ' .building_type').val('Commercial');
 
     } else if ($('#collapse12').hasClass('show')) {
         type = '#collapse12';
-        $('#quote_building_type').val('Corporate');
+        $(type + ' .building_type').val('Corporate');
 
     } else if ($('#collapse13').hasClass('show')) {
         type = '#collapse13';
-        $('#quote_building_type').val('Hybrid');
+        $(type + ' .building_type').val('Hybrid');
 
     } else {
         type = '0';
-        $('#quote_building_type').val('');
+        $(type + ' .building_type').val('');
     }
 }
 
 function setResult() {
     nan();
+    findType();
     $(type + ' #total_elev').val(totalElev);
     $(type + ' #cost').val(elevatorCost.toFixed(2) + '$');
     $(type + ' #fees').val(elevatorCostFee.toFixed(2) + '$');
     $(type + ' #total_cost').val(totalCost.toFixed(2) + '$');
-    $('#quote_total_price').val(totalCost);
-    $('#quote_install_fee').val(elevatorCostFee);
-    $('#quote_elevator_number').val(totalElev);
-    $('#quote_total_price').val(totalCost);
+    $(type + ' .total_price').val(parseFloat(totalCost,10).toFixed(2));
+    $(type + ' .install_fee').val(parseFloat(elevatorCostFee, 10).toFixed(2));
+    $(type + ' .elevator_number').val(parseInt(totalElev, 10));
 }
 
 function nan() {

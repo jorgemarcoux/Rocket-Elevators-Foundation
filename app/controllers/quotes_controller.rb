@@ -27,7 +27,7 @@ class QuotesController < ApplicationController
     @quote.save
     respond_to do |format|
       if @quote.save
-        format.html { redirect_to root_path, notice: 'Quote was successfully created.' }
+        format.html { redirect_to my_quotes_path, notice: 'Quote was successfully created.' }
       else
         format.html { render :new }
       end
