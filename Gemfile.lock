@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/collectiveidea/audited.git
+  revision: 4ad3a9c2a7dfacedc52f9f0c2a47f7b57a73e26e
+  specs:
+    audited (4.9.0)
+      activerecord (>= 4.2, < 6.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -287,6 +294,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  audited!
   bootsnap (>= 1.1.0)
   byebug
   cancancan
