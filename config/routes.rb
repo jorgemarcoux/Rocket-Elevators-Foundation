@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
   
+  resources :quotes , only: [:user_quotes, :new, :create]
   mount RailsAdmin::Engine => '/backoffice', as: 'rails_admin'
 
   root to: 'static_pages#index'
-  get 'static_pages/quote'
   get 'static_pages/residential'
   get 'static_pages/corporate'
-  get 'static_pages/login'
-  resources :static_pages
+
 
 
 
@@ -21,7 +20,7 @@ Rails.application.routes.draw do
     password: 's',
     confirmation: 'v'
   }
-  get 'my_quotes' => 'quotes#index', as: :my_quotes
+  get 'my_quotes' => 'quotes#user_quotes', as: :my_quotes
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

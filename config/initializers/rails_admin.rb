@@ -1,6 +1,20 @@
 RailsAdmin.config do |config|
   config.authorize_with :cancancan
 
+  config.model 'User' do
+    object_label_method do
+    :custom_label_method
+    end
+    include_fields :first_name, :last_name, :title, :is_admin, :is_employee, :is_user, :email, :created_at, :quotes
+  end
+
+  config.model 'Employee' do
+    object_label_method do
+    :custom_label_method
+    end
+  end
+
+
   ### Popular gems integration
 
   ## == Devise ==

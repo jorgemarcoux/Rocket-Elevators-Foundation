@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_15_171629) do
+ActiveRecord::Schema.define(version: 2020_10_16_151636) do
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "User_ID"
+    t.string "email"
     t.string "first_name"
     t.string "last_name"
     t.string "function"
@@ -22,26 +22,29 @@ ActiveRecord::Schema.define(version: 2020_10_15_171629) do
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "number_apartments"
-    t.integer "number_floors"
-    t.integer "number_basements"
-    t.integer "distinct_business"
-    t.integer "number_elevator_shaft"
-    t.integer "number_parking"
-    t.integer "maximum_occupant"
-    t.integer "hours_activity"
-    t.integer "prod_line"
-    t.integer "total_price"
-    t.integer "price_unit"
-    t.integer "number_elevator"
+    t.integer "apartments"
+    t.integer "floors"
+    t.integer "basements"
+    t.integer "businesses"
+    t.integer "elevator_shafts"
+    t.integer "parking_spaces"
+    t.integer "occupants"
+    t.integer "opening_hours"
+    t.string "product_line"
+    t.decimal "install_fee", precision: 8, scale: 2
+    t.decimal "total_price", precision: 8, scale: 2
+    t.integer "unit_price"
+    t.integer "elevator_number"
     t.integer "user_id"
-    t.decimal "install_fee", precision: 10
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "building_type"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
-    t.string "firstname"
-    t.string "lastname"
+    t.string "first_name"
+    t.string "last_name"
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -50,9 +53,9 @@ ActiveRecord::Schema.define(version: 2020_10_15_171629) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.boolean "admin", default: false
-    t.boolean "employee", default: false
-    t.boolean "user", default: true
+    t.boolean "is_admin", default: false
+    t.boolean "is_employee", default: false
+    t.boolean "is_user", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -65,13 +65,13 @@ function calcPrice() {
 }
 
 function prodLineCheck () {
-    if ($(type + " #prod_prodLine-1").prop("checked")) {
+    if ($(type + " #quote_product_line_standard").prop("checked")) {
         fee = 0.1;
         price = 7565;
-    } else if ($(type + " #prod_prodLine-2").prop("checked")) {
+    } else if ($(type + " #quote_product_line_premium").prop("checked")) {
         fee = 0.13;
         price = 12345;
-    } else if ($(type + " #prod_prodLine-3").prop("checked")) {
+    } else if ($(type + " #quote_product_line_excelium").prop("checked")) {
         fee = 0.16
         price = 15400;
     }
@@ -107,27 +107,36 @@ function infoUpdate () {
 function findType() {
     if ($('#collapse10').hasClass('show')) {
         type = '#collapse10';
+        $(type + ' .building_type').val('Residential');
 
     } else if ($('#collapse11').hasClass('show')) {
         type = '#collapse11';
+        $(type + ' .building_type').val('Commercial');
 
     } else if ($('#collapse12').hasClass('show')) {
         type = '#collapse12';
+        $(type + ' .building_type').val('Corporate');
 
     } else if ($('#collapse13').hasClass('show')) {
         type = '#collapse13';
+        $(type + ' .building_type').val('Hybrid');
 
     } else {
         type = '0';
+        $(type + ' .building_type').val('');
     }
 }
 
 function setResult() {
     nan();
+    findType();
     $(type + ' #total_elev').val(totalElev);
-    $(type + ' #total_elev_cost').val(elevatorCost.toFixed(2) + '$');
+    $(type + ' #cost').val(elevatorCost.toFixed(2) + '$');
     $(type + ' #fees').val(elevatorCostFee.toFixed(2) + '$');
     $(type + ' #total_cost').val(totalCost.toFixed(2) + '$');
+    $(type + ' .total_price').val(parseFloat(totalCost,10).toFixed(2));
+    $(type + ' .install_fee').val(parseFloat(elevatorCostFee, 10).toFixed(2));
+    $(type + ' .elevator_number').val(parseInt(totalElev, 10));
 }
 
 function nan() {
@@ -156,3 +165,10 @@ $('input').on('keyup change', () => {
     calcPrice();
     setResult();
 });
+
+$('.form-actions').addClass('center')
+$('.form-group').addClass('col-4 mt-15')
+$('.form-group.radio_buttons').removeClass('col-4').addClass('col-12 row')
+$('.form-check').addClass('col-4').css('padding-left', '120px')
+$('.form-check-input').css('display', 'inline-block')
+$('.col-form-label').addClass('text-center')
