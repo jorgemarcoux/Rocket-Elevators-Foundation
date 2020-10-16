@@ -41,9 +41,25 @@
 	padding-bottom: 20px;
 }
 
-#service-3 { margin-top: 40px; }
+#service-3 {
+	margin-top: 40px;
+}
+
+#user_password_confirmation {
+	margin-bottom: 30px;
+}
 
 select.color-black { color: black !important; }
+
+ul { list-style-type: none !important; padding-left: 0; }
+
+.img-user {
+	height: 270px;
+}
+
+.max-height {
+	height: 67%;
+}
 
 .a-vertical { vertical-align: auto; }
 
@@ -69,6 +85,10 @@ select.color-black { color: black !important; }
 .form-template {
 	padding-bottom: 5px;
 	background-color: white;
+}
+
+.arrow-top {
+	color: #961d31;
 }
 
 /* .button-default {
