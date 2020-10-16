@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :quotes
+  resources :quotes , only: [:user_quotes, :new, :create]
   mount RailsAdmin::Engine => '/backoffice', as: 'rails_admin'
 
   root to: 'static_pages#index'
@@ -10,16 +10,16 @@ Rails.application.routes.draw do
 
 
 
-  devise_for :users,
-  :controllers => { registrations: 'registrations'},
-  :path_prefix => '',
-  path: 'u',
-  path_names: {
-    sign_in: 'sign_in',
-    sign_out: 'sign_out',
-    password: 's',
-    confirmation: 'v'
-  }
+  devise_for :users
+  # :controllers => { registrations: 'registrations'},
+  # :path_prefix => '',
+  # path: 'u',
+  # path_names: {
+  #   sign_in: 'sign_in',
+  #   sign_out: 'sign_out',
+  #   password: 's',
+  #   confirmation: 'v'
+  # }
 
   # devise_for :users, skip: [:sessions]
   # as :user do
