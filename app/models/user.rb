@@ -12,7 +12,5 @@ class User < ActiveRecord::Base
    
     validates_uniqueness_of :email 
     validates_presence_of :email
-    validates :password, presence: true
-    validates :password, confirmation: { case_sensitive: true }
 
 end
