@@ -93,6 +93,14 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+
+    config.api_only = false
+    config.session_store :cookie_store
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore, config.session_options
+    config.middleware.use ::Rack::MethodOverride
+    config.force_ssl = false
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
