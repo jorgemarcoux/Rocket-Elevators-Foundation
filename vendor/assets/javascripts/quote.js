@@ -128,6 +128,7 @@ function setResult() {
     $(type + ' #cost').val(elevatorCost.toFixed(2) + '$');
     $(type + ' #fees').val(elevatorCostFee.toFixed(2) + '$');
     $(type + ' #total_cost').val(totalCost.toFixed(2) + '$');
+    $('#quote_total_price').val(totalCost.toFixed(2));
 }
 
 function nan() {
