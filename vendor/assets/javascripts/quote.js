@@ -65,13 +65,13 @@ function calcPrice() {
 }
 
 function prodLineCheck () {
-    if ($(type + " #prod_prodLine-1").prop("checked")) {
+    if ($(type + " #quote_product_line_0").prop("checked")) {
         fee = 0.1;
         price = 7565;
-    } else if ($(type + " #prod_prodLine-2").prop("checked")) {
+    } else if ($(type + " #quote_product_line_1").prop("checked")) {
         fee = 0.13;
         price = 12345;
-    } else if ($(type + " #prod_prodLine-3").prop("checked")) {
+    } else if ($(type + " #quote_product_line_2").prop("checked")) {
         fee = 0.16
         price = 15400;
     }
@@ -125,7 +125,7 @@ function findType() {
 function setResult() {
     nan();
     $(type + ' #total_elev').val(totalElev);
-    $(type + ' #total_elev_cost').val(elevatorCost.toFixed(2) + '$');
+    $(type + ' #cost').val(elevatorCost.toFixed(2) + '$');
     $(type + ' #fees').val(elevatorCostFee.toFixed(2) + '$');
     $(type + ' #total_cost').val(totalCost.toFixed(2) + '$');
 }
