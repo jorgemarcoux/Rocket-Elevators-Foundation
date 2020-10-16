@@ -1,4 +1,6 @@
-$(document).on('ready pjax:success', function() {
+$(document).on('turbolinks:load', function(){ $.rails.refreshCSRFTokens(); });
+
+$(document).on('ready pjax:success', function () {
   handleActiveBase();
   function handleActiveBase() {
     $('.sub-menu').each(function () {
