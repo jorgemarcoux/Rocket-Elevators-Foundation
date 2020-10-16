@@ -8,7 +8,7 @@
         <h1 class="text-blue fw-300">Log In</h1>
       </div>
     </div>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= form_for(:user, :url => session_path(:user)) do |f| %>
       <form class="form-signin d-flex justify-content-center flex-wrap">
         <div class="w-100p m-5">
           <%= f.label :email, class: "text-center fs-30"%>
