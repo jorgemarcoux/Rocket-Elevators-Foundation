@@ -7,9 +7,7 @@
         <i class="fa fa-bars"></i>
       </button>
       <!-- Logo -->
-      <a class="logo float-left scrollTo" href="/">
-        <%= image_tag("logo/R2.png", :alt => "logo") %>
-      </a>
+      <%= link_to image_tag('logo/R2.png'), root_path, class: "logo float-left scrollTo" %>
       <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
         <nav class="nav-main">
           <ul id="topMain" class="nav nav-pills nav-main nav-hover nav-onepage">

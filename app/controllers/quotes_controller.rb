@@ -3,8 +3,8 @@ class QuotesController < ApplicationController
 
   # GET /quotes
   # GET /quotes.json
-  def index
-    @quotes = Quote.all
+  def user_quotes
+    @quotes = Quote.where(:user_id => current_user.id)
   end
 
   # GET /quotes/1
@@ -25,7 +25,8 @@ class QuotesController < ApplicationController
   # POST /quotes.json
   def create
     @quote = Quote.new(quote_params)
-
+    @quote.user_id = current_user.id
+    @quote.save
     respond_to do |format|
       if @quote.save
         format.html { redirect_to @quote, notice: 'Quote was successfully created.' }

@@ -1,0 +1,42 @@
+<section>
+  <div class="text-center">
+    <h1 class="fw-300 text-blue">My Quotes</h1>
+  </div>
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <%# <th>Apartments</th>
+          <th>Floors</th>
+          <th>Basements</th>
+          <th>Businesses</th>
+          <th>Elevator shafts</th>
+          <th>Parking spaces</th>
+          <th>Occupants</th>
+          <th>Opening hours</th> %>
+          <th scope="col">Product Line</th>
+          <th scope="col">Price Per Elevator</th>
+          <th scope="col">Installation Fees</th>
+          <th scope="col">Total Cost</th>
+          <th scope="col">Required Elevators</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @quotes.each do |quote| %>
+          <tr>
+            <td><%= quote.product_line %></td>
+            <td><%= quote.unit_price %></td>
+            <td><%= quote.install_fee %></td>
+            <td><%= quote.total_price %></td>
+            <td><%= quote.elevator_number %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+    <div class="text-center">
+      <%= button_to "New Quote", { :action => "new" }, :method => :get, :class => "btn btn-primary" %>
+    </div>
+  </div>
+</section>
