@@ -14,23 +14,22 @@
           <th>Businesses</th>
           <th>Elevator shafts</th>
           <th>Parking spaces</th>
-          <th>Occupants</th>
-          <th>Opening hours</th> %>
+          <th>Occupants</th>%>
+            <th scope="col">Building Type</th>
+            <th scope="col">Required Elevators</th>
             <th scope="col">Product Line</th>
-            <th scope="col">Price Per Elevator</th>
             <th scope="col">Installation Fees</th>
             <th scope="col">Total Cost</th>
-            <th scope="col">Required Elevators</th>
           </tr>
         </thead>
         <tbody>
           <% @quotes.each do |quote| %>
             <tr>
-              <td><%= quote.product_line %></td>
-              <td><%= quote.unit_price %></td>
-              <td><%= quote.install_fee %></td>
-              <td><%= quote.total_price %></td>
+              <td><%= quote.building_type %></td>
               <td><%= quote.elevator_number %></td>
+              <td><%= quote.product_line %></td>
+              <td><%= number_to_currency(quote.install_fee, :unit => "$") %></td>
+              <td><%= number_to_currency(quote.total_price, :unit => "$") %></td>
             </tr>
           <% end %>
         </tbody>

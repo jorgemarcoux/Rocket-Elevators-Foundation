@@ -65,13 +65,13 @@ function calcPrice() {
 }
 
 function prodLineCheck () {
-    if ($(type + " #quote_product_line_0").prop("checked")) {
+    if ($(type + " #quote_product_line_standard").prop("checked")) {
         fee = 0.1;
         price = 7565;
-    } else if ($(type + " #quote_product_line_1").prop("checked")) {
+    } else if ($(type + " #quote_product_line_premium").prop("checked")) {
         fee = 0.13;
         price = 12345;
-    } else if ($(type + " #quote_product_line_2").prop("checked")) {
+    } else if ($(type + " #quote_product_line_excelium").prop("checked")) {
         fee = 0.16
         price = 15400;
     }
@@ -107,18 +107,23 @@ function infoUpdate () {
 function findType() {
     if ($('#collapse10').hasClass('show')) {
         type = '#collapse10';
+        $('#quote_building_type').val('Residential');
 
     } else if ($('#collapse11').hasClass('show')) {
         type = '#collapse11';
+        $('#quote_building_type').val('Commercial');
 
     } else if ($('#collapse12').hasClass('show')) {
         type = '#collapse12';
+        $('#quote_building_type').val('Corporate');
 
     } else if ($('#collapse13').hasClass('show')) {
         type = '#collapse13';
+        $('#quote_building_type').val('Hybrid');
 
     } else {
         type = '0';
+        $('#quote_building_type').val('');
     }
 }
 
@@ -128,7 +133,10 @@ function setResult() {
     $(type + ' #cost').val(elevatorCost.toFixed(2) + '$');
     $(type + ' #fees').val(elevatorCostFee.toFixed(2) + '$');
     $(type + ' #total_cost').val(totalCost.toFixed(2) + '$');
-    $('#quote_total_price').val(totalCost.toFixed(2));
+    $('#quote_total_price').val(totalCost);
+    $('#quote_install_fee').val(elevatorCostFee);
+    $('#quote_elevator_number').val(totalElev);
+    $('#quote_total_price').val(totalCost);
 }
 
 function nan() {
