@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :quotes
+  resources :quotes , only: [:user_quotes, :new, :create]
   mount RailsAdmin::Engine => '/backoffice', as: 'rails_admin'
 
   root to: 'static_pages#index'

@@ -3,14 +3,14 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div class="container">
     <div class="form-inputs row text-center">
-      <%= f.input :floors, input_html: {id: "floors"}, :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189' %>
-      <%= f.input :basements, input_html: {id: "basements"}, :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189' %>
-      <%= f.input :businesses, :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189' %>
-      <%= f.input :parking_spaces, :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189' %>
-      <%= f.input :occupants, input_html: {id: "occupants"}, :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189' %>
+      <%= f.input :floors, input_html: {id: "floors"}, :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189', required: 'true' %>
+      <%= f.input :basements, input_html: {id: "basements"}, :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189', required: 'true' %>
+      <%= f.input :businesses, :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189', required: 'true' %>
+      <%= f.input :parking_spaces, :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189', required: 'true' %>
+      <%= f.input :occupants, input_html: {id: "occupants"}, :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189', required: 'true' %>
     </div>
     <div class="form-inputs row">
-      <%= f.input :product_line, as: :radio_buttons, collection: [['0', 'Standard'], ['1', 'Premium'], ['2', 'Excelium']], label_method: :second, value_method: :first %>
+      <%= f.input :product_line, as: :radio_buttons, collection: [['0', 'Standard'], ['1', 'Premium'], ['2', 'Excelium']], label_method: :second, value_method: :first, required: 'true' %>
     </div>
     <%= f.hidden_field :total_price %>
     <div class="form-actions text-center">
