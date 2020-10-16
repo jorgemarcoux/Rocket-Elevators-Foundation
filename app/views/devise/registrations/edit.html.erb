@@ -9,12 +9,12 @@
           <%= f.error_notification %>
           <div class="field m-5">
             <div class="control">
-              <%= f.input :firstname, autofocus: true, input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" }, :label => "First name" %>
+              <%= f.input :first_name, autofocus: true, input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" }, :label => "First name" %>
             </div>
           </div>
           <div class="field m-5">
             <div class="control">
-              <%= f.input :lastname,  input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" } , :label => "Last name"%>
+              <%= f.input :last_name,  input_html: { class: "form-control"}, wrapper: false, label_html: { class: "label" } , :label => "Last name"%>
             </div>
           </div>
           <div class="field m-5">
@@ -48,7 +48,7 @@
             </div>
           </div>
         <% end %>
-        <% if current_user.user? %>
+        <% if current_user.is_user? %>
           <div class="text-center mt-60">
             <h3 class="title is-5">Danger Zone</h3>
             <p>If you are in need of any support, please contact us and we will be happy to help. </p>

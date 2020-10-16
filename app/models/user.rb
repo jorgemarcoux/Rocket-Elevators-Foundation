@@ -5,13 +5,14 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
 
   has_many :quotes
-   
-    # validates_uniqueness_of :email 
-    # validates_presence_of :email
-    # validates_uniqueness_of :email
-    # validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, presence: True
-    # validate :password, presence: true
-    # validate :password, confirmation: { case_sensitive: true }
 
+  def custom_label_method
+    "#{first_name} #{last_name}"
+  end
+   
+    validates_uniqueness_of :email 
+    validates_presence_of :email
+    validates :password, presence: true
+    validates :password, confirmation: { case_sensitive: true }
 
 end
