@@ -103,10 +103,10 @@ https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System
 
     Sometimes you have to run this command in ordre to reset your database
 
-        rails db:reset <br>
-        rails db:drop <br>
-        rails db:create <br>
-        rails db:migrate <br>
+        rails db:reset 
+        rails db:drop 
+        rails db:create 
+        rails db:migrate 
 
 
                         
