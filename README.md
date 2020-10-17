@@ -28,11 +28,11 @@ https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System
 
 
 
-    Terms : <br>
-    Gemfile     - A format for describing gem dependencies for Ruby programs
-    Bundle      - Ruby Dependency Management
-    Migrations  - Convenient way to alter your database schema over time in a consistent way.
-    MySQL       - an open-source database management software that helps users store, organize, and later retrieve data <br><br>
+ Terms : <br>
+ Gemfile     - A format for describing gem dependencies for Ruby programs <br>
+ Bundle      - Ruby Dependency Management <br>
+ Migrations  - Convenient way to alter your database schema over time in a consistent way. <br>
+ MySQL       - an open-source database management software that helps users store, organize, and later retrieve data <br><br>
 
 
 
