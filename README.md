@@ -87,12 +87,12 @@ https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System
 
 
     When you download the program, make sure that the file config/database.yml
-    is set correctly. If it's isn't the case. The program might show you some error when you lunch the server.
+    is set correctly. If it's not the case. The program might show you some error when you lunch the server.
     Use this command to install the dependencies specified in your Gemfile :
 
         bundle-install 
 
-    Some bundler command that can be useful : https://bundler.io/bundle_install.html or 
+    Other bundler command that can be useful : https://bundler.io/bundle_install.html or 
     https://stackoverflow.com/questions/7304576/how-do-i-set-up-the-database-yml-file-in-rails
 
     If you have error with the bundler, this link can help you : https://help.dreamhost.com/hc/en-us/articles/115001070131-Using-Bundler-to-install-Ruby-gems
@@ -110,7 +110,7 @@ https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System
 
 
                         
-                 
+          
 
 3. Running the program
 
@@ -134,7 +134,7 @@ https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System
 
 
     To do this, you must log in using the sign in button. 
-    After that, the information that you send to the software will enter a database. This data will allow us to give you the best service according to your needs. <br>
+    After that, the information that you send to the program will enter in the database. This data will allow us to give you the best service according to your needs. <br>
 
 
     Know that all your modifications as well as all your quotes are carefully saved and you can access them by going to your account. <br> <br>
@@ -144,10 +144,10 @@ https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System
 5. Acesss to our code  <br>
  
 
-    Here is the most important folder and files that makes sure our program runs well : <br>
+    Here is the most important folder and files that makes sure that our program runs well : <br>
 
     app/views :  <br>
-        Most of our different html codes that make up our website. The files are a combination of HTML and Ruby <br>
+        Most of our different html codes that make up the website. The files are a combination of HTML and Ruby <br>
     
     db <br>
         All the database related files go inside this folder. The configuration, schema, and migration files can be found here, along with any seed files. <br>
@@ -180,14 +180,14 @@ https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System
 
 6. Our different database
 
-    For more control of the database, we suggest you to install mysql workbench. It works almost with all peratiing system 
+    For more control of the database, we suggest you to install mysql workbench. It works almost with all operatiing system 
 
     Here is the link to download it : https://www.mysql.com/fr/products/workbench/
 
     To download the program, you must make sure that you have an account with oracle. 
     If it's not the case, here is the link to register : https://cutt.ly/Bgg9JBs
 
-    You can also add it in a code editor like visual studio code or IntelliJ IDEA. These different programs allow you to modify database tables more easily. You can see our database through the terminal. Depending on the computer, you must open mysql from the terminal
+    You can also add it in a code editor like visual studio code or IntelliJ IDEA. These different programs allow you to modify database tables more easily. You can alse see our database through the terminal. Depending on the computer, you must find the appropriate command to open mysql.
 
     Here are examples of commands on mysql :
 
@@ -198,16 +198,12 @@ https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System
     You'll find all the informations about mysql command in https://dev.mysql.com/doc/
 
     There is 3 tables which constitute our database, We have users, employees, and quotes. 
-
     We have inserted 7 employees who will be our database to start, you will find them, if you connect as admin in the site, or through the terminal.
 
 <br>
 <br>
 
 ### This concludes the presentation of the program, do not hesitate to share with us any suggestions or improvements.
-
-
-
 
 
 
