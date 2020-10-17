@@ -193,7 +193,7 @@ https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System
 
         Quote.all :  show us all quotes that have been submitted
         Quote.find(1)  : show us the first submission.
-        Quote.new and Quote.create : 
+        Quote.new and Quote.create : create a new instance of the quote
 
     You'll find all the informations about mysql command in https://dev.mysql.com/doc/
 
