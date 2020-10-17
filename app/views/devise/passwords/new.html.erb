@@ -1,20 +1,23 @@
-<div class="container max-height">
-  <h1 class="text-center mt-20">Forgot your password ?</h1>
 
-  <div class="text-center">
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+
+  <div class="custom-div no-box pt-70 text-center">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'no-box' }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
-      <div class="field">
-        <%= f.label :email, :class => 'fs-30' %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => 'form-control' %>
+      <h1 class="no-box fs-45 pb-40">Forgot your password ?</h1>
+
+      <div class="form-div field no-box mb-25">
+        <%= f.email_field :email, autocomplete: "off", class: 'no-box', value: '' %>
+
+        <%= f.label :email, class: 'label-name no-box' do %>
+          <span class="content-name no-box">Email</span>
+        <% end %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Send me reset password instructions", class: 'btn btn-lg mt-25 btn-red' %>
+        <%= f.submit "Reset Password", class: 'btn btn-lg mt-25 btn-red' %>
       </div>
     <% end %>
   </div>
 
   <%= render "devise/shared/links" %>
-</div>
