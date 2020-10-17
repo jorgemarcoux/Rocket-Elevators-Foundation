@@ -1,4 +1,72 @@
-/* Mobile first - up to 565px wide */
+
+
+.no-box {
+	direction: unset !important;
+}
+
+.custom-div {
+	display: flex !important;
+	height: 100%;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+	font-family: sans-serif;
+}
+
+.form-div {
+	width: 100%;
+	position: relative !important;
+	height: 60px !important;
+	overflow: hidden;
+}
+
+.form-div input {
+	width: 100%;
+	height: 100%;
+	color: rgb(19, 19, 19);
+	padding-top: 17px;
+	border: none;
+	background-color: 0 !important;
+}
+
+input:valid {
+	background-color: none !important;
+}
+
+.form-div label {
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	width:  100%;
+	height: 100%;
+	pointer-events: none;
+	border-bottom: 1px solid black;
+	background-color: transparent !important;
+}
+
+.form-div label::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -1px;
+	width: 100%;
+	height: 100%;
+	border-bottom: 2px solid #5fa8d3;
+	transform: translateX(-101%);
+	transition: transform 0.3s ease;
+	background-color: transparent !important;
+}
+
+.content-name {
+	position: absolute;
+	bottom: 25px;
+	left: 0;
+	transition: transform 1s ease;
+}
+
+.form-div input:focus + .label-name::after {
+	transform: translateX(0%);
+}
 
 #parallax_index_1 {
 	background-image: image-url("parallax/34-min.jpg");
@@ -51,14 +119,35 @@
 
 select.color-black { color: black !important; }
 
+html,body {
+    height: 100%
+}
+
+#nonFooter {
+    min-height: 100%;
+    position:relative;
+    /* Firefox */
+    min-height: -moz-calc(100% - 0px);
+    /* WebKit */
+    min-height: -webkit-calc(100% - 255px);
+    /* Opera */
+    min-height: -o-calc(100% - 255px);
+    /* Standard */
+    min-height: calc(100% - 255px);
+}
+
+#footer {
+    height: 255px;
+    margin: 0;
+    clear: both;
+    width: 100%;
+    position: relative;
+}
+
 ul { list-style-type: none !important; padding-left: 0; }
 
 .img-user {
 	height: 270px;
-}
-
-.max-height {
-	height: 67%;
 }
 
 .a-vertical { vertical-align: auto; }
