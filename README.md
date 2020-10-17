@@ -2,14 +2,16 @@
 
 ## Week-4, Team Project Description
 
-The main goal of this week is to transform the static site previously developed during the Genesis program and turn it into a web application on MVC (Model - View - Controller) foundations. The site must be in a state that allows you to create a new section that saves the Javascript form that calculates an estimate in the form of a purchase order. This purchase order includes the key elements of the estimation form and allows you to enter more details.
+The main goal of this week is to transform the static site previously developed during the Genesis program and turn it into a web application on MVC (Model - View - Controller) foundations. The site must be in a state that allows you to create a new section that saves the Javascript form that calculates an estimate in the form of a purchase order. This purchase order includes the key elements of the estimation form and allows you to enter more details. <br> <br>
+
 
 ## Members of the team
 
 #### - [William Sinclair](https://github.com/WilliamSinclairF)
 #### - [Frimina Zaddi](https://github.com/frimina)
-#### - [Loïc Rico](https://github.com/ricoloic)
+#### - [Loïc Rico](https://github.com/ricoloic) <br>
 
+<br>
 ## GitHub Repository
 
 https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System
@@ -20,18 +22,23 @@ https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System
  - [HTML5](https://www.w3schools.com/html/) <br>
  - [RUBY](https://www.ruby-lang.org/) <br>
  - [JavaScripts](https://www.javascript.com/) <br>
- - [CSS](https://css-tricks.com/) <br>
+ - [CSS](https://css-tricks.com/) <br><br>
  
- - [Ubuntu](https://www.microsoft.com/en-ca/p/ubuntu-1804-lts/9n9tngvndl3q?activetab=pivot:overviewtab) <br>
+ - [Ubuntu](https://www.microsoft.com/en-ca/p/ubuntu-1804-lts/9n9tngvndl3q?activetab=pivot:overviewtab) <br><br>
 
 
 
-    Terms : <br>
-    Gemfile - A format for describing gem dependencies for Ruby programs
-    Bundle - Ruby Dependency Management
-    Migrations - Convenient way to alter your database schema over time in a consistent way.
+ Terms : <br>
+ Gemfile     - A format for describing gem dependencies for Ruby programs <br>
+ Bundle      - Ruby Dependency Management <br>
+ Migrations  - Convenient way to alter your database schema over time in a consistent way. <br>
+ MySQL       - an open-source database management software that helps users store, organize, and later retrieve data <br><br>
 
 
+
+
+<br>
+<br>
  ## How to use
 
  1. Install Ruby on Rails
@@ -53,19 +60,21 @@ https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System
     d) Installing Rails <br>
     c) Setting Up A Database <br>
     d) Installing and setting MySQL <br>
-    e) Installing and setting PostgreSQL <br>
+    e) Installing and setting PostgreSQL <br><br>
+      
 
 
     If you have any problems during installation, google is your best friend. 
-
-    Here is a list of forums that might help you : 
+    Here is a list of forums that might help you : <br>
 
     a) https://stackoverflow.com/ <br>
     b) https://www.reddit.com/ <br>
     c) https://askubuntu.com/ <br>
-    d) https://developer.mozilla.org/ <br>
+    d) https://developer.mozilla.org/ <br><br>
 
 
+
+<br>
 
 2. Setting up databases
 
@@ -91,6 +100,7 @@ https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System
     Command to find some gem : https://guides.rubygems.org/rubygems-basics/
 
 
+
     Sometimes you have to run this command in ordre to reset your database
 
         rails db:reset <br>
@@ -99,6 +109,8 @@ https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System
         rails db:migrate <br>
 
 
+                        
+                 
 
 3. Running the program
 
@@ -109,72 +121,97 @@ https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System
         rails db:migrate
 
     Run the server with :  <br>
-        rails server
+        rails server <br><br>
 
 
+                             
 
-4. Exploring the Rocket Elevator Website
+4. Exploring the Rocket Elevator Website <br>
 
 
     The main program of our website is on the quotes page. 
-    From this page, you can get a quote for the type of building you are looking for. We have three types of elevator to satisfy everyone. 
+    From this page, you can get a quote for the type of building you are looking for. We have three types of elevator to satisfy everyone. <br>
 
 
     To do this, you must log in using the sign in button. 
-    After that, the information that you send to the software will enter a database. This data will allow us to give you the best service according to your needs.
+    After that, the information that you send to the software will enter a database. This data will allow us to give you the best service according to your needs. <br>
 
 
-    Know that all your modifications as well as all your quotes are carefully saved and you can access them by going to your account.
-
-5. Acesss to our code 
+    Know that all your modifications as well as all your quotes are carefully saved and you can access them by going to your account. <br> <br>
 
 
-    Here is the most important folder and files that makes sure our program runs well : 
 
-    app/views : 
-        Most of our different html codes that make up our website. The files are a combination of HTML and Ruby
+5. Acesss to our code  <br>
+ 
+
+    Here is the most important folder and files that makes sure our program runs well : <br>
+
+    app/views :  <br>
+        Most of our different html codes that make up our website. The files are a combination of HTML and Ruby <br>
     
-    db
-        All the database related files go inside this folder. The configuration, schema, and migration files can be found here, along with any seed files.
+    db <br>
+        All the database related files go inside this folder. The configuration, schema, and migration files can be found here, along with any seed files. <br>
 
-    app/models : 
-        This folder make sure the you find a particular data that you're looking for, update that data and remove data. 
+    app/models : <br>
+        This folder make sure the you find a particular data that you're looking for, update that data and remove data. <br>
 
-    app/controllers : 
-        This is where all the controller files go. Controllers are responsible for orchestrating the model and views.
+    app/controllers : <br>
+        This is where all the controller files go. Controllers are responsible for orchestrating the model and views. <br>
  
     
-    config/routes : 
-        The rails router recognizes our different URLs and dispatches them to a controller's action
+    config/routes : <br>
+        The rails router recognizes our different URLs and dispatches them to a controller's action <br>
 
 
-    config/database.yml :
-        This file holds all the database configuration the application needs. many different configurations can be set for different environments.
+    config/database.yml : <br>
+        This file holds all the database configuration the application needs. many different configurations can be set for different environments. <br>
 
-    config/environment.rb
+    config/environment.rb <br>
         This file requires application.rb to initialize the Rails application.
 
 
-    Gemfile :
+    Gemfile : <br>
         The Gemfile is the place where all your app’s gem dependencies are declared.
 
-
     
-    For more informations about the rails directory structure, please visit : https://www.sitepoint.com/a-quick-study-of-the-rails-directory-structure/
+    For more informations about the rails directory structure, please visit : https://www.sitepoint.com/a-quick-study-of-the-rails-directory-structure/ <br><br>
 
 
-    
 
 6. Our different database
 
-For more control of the database, we suggest you to install mysql workbench. It works almost with all peratiing system 
+    For more control of the database, we suggest you to install mysql workbench. It works almost with all peratiing system 
 
-Here is the link to download it : https://www.mysql.com/fr/products/workbench/
+    Here is the link to download it : https://www.mysql.com/fr/products/workbench/
 
-To download the program, you must make sure that you have an account with oracle. 
-If it's not the case, here is the link to register : https://cutt.ly/Bgg9JBs
+    To download the program, you must make sure that you have an account with oracle. 
+    If it's not the case, here is the link to register : https://cutt.ly/Bgg9JBs
 
-You can also add it in a code editor like visual studio code or IntelliJ IDEA. These different programs allow you to modify database tables more easily.
+    You can also add it in a code editor like visual studio code or IntelliJ IDEA. These different programs allow you to modify database tables more easily. You can see our database through the terminal. Depending on the computer, you must open mysql from the terminal
+
+    Here are examples of commands on mysql :
+
+        Quote.all :  show us all quotes that have been submitted
+        Quote.find(1)  : show us the first submission.
+        Quote.new and Quote.create : 
+
+    You'll find all the informations about mysql command in https://dev.mysql.com/doc/
+
+    There is 3 tables which constitute our database, We have users, employees, and quotes. 
+
+    We have inserted 7 employees who will be our database to start, you will find them, if you connect as admin in the site, or through the terminal.
+
+<br>
+<br>
+
+### This concludes the presentation of the program, do not hesitate to share with us any suggestions or improvements.
+
+
+
+
+
+
+
 
 
 
