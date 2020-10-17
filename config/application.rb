@@ -13,11 +13,11 @@ module App
     config.load_defaults 5.2
     config.api_only = false
 
-    # config.session_store :cookie_store
-    # config.middleware.use ActionDispatch::Cookies
-    # config.middleware.use ActionDispatch::Session::CookieStore, config.session_options
+    config.session_store :cookie_store
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore, config.session_options
     config.middleware.use ::Rack::MethodOverride
-    config.force_ssl = true
+    config.force_ssl = false
     
 
     # Settings in config/environments/* take precedence over those specified here.

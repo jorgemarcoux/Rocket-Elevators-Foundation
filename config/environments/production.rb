@@ -98,7 +98,7 @@ Rails.application.configure do
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore, config.session_options
     config.middleware.use ::Rack::MethodOverride
-    config.force_ssl = true
+    config.force_ssl = false
     config.cloudflare.expires_in = 12.hours # default value
     config.cloudflare.timeout = 5.seconds # default value
 
