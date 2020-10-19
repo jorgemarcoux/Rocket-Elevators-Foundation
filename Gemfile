@@ -88,3 +88,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :production do
+  # or :staging or :beta or whatever environments you are using cloudflare in.
+  # you probably don't want this for :test or :development
+  gem 'cloudflare-rails'
+end
