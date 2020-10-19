@@ -10,7 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_18_185456) do
+ActiveRecord::Schema.define(version: 2020_10_19_141756) do
+
+  create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "building_id"
+    t.integer "battery_id"
+    t.string "type"
+    t.string "status"
+    t.integer "employee_id"
+    t.date "date_of_commissioning"
+    t.date "date_of_last_inspection"
+    t.string "certificate_of_operations"
+    t.string "information"
+    t.string "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "building_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "building_id"
+    t.string "information_key"
+    t.string "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "battery_id"
+    t.string "type"
+    t.integer "number_of_floors_served"
+    t.string "status"
+    t.string "information"
+    t.string "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "full_name"
@@ -23,6 +57,21 @@ ActiveRecord::Schema.define(version: 2020_10_18_185456) do
     t.text "message"
     t.string "file_attachment"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "column_id"
+    t.string "serial_number"
+    t.string "model"
+    t.string "type"
+    t.string "status"
+    t.date "date_of_commissioning"
+    t.date "date_of_last_inspection"
+    t.string "certificate_of_inspection"
+    t.string "information"
+    t.string "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
