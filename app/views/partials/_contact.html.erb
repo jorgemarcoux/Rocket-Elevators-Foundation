@@ -30,13 +30,13 @@
       <!-- ERROR VERIF TO BE ADDED -->
       <div class="col-lg-9 text-center">
         <%= simple_form_for Contact.new, validates: true do |form_contact| %>
-        <%= form_contact.error_notification %>
+          <%= form_contact.error_notification %>
           <div>
             <div class="form-input">
               <div class="form-inputs row text-center">
                 <%= form_contact.input :full_name %>
                 <%= form_contact.input :email, as: :email %>
-                <%= form_contact.input :phone, as: :integer %>
+                <%= form_contact.input :phone %>
                 <%= form_contact.input :business_name %>
                 <%= form_contact.input :project_name %>
                 <%= form_contact.input :department, as: :select, collection: ["Elevator Consultant", "Building Manager", "Architect"] %>

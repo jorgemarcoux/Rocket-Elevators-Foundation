@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2020_10_18_185456) do
   create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "full_name"
     t.string "email"
-    t.integer "phone"
+    t.string "phone"
     t.string "business_name"
     t.string "project_name"
     t.string "department"
