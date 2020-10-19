@@ -17,3 +17,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require toastr
+//= require jquery-3.3.1.min.js
+//= require scripts.js
+//= require jquery.themepunch.tools.min.js
+//= require jquery.themepunch.revolution.min.js
+//= require demo.revolution_slider.js
+//= require contact.js
+//= require owl.carousel.min.js
+//= require owl.carousel.js
+//= require quote.js
+//= require rails.validations
+//= require rails.validations.simple_form

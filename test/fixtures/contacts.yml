@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  full_name: 
+  email: 
+  phone: 
+  business_name: 
+  project_name: 
+  department: 
+  project_description: 
+  message: 
+  file_attachment: MyString
+
+two:
+  full_name: 
+  email: 
+  phone: 
+  business_name: 
+  project_name: 
+  department: 
+  project_description: 
+  message: 
+  file_attachment: MyString

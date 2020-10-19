@@ -168,6 +168,13 @@ $('input').on('keyup change', () => {
 
 $('.form-actions').addClass('center')
 $('.form-group').addClass('col-4 mt-15')
+$('.contact_project_description').removeClass('col-4').addClass('col-6')
+$('.contact_message').removeClass('col-4').addClass('col-6')
+$('.form-control-file').removeClass('form-control-file').addClass('form-control')
+$('textarea').css('height', '260px')
+$('.send-info').removeClass('col-4').addClass('col-2')
+$('select').addClass('text-dark')
+$('.contact_file_attachment').removeClass('col-4').addClass('col-10')
 $('.form-group.radio_buttons').removeClass('col-4').addClass('col-12 row')
 $('.form-check').addClass('col-4').css('padding-left', '120px')
 $('.form-check-input').css('display', 'inline-block')

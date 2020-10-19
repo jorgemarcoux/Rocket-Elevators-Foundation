@@ -20,14 +20,12 @@ class QuotesController < ApplicationController
   # POST /quotes
   # POST /quotes.json
   def create
-    puts "quotes params"
-    puts quote_params
     @quote = Quote.new(quote_params)
     @quote.user_id = current_user.id
     @quote.save
     respond_to do |format|
       if @quote.save
-        format.html { redirect_to my_quotes_path, notice: 'Quote was successfully created.' }
+        format.html { redirect_to my_quotes_path, notice: 'Quote was successfully created !' }
       else
         format.html { render :new }
       end

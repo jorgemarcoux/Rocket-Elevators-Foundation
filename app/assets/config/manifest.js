@@ -1,9 +1,9 @@
 //= link_tree ../images
 
-
 //= link_directory ../javascripts .js
 //= link_directory ../stylesheets .css
 
+//= link custom-input.scss
 //= link bootstrap.min.css
 //= link extralayers.css
 //= link settings.css
