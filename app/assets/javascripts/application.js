@@ -26,3 +26,5 @@
 //= require owl.carousel.min.js
 //= require owl.carousel.js
 //= require quote.js
+//= require rails.validations
+//= require rails.validations.simple_form

@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
   
+  resources :contacts
   resources :quotes , only: [:user_quotes, :new, :create]
   mount RailsAdmin::Engine => '/backoffice', as: 'rails_admin'
 
   root to: 'static_pages#index'
   get 'static_pages/residential'
   get 'static_pages/corporate'
-
-
-
 
   devise_for :users,
   :controllers => { registrations: 'registrations'},
@@ -28,8 +26,8 @@ Rails.application.routes.draw do
   # delete 'signout', to: 'devise/sessions#destroy', as: :destroy_user_session
   # end
 
-
   get 'my_quotes' => 'quotes#user_quotes', as: :my_quotes
+  get 'my_leads' => 'contacts#user_leads', as: :my_leads
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

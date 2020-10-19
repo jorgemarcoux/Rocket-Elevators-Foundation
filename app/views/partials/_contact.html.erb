@@ -21,95 +21,36 @@
             </p>
           </div>
           <div class="col-lg-12 col-md-6">
-            <iframe id="map-spacing" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2729.042993784821!2d-71.2818834840848!3d46.842843548415686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb897d0e1cafe3f%3A0x9863b2d992c71670!2sCodeBoxx!5e0!3m2!1sfr!2sca!4v1599866854501!5m2!1sfr!2sca" width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <iframe id="map-spacing" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2729.042993784821!2d-71.2818834840848!3d46.842843548415686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb897d0e1cafe3f%3A0x9863b2d992c71670!2sCodeBoxx!5e0!3m2!1sfr!2sca!4v1599866854501!5m2!1sfr!2sca" width="100%" height="320" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           </div>
         </div>
       </div>
       <!-- /INFO -->
       <!-- FORM -->
+      <!-- ERROR VERIF TO BE ADDED -->
       <div class="col-lg-9 text-center">
-        <h3>Submit us your <strong><em>Project!</em></strong></h3>
-        <!-- Alert Success -->
-        <div id="alert_success" class="alert alert-success mb-30">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-          <strong>Thank You!</strong> Your message successfully sent!
-        </div>
-        <!-- /Alert Success -->
-        <!-- Alert Failed -->
-        <div id="alert_failed" class="alert alert-danger mb-30">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-          <strong>[SMTP] Error!</strong> Internal server error!
-        </div>
-        <!-- /Alert Failed -->
-        <!-- Alert Mandatory -->
-        <div id="alert_mandatory" class="alert alert-danger mb-30">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-          <strong>Sorry!</strong> You need to complete all mandatory (*) fields!
-        </div>
-        <!-- /Alert Mandatory -->
-        <form action="404.html" method="post" enctype="multipart/form-data">
-          <fieldset>
-            <input type="hidden" name="action" value="contact_send" />
-            <div class="row">
-              <div class="col-md-4">
-                <label for="contact:name">Full Name *</label>
-                <input required type="text" value="" class="form-control" name="contact[name][required]" id="contact:name">
+        <%= simple_form_for Contact.new, validates: true do |form_contact| %>
+        <%= form_contact.error_notification %>
+          <div>
+            <div class="form-input">
+              <div class="form-inputs row text-center">
+                <%= form_contact.input :full_name %>
+                <%= form_contact.input :email, as: :email %>
+                <%= form_contact.input :phone, as: :integer %>
+                <%= form_contact.input :business_name %>
+                <%= form_contact.input :project_name %>
+                <%= form_contact.input :department, as: :select, collection: ["Elevator Consultant", "Building Manager", "Architect"] %>
+                <%= form_contact.input :project_description, as: :text %>
+                <%= form_contact.input :message, as: :text %>
+                <%= form_contact.input :file_attachment, as: :file %>
+                <div class="form-group send-info">
+                  <label style="height: 26px;"></label>
+                  <%= form_contact.button :submit, 'Send Info', class: 'btn btn-red' %>
+                </div>
               </div>
-              <div class="col-md-4">
-                <label for="contact:email">E-mail Address *</label>
-                <input required type="email" value="" class="form-control" name="contact[email][required]" id="contact:email">
-              </div>
-              <div class="col-md-4">
-                <label for="contact:phone">Phone</label>
-                <input type="text" value="" class="form-control" name="contact[phone]" id="contact:phone">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
-                <label for="contact:subject">Business Name *</label>
-                <input required type="text" value="" class="form-control" name="contact[subject][required]" id="contact:subject">
-              </div>
-              <div class="col-md-4">
-                <label for="contact:subject">Project Name *</label>
-                <input required type="text" value="" class="form-control" name="contact[subject][required]" >
-              </div>
-              <div class="col-md-4">
-                <label for="contact_department">Department</label>
-                <select class="form-control pointer" name="contact[department]">
-                  <option value="">--- Select ---</option>
-                  <option value="Elevator Consultant">Elevator Consultant</option>
-                  <option value="Building Manager">Building Manager</option>
-                  <option value="Architect">Architect</option>
-                </select>
-              </div>
-            </div>
-            <div class="row">
-              <div class="clearfix col-md-6">
-                <label for="contact:Project Description">Project Description *</label>
-                <textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="contact:message"></textarea>
-              </div>
-              <div class="clearfix col-md-6">
-                <label for="contact:message">Message *</label>
-                <textarea required maxlength="10000" rows="8" class="form-control" name="contact" ></textarea>
-              </div>
-            </div>
-            <div class="clearfix mt-30">
-              <label for="contact:attachment">File Attachment</label>
-              <!-- custom file upload -->
-              <div class="fancy-file-upload fancy-file-danger">
-                <i class="fa fa-upload"></i>
-                <input type="file" class="form-control" name="contact[attachment]" onchange="jQuery(this).next('input').val(this.value);" />
-                <input type="text" class="form-control" placeholder="no file selected" readonly="" />
-                <span class="button">Choose File</span>
-              </div>
-            </div>
-          </fieldset>
-          <div class="row">
-            <div class="col-md-12">
-              <button type="submit" class="btn btn-red"><i class="fa fa-check"></i> SEND MESSAGE</button>
             </div>
           </div>
-        </form>
+        <% end %>
       </div>
       <!-- /FORM -->
     </div>
