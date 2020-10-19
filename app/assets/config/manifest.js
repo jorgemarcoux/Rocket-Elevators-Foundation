@@ -25,6 +25,5 @@
 //= link jquery.themepunch.tools.min
 //= link jquery.themepunch.revolution.min
 //= link demo.revolution_slider.js
-//= link contact
 //= link quote.js
 //= link rails_admin/custom/ui.js

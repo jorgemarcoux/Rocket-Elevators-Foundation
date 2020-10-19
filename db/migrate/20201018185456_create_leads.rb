@@ -1,6 +1,6 @@
-class CreateContacts < ActiveRecord::Migration[5.2]
+class CreateLeads < ActiveRecord::Migration[5.2]
   def change
-    create_table :contacts do |t|
+    create_table :leads do |t|
       t.string :full_name
       t.string :email
       t.string :phone
@@ -9,7 +9,7 @@ class CreateContacts < ActiveRecord::Migration[5.2]
       t.string :department
       t.text :project_description
       t.text :message
-      t.string :file_attachment
+      t.binary :file_attachment, limit: 4.megabytes
       t.integer :user_id
 
       t.timestamps null: false

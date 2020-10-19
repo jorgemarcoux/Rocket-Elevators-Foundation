@@ -1,4 +1,4 @@
-class Contact < ApplicationRecord
+class Lead < ApplicationRecord
     belongs_to :user, optional: true, foreign_key: :user_id
     validates :full_name, presence: true, allow_blank: false
     validates :email, presence: true, allow_blank: false

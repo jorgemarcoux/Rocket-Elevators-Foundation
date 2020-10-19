@@ -6,7 +6,9 @@
       <h2 class="fs-90 fw-300">GET A QUOTE</h2>
       <a class="btn btn-lg btn-default btn-lg" href="/">HOME <i class="fa fa-angle-right"></i></a>
       &nbsp; OR &nbsp;
-      <a class="btn btn-lg btn-red" href="/#contact">CONTACT US <i class="fa fa-angle-right"></i></a>
+      <%= link_to leads_new_path do %>
+      <span class="btn btn-lg btn-red">CONTACT US <i class="fa fa-angle-right"></i></span>
+      <% end %>
     </div>
   </div>
 </section>

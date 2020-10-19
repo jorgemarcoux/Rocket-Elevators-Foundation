@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :contacts
+  resources :leads
   resources :quotes , only: [:user_quotes, :new, :create]
   mount RailsAdmin::Engine => '/backoffice', as: 'rails_admin'
 
@@ -27,7 +27,8 @@ Rails.application.routes.draw do
   # end
 
   get 'my_quotes' => 'quotes#user_quotes', as: :my_quotes
-  get 'my_leads' => 'contacts#user_leads', as: :my_leads
-  
+  get 'my_leads' => 'leads#user_leads', as: :my_leads
+  get 'leads_new' => 'leads#new', as: :leads_new
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
