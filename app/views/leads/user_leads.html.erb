@@ -19,16 +19,16 @@
           </tr>
         </thead>
         <tbody>
-          <% @contacts.each do |contact| %>
+          <% @leads.each do |lead| %>
             <tr>
-              <td><%= contact.full_name %></td>
-              <td><%= contact.email %></td>
-              <td><%= contact.phone %></td>
-              <td><%= contact.business_name %></td>
-              <td><%= contact.project_name %></td>
-              <td><%= contact.department %></td>
-              <td><%= contact.project_description %></td>
-              <td><%= contact.message %></td>
+              <td><%= lead.full_name %></td>
+              <td><%= lead.email %></td>
+              <td><%= lead.phone %></td>
+              <td><%= lead.business_name %></td>
+              <td><%= lead.project_name %></td>
+              <td><%= lead.department %></td>
+              <td><%= lead.project_description %></td>
+              <td><%= lead.message %></td>
             </tr>
           <% end %>
         </tbody>

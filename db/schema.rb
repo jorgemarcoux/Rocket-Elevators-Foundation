@@ -12,7 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2020_10_18_185456) do
 
-  create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "email"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "function"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "full_name"
     t.string "email"
     t.string "phone"
@@ -21,17 +30,8 @@ ActiveRecord::Schema.define(version: 2020_10_18_185456) do
     t.string "department"
     t.text "project_description"
     t.text "message"
-    t.string "file_attachment"
+    t.binary "file_attachment", limit: 16777215
     t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "email"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "function"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
