@@ -3,7 +3,7 @@ class CreateContacts < ActiveRecord::Migration[5.2]
     create_table :contacts do |t|
       t.string :full_name
       t.string :email
-      t.integer :phone
+      t.integer :phone, :limit => 10000
       t.string :business_name
       t.string :project_name
       t.string :department

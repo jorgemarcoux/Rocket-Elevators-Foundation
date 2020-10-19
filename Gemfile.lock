@@ -44,6 +44,8 @@ GEM
       activemodel (= 5.2.4.4)
       activesupport (= 5.2.4.4)
       arel (>= 9.0)
+    activerecord-suppress_range_error (0.1.1)
+      activerecord (>= 4.2)
     activestorage (5.2.4.4)
       actionpack (= 5.2.4.4)
       activerecord (= 5.2.4.4)
@@ -314,6 +316,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-suppress_range_error (~> 0.1.1)
   audited!
   better_errors (~> 2.8, >= 2.8.3)
   binding_of_caller (~> 0.8.0)

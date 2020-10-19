@@ -40,6 +40,9 @@ gem 'rails_admin_rollincode', '~> 1.0'
 # PERMISSIONS
 gem 'cancancan'
 
+# Suppressing RangeError during type casting
+gem 'activerecord-suppress_range_error', '~> 0.1.1'
+
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
 

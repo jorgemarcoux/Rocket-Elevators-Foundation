@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
 
   has_many :quotes
+  has_many :contacts
 
   def custom_label_method
     "#{first_name} #{last_name}"

@@ -8,5 +8,5 @@ class Contact < ApplicationRecord
     validates :department, presence: true, allow_blank: false
     validates :project_description, presence: true, allow_blank: false
     validates :message, presence: true, allow_blank: false
-    validates :file_attachment, presence: true, allow_blank: false    
+    validates :file_attachment, presence: true, allow_blank: false
 end

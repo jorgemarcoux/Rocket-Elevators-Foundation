@@ -65,3 +65,11 @@ input:valid {
 .form-div input:focus + .label-name::after {
 	transform: translateX(0%);
 }
+
+.danger-card {
+	margin: auto;
+	width: fit-content !important;
+	border: #961d31 3px solid !important;
+	border-radius: 15px;
+	padding: 15px;
+}
