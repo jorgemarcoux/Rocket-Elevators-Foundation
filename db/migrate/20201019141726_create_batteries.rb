@@ -1,11 +1,10 @@
 class CreateBatteries < ActiveRecord::Migration[5.2]
   def change
     create_table :batteries do |t|
-      t.integer :building_id
-      t.integer :battery_id
-      t.string :type
-      t.string :status
-      t.integer :employee_id
+      t.belongs_to :building
+      t.belongs_to :employee
+      t.string :battery_type
+      t.string :battery_status
       t.date :date_of_commissioning
       t.date :date_of_last_inspection
       t.string :certificate_of_operations

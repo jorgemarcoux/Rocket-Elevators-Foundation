@@ -3,11 +3,9 @@ class CreateEmployeesTable < ActiveRecord::Migration[5.2]
   def change
     create_table :employees do |t|
 
-      t.integer :User_ID                                            #Username for employees
       t.string :first_name                                          #First Name
       t.string :last_name                                           #Last Name
       t.string :function                                            #The principal function
-
       t.timestamps null: false
 
 

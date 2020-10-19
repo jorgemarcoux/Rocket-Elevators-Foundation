@@ -1,6 +1,7 @@
 class CreateQuotes < ActiveRecord::Migration[5.2]
   def change
     create_table :quotes do |t|
+      t.belongs_to :user
       t.integer :apartments
       t.integer :floors
       t.integer :basements
@@ -14,7 +15,6 @@ class CreateQuotes < ActiveRecord::Migration[5.2]
       t.decimal :total_price
       t.integer :unit_price
       t.integer :elevator_number
-      t.integer :user_id
 
       t.timestamps
     end
