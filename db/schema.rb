@@ -50,14 +50,16 @@ ActiveRecord::Schema.define(version: 2020_10_19_144023) do
   end
 
   create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "building_id"
+    t.integer "address_id"
     t.integer "customer_id"
-    t.string "Address"
+    t.integer "battery_id"
     t.string "full_name_administrator"
     t.string "email_administrator_"
     t.integer "phone_number_administrator"
     t.string "full_name_technical_contact"
     t.string "technical_contact_email"
-    t.integer "technical_contact_phone"
+    t.string "technical_contact_phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -69,30 +71,6 @@ ActiveRecord::Schema.define(version: 2020_10_19_144023) do
     t.string "status"
     t.string "information"
     t.string "notes"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "email"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "function"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "full_name"
-    t.string "email"
-    t.string "phone"
-    t.string "business_name"
-    t.string "project_name"
-    t.string "department"
-    t.text "project_description"
-    t.text "message"
-    t.binary "file_attachment", limit: 16777215
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -133,6 +111,21 @@ ActiveRecord::Schema.define(version: 2020_10_19_144023) do
     t.string "first_name"
     t.string "last_name"
     t.string "function"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "full_name"
+    t.string "email"
+    t.string "phone"
+    t.string "business_name"
+    t.string "project_name"
+    t.string "department"
+    t.text "project_description"
+    t.text "message"
+    t.binary "file_attachment", limit: 16777215
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
