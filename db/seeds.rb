@@ -8,3 +8,6 @@
 
 # user = CreateAdminService.new.call
 # puts 'CREATED ADMIN USER: ' << user.email
+
+User.first.update("first_name" => "bob")
+
