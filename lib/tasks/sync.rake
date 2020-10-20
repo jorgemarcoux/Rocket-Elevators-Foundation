@@ -1,6 +1,7 @@
 require './lib/dwh/sync.rb'
 namespace :dwh do
-  task :test_sync  => :environment do
-    Dwh::Sync.sync_quote
+  task :sync  => :environment do
+    Dwh::Sync.sync_fact_quotes
+    Dwh::Sync.sync_dim_customers
   end
 end
