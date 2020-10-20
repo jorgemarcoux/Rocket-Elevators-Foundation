@@ -3,9 +3,9 @@ class CreateFactElevator < ActiveRecord::Migration[5.2]
     create_table :fact_elevators do |t|
       
       t.integer :serial_number
-      t.integer :building_id
-      t.integer :customer_id
-      t.string :building_city
+      t.integer :building_id #from column > battery > building table
+      t.integer :customer_id #from column > battery > building table
+      t.string :building_city #from column > battery > building > address
 
       t.timestamps
     end
