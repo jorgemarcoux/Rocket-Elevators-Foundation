@@ -10,15 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_10_20_130644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-    create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "function"
+  create_table "fact_quotes", force: :cascade do |t|
+    t.integer "quote_id"
+    t.date "creation_date"
+    t.string "company_name"
+    t.string "email"
+    t.integer "elevator_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
