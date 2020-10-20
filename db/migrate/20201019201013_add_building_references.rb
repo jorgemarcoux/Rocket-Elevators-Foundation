@@ -8,6 +8,7 @@ class AddBuildingReferences < ActiveRecord::Migration[5.2]
     end
       create_table :addresses do |t|
       t.references :building, foreign_key: true
+      t.references :customer, foreign_key: true
       t.string :type_of_address
       t.string :status
       t.string :entity
@@ -21,5 +22,6 @@ class AddBuildingReferences < ActiveRecord::Migration[5.2]
     end
     add_reference :buildings, :building_detail, index: true
     add_reference :buildings, :address, index: true
+    add_reference :customers, :address, index: true
   end
 end

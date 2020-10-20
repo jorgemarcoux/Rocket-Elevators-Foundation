@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_201013) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "building_id"
+    t.bigint "customer_id"
     t.string "type_of_address"
     t.string "status"
     t.string "entity"
@@ -26,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_201013) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["building_id"], name: "index_addresses_on_building_id"
+    t.index ["customer_id"], name: "index_addresses_on_customer_id"
   end
 
   create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -85,7 +87,6 @@ ActiveRecord::Schema.define(version: 2020_10_19_201013) do
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.string "company_name"
-    t.string "company_headquarters_address"
     t.string "company_contact_full_name"
     t.string "company_contact_phone"
     t.string "company_contact_email"
@@ -95,15 +96,17 @@ ActiveRecord::Schema.define(version: 2020_10_19_201013) do
     t.string "technical_manager_email_service"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "address_id"
+    t.index ["address_id"], name: "index_customers_on_address_id"
     t.index ["user_id"], name: "index_customers_on_user_id"
   end
 
   create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "column_id"
     t.string "serial_number"
-    t.string "model"
-    t.string "type"
-    t.string "status"
+    t.string "elevator_model"
+    t.string "elevator_type"
+    t.string "elevator_status"
     t.date "date_of_commissioning"
     t.date "date_of_last_inspection"
     t.string "certificate_of_inspection"
@@ -160,7 +163,6 @@ ActiveRecord::Schema.define(version: 2020_10_19_201013) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
     t.string "first_name"
     t.string "last_name"
     t.string "title"
@@ -179,5 +181,6 @@ ActiveRecord::Schema.define(version: 2020_10_19_201013) do
   end
 
   add_foreign_key "addresses", "buildings"
+  add_foreign_key "addresses", "customers"
   add_foreign_key "building_details", "buildings"
 end
