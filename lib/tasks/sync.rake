@@ -1,10 +1,9 @@
 require './lib/dwh/sync.rb'
 namespace :dwh do
   task :sync  => :environment do
-    DimCustomer.destroy_all
-    FactContact.destroy_all
-    FactElevator.destroy_all
-    FactQuote.destroy_all
+    Second::Base.connection.execute('TRUNCATE dim_customers RESTART IDENTITY')
+    Second::Base.connection.execute('TRUNCATE fact_quotes RESTART IDENTITY')
+    Second::Base.connection.execute('TRUNCATE fact_leads RESTART IDENTITY')
 
     Dwh::Sync.sync_fact_quotes
     Dwh::Sync.sync_fact_leads
