@@ -34,6 +34,7 @@ class CreateTables < ActiveRecord::Migration[5.2]
 
     create_table :quotes do |t|
       t.belongs_to :user
+      t.belongs_to :customer
       t.string :building_type
       t.integer :apartments
       t.integer :floors

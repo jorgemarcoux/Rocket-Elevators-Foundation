@@ -143,6 +143,7 @@ ActiveRecord::Schema.define(version: 2020_10_21_004301) do
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "customer_id"
     t.string "building_type"
     t.integer "apartments"
     t.integer "floors"
@@ -159,6 +160,7 @@ ActiveRecord::Schema.define(version: 2020_10_21_004301) do
     t.integer "elevator_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_quotes_on_customer_id"
     t.index ["user_id"], name: "index_quotes_on_user_id"
   end
 

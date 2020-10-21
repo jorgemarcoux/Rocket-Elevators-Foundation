@@ -66,7 +66,7 @@ for i in 1..randUserCreation do
         technical_authority_full_name: Faker::Name.unique.name,
         technical_authority_phone_number: Faker::PhoneNumber.cell_phone,
         technical_manager_email_service: Faker::Internet.unique.email,
-        created_at: Time.at((tmp_user.created_at.to_f - Time.local(2020, 7, 8).to_f)*rand + Time.local(2020, 7, 8).to_f)
+        created_at: tmp_user.created_at
     )
 
     tmp_customer_address.update('customer_id' => tmp_customer.id)
@@ -156,6 +156,7 @@ for i in 1..randUserCreation do
 
     tmp_quote = Quote.create(
         user_id: tmp_user.id,
+        customer_id: tmp_customer.id,
         building_type: tmp_battery.battery_type,
         unit_price: rand(7565..100000),
         install_fee: rand(2000..10000),
@@ -163,7 +164,8 @@ for i in 1..randUserCreation do
         elevator_number: rand(1..50).floor,
         product_line: ["Excelium", "Premium", "Standard"].sample,
         basements: rand(1..45).floor,
-        floors: rand(1..100).floor
+        floors: rand(1..100).floor,
+        created_at: tmp_lead.created_at
     )
 
     if tmp_battery.battery_type == "Residential"
