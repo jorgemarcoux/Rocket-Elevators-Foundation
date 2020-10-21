@@ -23,6 +23,10 @@ class LeadsController < ApplicationController
         @lead = Lead.edit
     end
 
+    def show
+        @lead = Lead.show
+    end
+
     def new
         @lead = Lead.new
     end
