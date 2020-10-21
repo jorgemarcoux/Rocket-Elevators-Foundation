@@ -13,7 +13,6 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
 //= require jquery
 //= require jquery_ujs
 //= require toastr
@@ -27,3 +26,7 @@
 //= require quote.js
 //= require rails.validations
 //= require rails.validations.simple_form
+//= require chartkick
+//= require highcharts
+//= require Chart.bundle
+//= require_tree .

@@ -1,4 +1,8 @@
-$(document).on('turbolinks:load', function(){ $.rails.refreshCSRFTokens(); });
+//= require chartkick
+//= require highcharts
+//= require Chart.bundle
+
+$(document).on('turbolinks:load', function () { $.rails.refreshCSRFTokens(); });
 
 $(document).on('ready pjax:success', function () {
   handleActiveBase();
