@@ -125,6 +125,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_201013) do
     t.string "first_name"
     t.string "last_name"
     t.string "function"
+    t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
