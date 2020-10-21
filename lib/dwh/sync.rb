@@ -17,26 +17,25 @@ module Dwh
     def self.sync_dim_customers
       for c in Customer.all do
         elevator_number = 0
-        customer_buildings = Building.where("customer_id = #{c.id}")
-        puts customer_buildings
+        customer_buildings = Building.where(customer_id: c.id).to_a
         for building in customer_buildings do
-          batteries = Battery.find(:all, :condition => { :building_id => building.id })
+          batteries = Battery.where(building_id: building.id).to_a
           for battery in batteries do
-            columns = Column.find(:all, :condition => { :battery_id => battery.id })
+            columns = Column.where(battery_id: battery.id).to_a
             for column in columns do
-              elevators = Elevator.find(:all, :condition => { :column_id => column.id })
+              elevators = Elevator.where(column_id: column.id).to_a
               elevator_number += elevators.size
             end
           end
         end
-        address = Address.find(c.address_id)
+        city = Address.find(c.address_id).city
         DimCustomer.create!({
-        creation_date: c.created_at,
+        customer_creation_date: c.created_at,
         company_name: c.company_name,
         company_contact_full_name: c.company_contact_full_name,
-        email: c.email,
+        company_contact_email: c.company_contact_email,
         elevator_number: elevator_number,
-        customer_city: address.ciy
+        customer_city: city
         })
       end
     end
