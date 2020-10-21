@@ -1,5 +1,9 @@
 -- Fact Quotes:
 
+SELECT to_char(quote_created_at, 'Month') as month, Count(*) as Number_Of_Quotes FROM fact_quotes GROUP BY month
+
+SELECT to_char(creation_date, 'Month') as month, Count(*) as Number_Of_contact FROM fact_contacts GROUP BY month
+
 -- Not so good:
 
 select * from quotes
