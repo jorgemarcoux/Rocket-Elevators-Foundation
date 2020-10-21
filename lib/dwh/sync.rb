@@ -1,5 +1,6 @@
 module Dwh
   class Sync
+
     def self.sync_fact_quotes
       for q in Quote.all do
         user = User.find(q.user_id)
@@ -13,6 +14,7 @@ module Dwh
           })
       end
     end
+
 
     def self.sync_dim_customers
       for c in Customer.all do
@@ -40,6 +42,27 @@ module Dwh
       end
     end
 
+
+    def self.sync_fact_elevators
+      for e in Elevator.all do
+        column = Column.find(e.id)
+        battery = Battery.find(column.id)
+        building = Building.find(battery.id)
+        address = Address.find(building.id)
+        customer = Customer.find(building.id)
+        
+      
+        FactElevator.create!({
+          serial_number: e.serial_number,
+          date_of_commissioning: e.date_of_commissioning,
+          building_id: building.id,
+          customer_id: customer.id,
+          building_city: address.city
+        })
+      end
+    end
+
+
     def self.sync_fact_contacts 
       for u in User.all do
         customer = Customer.find(u.id)
@@ -51,7 +74,7 @@ module Dwh
           company_name: customer.company_name,
           email: u.email,
           project_name: lead.project_name
-          })
+        })
            
       end
     end
