@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 2020_10_19_201013) do
 
   create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "customer_id"
+    t.bigint "admin_contact_id"
+    t.bigint "technical_contact_id"
     t.string "administrator_full_name"
     t.string "administrator_email"
     t.string "administrator_phone_number"
@@ -68,8 +70,10 @@ ActiveRecord::Schema.define(version: 2020_10_19_201013) do
     t.bigint "building_detail_id"
     t.bigint "address_id"
     t.index ["address_id"], name: "index_buildings_on_address_id"
+    t.index ["admin_contact_id"], name: "index_buildings_on_admin_contact_id"
     t.index ["building_detail_id"], name: "index_buildings_on_building_detail_id"
     t.index ["customer_id"], name: "index_buildings_on_customer_id"
+    t.index ["technical_contact_id"], name: "index_buildings_on_technical_contact_id"
   end
 
   create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -183,4 +187,6 @@ ActiveRecord::Schema.define(version: 2020_10_19_201013) do
   add_foreign_key "addresses", "buildings"
   add_foreign_key "addresses", "customers"
   add_foreign_key "building_details", "buildings"
+  add_foreign_key "buildings", "employees", column: "admin_contact_id"
+  add_foreign_key "buildings", "employees", column: "technical_contact_id"
 end
