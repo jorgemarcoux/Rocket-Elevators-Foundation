@@ -44,7 +44,6 @@ module Dwh
       for u in User.all do
         customer = Customer.find(u.id)
         lead = Lead.find(u.id)
-        
           FactContact.create!({ 
           contact_id: u.id,
           creation_date: u.created_at,
@@ -55,6 +54,5 @@ module Dwh
            
       end
     end
-
   end
 end
