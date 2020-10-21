@@ -4,9 +4,9 @@
 
 The main goal of this week is to transform the static site previously developed during the Genesis program and turn it into a web application on MVC (Model - View - Controller) foundations. The site must be in a state that allows you to create a new section that saves the Javascript form that calculates an estimate in the form of a purchase order. This purchase order includes the key elements of the estimation form and allows you to enter more details. <br> <br>
 
-Admin account for full website access: admin@admin.com / admin123
-Employee account: employee@employee.com / employee123
-User/customer account: user@user.com / user123
+#### Admin account for full website access: admin@admin.com / admin123
+#### Employee account: employee@employee.com / employee123
+#### User/customer account: user@user.com / user123
 
 
 ## Members of the team
