@@ -10,7 +10,7 @@ module Dwh
           company_name: customer.company_name,
           email: user.email,
           elevator_number: q.elevator_number
-          })
+        })
       end
     end
 

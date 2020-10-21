@@ -23,7 +23,15 @@ Elevator.destroy_all
 randUserCreation = 100
 
 for i in 1..randUserCreation do
-    addressy = Addressy::US.fetch(2)
+    addressy = Addressy::US.fetch(10)
+
+    User.create(
+        first_name: "Admin",
+        email: "admin@admin.com",
+        password: "admin123",
+        is_admin: true,
+        is_user: false
+    )
 
     tmp_user = User.create(
         first_name: Faker::Name.unique.first_name,
@@ -160,24 +168,19 @@ for i in 1..randUserCreation do
 
     if tmp_battery.battery_type == "Residential"
         tmp_quote.update("apartments" => rand(1..1000).floor)
+
     elsif tmp_battery.battery_type == "Commercial"
         tmp_quote.update("businesses" => rand(1..20).floor)
         tmp_quote.update("elevator_shafts" => rand(1..35).floor)
         tmp_quote.update("parking_spaces" => rand(1..140).floor)
+
     elsif tmp_battery.battery_type == "Corporate" || tmp_battery.battery_type == "Hybrid"
         tmp_quote.update("businesses" => rand(1..20).floor)
         tmp_quote.update("parking_spaces" => rand(1..140).floor)
         tmp_quote.update("occupants" => rand(1..1000).floor)
     end
+
     if tmp_battery.battery_type == "Hybrid"
         tmp_quote.update("opening_hours" => rand(1..24).floor)
     end
 end
-
-User.create(
-    first_name: "Admin",
-    email: "admin@admin.com",
-    password: "admin123",
-    is_admin: true,
-    is_user: false
-)
