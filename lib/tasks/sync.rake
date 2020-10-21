@@ -5,5 +5,7 @@ namespace :dwh do
     Second::Base.connection.execute('TRUNCATE fact_quotes RESTART IDENTITY')
     Dwh::Sync.sync_fact_quotes
     Dwh::Sync.sync_dim_customers
+    Dwh::Sync.sync_fact_contacts
+    Dh
   end
 end

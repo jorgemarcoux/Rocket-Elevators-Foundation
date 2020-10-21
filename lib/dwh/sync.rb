@@ -40,5 +40,21 @@ module Dwh
       end
     end
 
+    def self.sync_fact_contacts 
+      for u in User.all do
+        customer = Customer.find(u.id)
+        lead = Lead.find(u.id)
+        
+          FactContact.create!({ 
+          contact_id: u.id,
+          creation_date: u.created_at,
+          company_name: customer.company_name,
+          email: u.email,
+          project_name: lead.project_name
+          })
+           
+      end
+    end
+
   end
 end
