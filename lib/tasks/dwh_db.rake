@@ -43,8 +43,7 @@ namespace :dwh do
     ENV['SCHEMA'] = 'db_dwh/schema.rb'
     Rails.application.config.paths['db'] = ['db_dwh']
     Rails.application.config.paths['db/migrate'] = ['db_dwh/migrate']
-    # If you are using Rails 5 or higher change `paths['db/seeds']` to `paths['db/seeds.rb']`
-    Rails.application.config.paths['db/seeds'] = ['db_dwh/seeds.rb']
+    Rails.application.config.paths['db/seeds.rb'] = ['db_dwh/seeds.rb']
     Rails.application.config.paths['config/database'] = ['config/dwh_db.yml']
   end
 

@@ -42,6 +42,10 @@ gem 'rails_admin_rollincode', '~> 1.0'
 # PERMISSIONS
 gem 'cancancan'
 
+gem 'addressy', '~> 0.0.2'
+gem 'faker', '~> 2.14'
+
+
 # Suppressing RangeError during type casting
 gem 'activerecord-suppress_range_error', '~> 0.1.1'
 
