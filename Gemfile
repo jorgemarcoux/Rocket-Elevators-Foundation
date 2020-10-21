@@ -38,6 +38,7 @@ gem 'toastr-rails', '~> 1.0'
 gem 'jquery-rails'
 # ADMIN SECTION
 gem 'rails_admin', '~> 2.0'
+gem 'activeadmin'
 gem 'rails_admin_rollincode', '~> 1.0'
 # PERMISSIONS
 gem 'cancancan'
