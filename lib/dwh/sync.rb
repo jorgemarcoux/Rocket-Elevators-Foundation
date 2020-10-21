@@ -45,7 +45,7 @@ module Dwh
 
     def self.sync_fact_elevators
       for e in Elevator.all do
-        column = Column.find(e.id)
+        column = Column.find(e.column_id)
         battery = Battery.find(column.id)
         building = Building.find(battery.id)
         address = Address.find(building.id)
