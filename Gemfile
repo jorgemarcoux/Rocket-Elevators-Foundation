@@ -48,6 +48,10 @@ gem 'activerecord-suppress_range_error', '~> 0.1.1'
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
 
+gem 'faker', '~> 2.14'
+
+gem 'addressy', '~> 0.0.2'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
