@@ -5,13 +5,14 @@ module Dwh
       for q in Quote.all do
         user = User.find(q.user_id)
         customer = Customer.find(user.id)
+
         FactQuote.create!({
           quote_id: q.id,
           quote_created_at: q.created_at,
           company_name: customer.company_name,
           email: user.email,
           elevator_number: q.elevator_number
-          })
+        })
       end
     end
 
@@ -31,13 +32,14 @@ module Dwh
           end
         end
         city = Address.find(c.address_id).city
+
         DimCustomer.create!({
-        customer_creation_date: c.created_at,
-        company_name: c.company_name,
-        company_contact_full_name: c.company_contact_full_name,
-        company_contact_email: c.company_contact_email,
-        elevator_number: elevator_number,
-        customer_city: city
+          customer_creation_date: c.created_at,
+          company_name: c.company_name,
+          company_contact_full_name: c.company_contact_full_name,
+          company_contact_email: c.company_contact_email,
+          elevator_number: elevator_number,
+          customer_city: city
         })
       end
     end
@@ -50,7 +52,6 @@ module Dwh
         building = Building.find(battery.id)
         address = Address.find(building.id)
         customer = Customer.find(building.id)
-        
       
         FactElevator.create!({
           serial_number: e.serial_number,
@@ -67,14 +68,14 @@ module Dwh
       for u in User.all do
         customer = Customer.find(u.id)
         lead = Lead.find(u.id)
-          FactContact.create!({ 
+
+        FactContact.create!({ 
           contact_id: u.id,
           creation_date: u.created_at,
           company_name: customer.company_name,
           email: u.email,
           project_name: lead.project_name
         })
-           
       end
     end
   end
