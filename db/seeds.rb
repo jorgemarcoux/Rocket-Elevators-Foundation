@@ -156,7 +156,6 @@ for i in 1..randUserCreation do
 
     tmp_quote = Quote.create(
         user_id: tmp_user.id,
-        customer_id: tmp_customer.id,
         building_type: tmp_battery.battery_type,
         unit_price: rand(7565..100000),
         install_fee: rand(2000..10000),
@@ -185,4 +184,8 @@ for i in 1..randUserCreation do
     if tmp_battery.battery_type == "Hybrid"
         tmp_quote.update("opening_hours" => rand(1..24).floor)
     end
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> merging-all

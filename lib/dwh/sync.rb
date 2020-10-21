@@ -30,25 +30,29 @@ module Dwh
         end
         city = Address.find(c.address_id).city
         DimCustomer.create!({
-          customer_creation_date: c.created_at,
-          company_name: c.company_name,
-          company_contact_full_name: c.company_contact_full_name,
-          company_contact_email: c.company_contact_email,
-          elevator_number: elevator_number,
-          customer_city: city
+        customer_creation_date: c.created_at,
+        company_name: c.company_name,
+        company_contact_full_name: c.company_contact_full_name,
+        company_contact_email: c.company_contact_email,
+        elevator_number: elevator_number,
+        customer_city: city
         })
       end
     end
-    
-    def self.sync_fact_leads
-      for l in Lead.all do
-        FactContact.create!({
-          contact_id: l.id,
-          company_name: l.business_name,
-          email: l.email,
-          project_name: l.project_name,
-          created_at: l.created_at
-        })
-     end
+
+    def self.sync_fact_contacts 
+      for u in User.all do
+        customer = Customer.find(u.id)
+        lead = Lead.find(u.id)
+          FactContact.create!({ 
+          contact_id: u.id,
+          creation_date: u.created_at,
+          company_name: customer.company_name,
+          email: u.email,
+          project_name: lead.project_name
+          })
+           
+      end
+    end
   end
 end
