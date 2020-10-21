@@ -184,8 +184,4 @@ for i in 1..randUserCreation do
     if tmp_battery.battery_type == "Hybrid"
         tmp_quote.update("opening_hours" => rand(1..24).floor)
     end
-<<<<<<< HEAD
 end
-=======
-end
->>>>>>> merging-all
