@@ -8,7 +8,7 @@ module Dwh
           quote_id: q.id,
           quote_created_at: q.created_at,
           company_name: customer.company_name,
-          email: user.email ? user.email : null,
+          email: user.email,
           elevator_number: q.elevator_number
           })
       end
