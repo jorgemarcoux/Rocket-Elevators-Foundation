@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
 
+  skip_before_action :verify_authenticity_token
+
+  rescue_from ActionController::InvalidAuthenticityToken, with: :redirect_and_prompt_for_sign_in
+
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
       format.json { head :forbidden, content_type: 'text/html' }
@@ -7,9 +11,6 @@ class ApplicationController < ActionController::Base
       format.js   { head :forbidden, content_type: 'text/html' }
     end
   end
-
-
-  rescue_from ActionController::InvalidAuthenticityToken, with: :redirect_and_prompt_for_sign_in
 
   protected
 
@@ -23,13 +24,11 @@ class ApplicationController < ActionController::Base
       new_user_session_path
     end
 
-
-  skip_before_action :verify_authenticity_token
-  def after_sign_in_path_for(resource)
-    if current_user.is_admin?
-      rails_admin_path
-    else
-      new_quote_path
-    end
-  end  
+    def after_sign_in_path_for(resource)
+      if current_user.is_admin?
+        rails_admin_path
+      else
+        new_quote_path
+      end
+    end  
 end

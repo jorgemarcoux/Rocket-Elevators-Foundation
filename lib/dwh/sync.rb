@@ -3,7 +3,9 @@ module Dwh
 
     def self.sync_fact_quotes
       for q in Quote.all do
+        # gets the user from the quote in order to find the email associated with it
         user = User.find(q.user_id)
+        # gets the customer from the quote to find it's company name
         customer = Customer.find(user.id)
 
         FactQuote.create!({
@@ -19,9 +21,11 @@ module Dwh
 
     def self.sync_dim_customers
       for c in Customer.all do
+        # variable that counts the total number of elevator for the customer
         elevator_number = 0
         customer_buildings = Building.where(customer_id: c.id).to_a
         for building in customer_buildings do
+          # goes through all the batteries linked to the building to eventually reach every elevator in every column and adds them to the elevator_number variable
           batteries = Battery.where(building_id: building.id).to_a
           for battery in batteries do
             columns = Column.where(battery_id: battery.id).to_a
@@ -47,6 +51,7 @@ module Dwh
 
     def self.sync_fact_elevators
       for e in Elevator.all do
+        # drilling down all the way to the address and customer table to get the relevant info for each elevator
         column = Column.find(e.column_id)
         battery = Battery.find(column.battery_id)
         building = Building.find(battery.building_id)

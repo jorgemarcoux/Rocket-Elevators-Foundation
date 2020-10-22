@@ -5,26 +5,53 @@ RailsAdmin.config do |config|
     object_label_method do
     :custom_label_method
     end
-    include_fields :first_name, :last_name, :title, :is_admin, :is_employee, :is_user, :email, :created_at, :quotes
+    exclude_fields :id
   end
 
   config.model 'Employee' do
     object_label_method do
     :custom_label_method
     end
+    exclude_fields :id
   end
 
   config.model 'Address' do
     object_label_method do
     :custom_label_method
     end
+    exclude_fields :id
+  end
+
+  config.model 'Building' do
+    exclude_fields :id
+  end
+
+  config.model 'Battery' do
+    exclude_fields :id
+  end
+
+  config.model 'Column' do
+    exclude_fields :id
+  end
+
+  config.model 'Elevator' do
+    exclude_fields :id
+  end
+
+  config.model 'BuildingDetail' do
+    object_label_method do
+    :custom_label_method
+    end
+    exclude_fields :id
   end
 
   config.model 'Customer' do
     object_label_method do
     :custom_label_method
     end
+    exclude_fields :id
   end
+
 
   ### Popular gems integration
 
@@ -32,6 +59,7 @@ RailsAdmin.config do |config|
   config.authenticate_with do
     warden.authenticate! scope: :user
   end
+  
   config.current_user_method(&:current_user)
 
   config.main_app_name = ["Rocket Elevators", "BackOffice"]
@@ -60,7 +88,6 @@ RailsAdmin.config do |config|
     show
     edit
     delete
-    show_in_app
 
     ## With an audit adapter, you can add:
     # history_index
