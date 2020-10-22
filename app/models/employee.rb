@@ -7,5 +7,4 @@ class Employee < ActiveRecord::Base
   belongs_to :user, optional: true
   has_many :buildings, foreign_key: :admin_contact_id
   has_many :buildings, foreign_key: :technical_contact_id
-
 end
