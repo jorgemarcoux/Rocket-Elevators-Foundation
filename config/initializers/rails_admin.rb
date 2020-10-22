@@ -23,7 +23,7 @@ RailsAdmin.config do |config|
   end
 
   config.model 'Building' do
-    exclude_fields :id
+    exclude_fields :id, :address_id, :building_detail_id
   end
 
   config.model 'Battery' do
