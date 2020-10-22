@@ -14,8 +14,8 @@ module App
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     config.api_only = false
-    config.assets.js_compressor = :uglifier
     config.assets.css_compressor = :sass
+    config.assets.js_compressor = Uglifier.new(harmony: true)
 
     config.session_store :cookie_store
     config.middleware.use ActionDispatch::Cookies
