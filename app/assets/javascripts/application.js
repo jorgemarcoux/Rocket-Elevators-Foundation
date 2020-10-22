@@ -10,7 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_tree .
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
@@ -29,3 +28,4 @@
 //= require rails.validations.simple_form
 //= require chartkick
 //= require Chart.bundle
+//= require_tree .
