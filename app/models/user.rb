@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :quotes
   has_many :leads
   has_one :customer
+  has_one :employee
 
   def custom_label_method
     "#{first_name} #{last_name}"
