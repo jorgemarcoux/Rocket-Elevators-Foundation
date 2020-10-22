@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem "audited", github: "collectiveidea/audited"
 gem 'sprockets-rails', :require => 'sprockets/railtie'
-gem 'cloudflare-rails'
+gem 'actionpack-cloudflare'
 
 # USER RELATED
 gem 'devise'

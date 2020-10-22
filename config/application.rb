@@ -19,7 +19,6 @@ module App
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore, config.session_options
     config.middleware.use ::Rack::MethodOverride
-    config.cloudflare.expires_in = 12.hours # default value
     config.force_ssl = true
     
     # Settings in config/environments/* take precedence over those specified here.
