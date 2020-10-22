@@ -64,7 +64,6 @@ Rails.application.configure do
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore, config.session_options
     config.middleware.use ::Rack::MethodOverride
-    config.force_ssl = false
 
   # MAILER OPTIONS FOR DEVISE: DEV ENV
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }

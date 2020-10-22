@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem "audited", github: "collectiveidea/audited"
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'cloudflare-rails'
 
 # USER RELATED
 gem 'devise'
@@ -99,5 +100,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   # or :staging or :beta or whatever environments you are using cloudflare in.
   # you probably don't want this for :test or :development
-  gem 'cloudflare-rails'
 end
