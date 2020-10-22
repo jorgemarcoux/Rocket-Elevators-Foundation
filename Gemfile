@@ -39,10 +39,10 @@ gem 'jquery-rails'
 gem 'rails_admin', '~> 2.0'
 gem 'rails_admin_rollincode', '~> 1.0'
 gem 'rails_admin_material'
-gem 'chartkick'
-gem 'groupdate'
+gem 'chartkick', '~> 3.4', '>= 3.4.2'
+gem 'groupdate', '~> 5.2', '>= 5.2.1'
 # PERMISSIONS
-gem 'cancancan'
+gem 'cancancan', '~> 3.1'
 # FAKE DATA
 gem 'addressy', '~> 0.0.2'
 gem 'faker', '~> 2.14'
