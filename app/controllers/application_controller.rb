@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::Base
 
-  skip_before_action :verify_authenticity_token
-
   rescue_from ActionController::InvalidAuthenticityToken, with: :redirect_and_prompt_for_sign_in
 
   rescue_from CanCan::AccessDenied do |exception|
@@ -21,13 +19,16 @@ class ApplicationController < ActionController::Base
   private
 
     def after_sign_out_path_for(resource)
+      skip_before_action :verify_authenticity_token
       new_user_session_path
     end
 
     def after_sign_in_path_for(resource)
       if current_user.is_admin?
+        skip_before_action :verify_authenticity_token
         rails_admin_path
       else
+        skip_before_action :verify_authenticity_token
         new_quote_path
       end
     end  
