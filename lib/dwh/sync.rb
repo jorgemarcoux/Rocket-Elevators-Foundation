@@ -48,10 +48,10 @@ module Dwh
     def self.sync_fact_elevators
       for e in Elevator.all do
         column = Column.find(e.column_id)
-        battery = Battery.find(column.id)
-        building = Building.find(battery.id)
-        address = Address.find(building.id)
-        customer = Customer.find(building.id)
+        battery = Battery.find(column.battery_id)
+        building = Building.find(battery.building_id)
+        address = Address.find(building.address_id)
+        customer = Customer.find(building.customer_id)
       
         FactElevator.create!({
           serial_number: e.serial_number,
