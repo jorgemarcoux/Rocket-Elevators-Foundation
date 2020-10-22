@@ -1,1 +1,1 @@
-<%= column_chart FactElevator.unscoped.group(:customer_id).count(:customer_id).sort_by {|k,v| v}.reverse[0..20], label: "Elevators in building", title: "Elevators per building", colors: ['#2cd15d'] %>
+<%= column_chart FactElevator.unscoped.group(:customer_id).count(:id).sort_by {|k,v| v}.reverse[0..20], label: "Elevators in building", title: "Elevators per building", colors: ['#2cd15d'] %>

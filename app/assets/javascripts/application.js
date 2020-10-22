@@ -27,6 +27,5 @@
 //= require rails.validations
 //= require rails.validations.simple_form
 //= require chartkick
-//= require highcharts
 //= require Chart.bundle
 //= require_tree .
