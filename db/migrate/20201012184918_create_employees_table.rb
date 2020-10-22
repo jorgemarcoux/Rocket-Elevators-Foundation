@@ -6,6 +6,8 @@ class CreateEmployeesTable < ActiveRecord::Migration[5.2]
       t.string :first_name                                          #First Name
       t.string :last_name                                           #Last Name
       t.string :function                                            #The principal function
+      t.string :phone
+      t.string :email
       t.timestamps null: false
 
 

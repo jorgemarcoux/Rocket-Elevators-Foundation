@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+
+  mount RailsAdmin::Engine => '/backoffice', as: 'rails_admin'
   
   resources :leads
   resources :quotes , only: [:user_quotes, :new, :create]
-  mount RailsAdmin::Engine => '/backoffice', as: 'rails_admin'
 
   root to: 'static_pages#index'
   get 'static_pages/residential'
@@ -19,16 +20,8 @@ Rails.application.routes.draw do
     confirmation: 'v'
   }
 
-  # devise_for :users, skip: [:sessions]
-  # as :user do
-  # get 'signin', to: 'devise/sessions#new', as: :new_user_session
-  # post 'signin', to: 'devise/sessions#create', as: :user_session
-  # delete 'signout', to: 'devise/sessions#destroy', as: :destroy_user_session
-  # end
-
   get 'my_quotes' => 'quotes#user_quotes', as: :my_quotes
   get 'my_leads' => 'leads#user_leads', as: :my_leads
   get 'leads_new' => 'leads#new', as: :leads_new
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
