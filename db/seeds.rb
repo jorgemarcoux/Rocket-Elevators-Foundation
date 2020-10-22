@@ -45,17 +45,73 @@ for i in 1..randEmployeeCreation do
     )
 end
 
+User.create(
+    first_name: "Admin",
+    email: "admin@admin.com",
+    password: "admin123",
+
+    is_admin: true,
+    is_user: false
+)
+
+Employee.create(
+    first_name: "Nicolas",
+    last_name: "Genest",
+    function: "CEO",
+    phone: Faker::PhoneNumber.unique.cell_phone,
+    email: "nicolas.genest@codeboxx.biz"
+)
+
+Employee.create(
+    first_name: "Nadya",
+    last_name: "Fortier",
+    function: "Director",
+    phone: Faker::PhoneNumber.unique.cell_phone,
+    email: "nadya.fortier@codeboxx.biz"
+)
+
+Employee.create(
+    first_name: "Martin",
+    last_name: "Chantal",
+    function: "Director Assistant",
+    phone: Faker::PhoneNumber.unique.cell_phone,
+    email: "martin.chantal@codeboxx.biz"
+)
+
+Employee.create(
+    first_name: "Mathieu",
+    last_name: "Houde",
+    function: "Captain",
+    phone: Faker::PhoneNumber.unique.cell_phone,
+    email: "mathieu.houde@codeboxx.biz"
+)
+
+Employee.create(
+    first_name: "David",
+    last_name: "Boutin",
+    function: "Engineer",
+    phone: Faker::PhoneNumber.unique.cell_phone,
+    email: "david.boutin@codeboxx.biz"
+)
+
+Employee.create(
+    first_name: "Mathieu",
+    last_name: "Lortie",
+    function: "Engineer",
+    phone: Faker::PhoneNumber.unique.cell_phone,
+    email: "mathieu.lortie@codeboxx.biz"
+)
+
+Employee.create(
+    first_name: "Thomas",
+    last_name: "Carrier",
+    function: "Engineer",
+    phone: Faker::PhoneNumber.unique.cell_phone,
+    email: "thomas.carrier@codeboxx.biz"
+)
+
 for i in 1..randUserCreation do
     addressy = Addressy::US.fetch(10)
-
-    User.create(
-        first_name: "Admin",
-        email: "admin@admin.com",
-        password: "admin123",
-
-        is_admin: true,
-        is_user: false
-    )
 
     tmp_user = User.create(
         first_name: Faker::Name.unique.first_name,
