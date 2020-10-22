@@ -23,5 +23,6 @@ class AddBuildingReferences < ActiveRecord::Migration[5.2]
     add_reference :buildings, :building_detail, index: true
     add_reference :buildings, :address, index: true
     add_reference :customers, :address, index: true
+    add_reference :employees, :user, index: true
   end
 end
