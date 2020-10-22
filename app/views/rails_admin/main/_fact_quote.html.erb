@@ -1,0 +1,1 @@
+<%= column_chart FactQuote.group_by_month(:quote_created_at, last: 12, format: "%b %Y").count, label: "Unique quotes", title: "Quotes (Last 12 months)", colors: ['#740012'] %>

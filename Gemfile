@@ -38,6 +38,7 @@ gem 'jquery-rails'
 # ADMIN SECTION
 gem 'rails_admin', '~> 2.0'
 gem 'rails_admin_rollincode', '~> 1.0'
+gem 'rails_admin_material'
 gem 'chartkick'
 gem 'groupdate'
 # PERMISSIONS

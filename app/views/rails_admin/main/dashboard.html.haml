@@ -1,6 +1,9 @@
 - if @abstract_models
 
-  = column_chart Lead.group_by_month(:created_at).count
+  -# = column_chart FactContact.group_by_month(:creation_date, last: 12, format: "%b %Y").count, label: "Unique Requests", title: "Unique Requests Per Month", colors: ['#740012']
+  = render 'fact_contact'
+  = render 'fact_quote'
+  = render 'fact_elevator'
   %br
 
   %table.table.table-condensed.table-striped
