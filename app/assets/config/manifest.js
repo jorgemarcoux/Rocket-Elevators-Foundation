@@ -1,8 +1,6 @@
 //= link_tree ../images
-
 //= link_directory ../javascripts .js
 //= link_directory ../stylesheets .css
-
 //= link custom-input.scss
 //= link bootstrap.min.css
 //= link extralayers.css
@@ -16,7 +14,6 @@
 //= link owl.pack.css
 //= link owl.theme.css
 //= link owl.transitions.css
-
 //= link jquery-3.3.1.min.js
 //= link bootstrap.min.js
 //= link scripts

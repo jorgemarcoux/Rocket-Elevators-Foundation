@@ -14,6 +14,17 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model 'Address' do
+    object_label_method do
+    :custom_label_method
+    end
+  end
+
+  config.model 'Customer' do
+    object_label_method do
+    :custom_label_method
+    end
+  end
 
   ### Popular gems integration
 
