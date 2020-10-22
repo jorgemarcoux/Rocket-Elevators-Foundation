@@ -19,7 +19,7 @@ module App
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore, config.session_options
     config.middleware.use ::Rack::MethodOverride
-    config.force_ssl = false
+    config.force_ssl = true
     
 
     # Settings in config/environments/* take precedence over those specified here.
