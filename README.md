@@ -14,6 +14,7 @@ The main goal of this week is to transform the static site previously developed 
 #### - [Loïc Rico](https://github.com/ricoloic) <br>
 
 <br>
+
 ## GitHub Repository
 
 https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System
