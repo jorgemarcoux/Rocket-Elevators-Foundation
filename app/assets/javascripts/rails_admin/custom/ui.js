@@ -1,5 +1,4 @@
 //= require chartkick
-//= require highcharts
 //= require Chart.bundle
 //= require rails_admin/themes/material/ui.js
 
