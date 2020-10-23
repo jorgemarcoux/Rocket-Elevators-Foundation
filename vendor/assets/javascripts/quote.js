@@ -174,7 +174,6 @@ $('.form-control-file').removeClass('form-control-file').addClass('form-control'
 $('textarea').css('height', '260px')
 $('.send-info').removeClass('col-4').addClass('col-2')
 $('select').addClass('text-dark')
-$('.lead_file_attachment').removeClass('col-4').addClass('col-10')
 $('.form-group.radio_buttons').removeClass('col-4').addClass('col-12 row')
 $('.form-check').addClass('col-4').css('padding-left', '120px')
 $('.form-check-input').css('display', 'inline-block')

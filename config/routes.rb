@@ -22,6 +22,4 @@ Rails.application.routes.draw do
 
   get 'my_quotes' => 'quotes#user_quotes', as: :my_quotes
   get 'my_leads' => 'leads#user_leads', as: :my_leads
-  get 'leads_new' => 'leads#new', as: :leads_new
-
 end
