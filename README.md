@@ -115,7 +115,7 @@ The main goal of this week is to transform the static site previously developed 
 
  - **`config/routes`** : The rails router recognizes our different URLs and dispatches them to a controller's action
 
- - **`config/database.yml`** : This file holds all the database configuration the application needs. many different configurations can be set for different environments. <br>
+ - **`config/database.yml`** : This file holds all the database configuration the application needs. many different configurations can be set for different environments.
 
  - **`config/environment.rb`** : This file requires **`application.rb`** to initialize the Rails application.
 
@@ -163,9 +163,9 @@ These data allow us to answer three main questions:
 Three database queries are required to select the warehouse data that answers these three questions. These SELECT queries will return :
  - The number of unique requests (ContactId) grouped by Month 
  - The number of unique requests (QuoteId) grouped by Month
- - The number of elevators (ElevatorId) contained in the buildings belonging to each customer <br>
+ - The number of elevators (ElevatorId) contained in the buildings belonging to each customer
 
-The data warehouse works under PostgreSQL. You have several ways of seeing the different tables, either from the teriminal, a software that manipulates PostgreSQL or from the backoffice section of our website. <br>
+The data warehouse works under PostgreSQL. You have several ways of seeing the different tables, either from the teriminal, a software that manipulates PostgreSQL or from the backoffice section of our website.
 
 Here's the link to download **[PgAdmin](https://www.pgadmin.org/)** who is well known in the developer community. It works with all operating systems. 
 
