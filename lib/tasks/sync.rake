@@ -3,8 +3,8 @@ namespace :dwh do
   task :sync  => :environment do
     # Starts off by clearing the current fact DB
     Second::Base.connection.execute('TRUNCATE dim_customers RESTART IDENTITY')
-    Second::Base.connection.execute('TRUNCATE fact_quotes RESTART IDENTITY')	   
-    Second::Base.connection.execute('TRUNCATE fact_contacts RESTART IDENTITY')	
+    Second::Base.connection.execute('TRUNCATE fact_quotes RESTART IDENTITY')
+    Second::Base.connection.execute('TRUNCATE fact_contacts RESTART IDENTITY')
     Second::Base.connection.execute('TRUNCATE fact_elevators RESTART IDENTITY')
 
     # NOTE: If you add another function to the task, wrap it with begin and rescue to catch the exception so that Rake can still run without stopping

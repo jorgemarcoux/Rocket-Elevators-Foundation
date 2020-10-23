@@ -1,5 +1,4 @@
 class LeadsController < ApplicationController
-
     def user_leads
         @leads = Lead.where(:user_id => current_user.id)
     end
