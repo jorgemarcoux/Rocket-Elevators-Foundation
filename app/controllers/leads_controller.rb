@@ -14,7 +14,7 @@ class LeadsController < ApplicationController
             if @lead.save
                 format.html { redirect_to my_leads_path, notice: 'Your lead as been successfully register !' }
             else
-                format.html { redirect_to root, notice: 'Your lead as been declined !' }
+                format.html { render :new }
             end
         end
     end
@@ -23,20 +23,12 @@ class LeadsController < ApplicationController
         @lead = Lead.edit
     end
 
-    def show
-        @lead = Lead.show
-    end
-
     def new
         @lead = Lead.new
     end
 
     private
-        def set_quote
-            @lead = Lead.find(params[:id])
-        end
-
         def lead_params
-            params.require(:lead).permit(:full_name, :email, :phone, :business_name, :project_name, :department, :project_description, :message, :file_attachment, :user_id)
+            params.require(:lead).permit(:attachment, :full_name, :email, :phone, :business_name, :project_name, :department, :project_description, :message, :user_id)
         end
 end

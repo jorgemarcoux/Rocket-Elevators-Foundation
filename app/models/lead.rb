@@ -8,4 +8,6 @@ class Lead < ApplicationRecord
     validates :department, presence: true, allow_blank: false
     validates :project_description, presence: true, allow_blank: false
     validates :message, presence: true, allow_blank: false
+
+    mount_uploader :attachment, AttachmentUploader
 end
