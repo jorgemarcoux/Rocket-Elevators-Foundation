@@ -29,3 +29,5 @@
 .vscode
 
 *.Identifier
+database.yml
+dwh_db.yml
