@@ -1,5 +1,4 @@
 class LeadsController < ApplicationController
-    before_action :authenticate_user!
 
     def user_leads
         @leads = Lead.where(:user_id => current_user.id)
@@ -7,12 +6,17 @@ class LeadsController < ApplicationController
 
     def create
         @lead = Lead.new(lead_params)
+        if user_signed_in?
         @lead.user_id = current_user.id
+        end
         @lead.save
         
         respond_to do |format|
-            if @lead.save
+            if @lead.save && user_signed_in?
                 format.html { redirect_to my_leads_path, notice: 'Your lead as been successfully register !' }
+
+            elsif @lead.save && !user_signed_in?
+                format.html { redirect_to root_path, notice: 'Your lead as been successfully register !' }
             else
                 format.html { render :new }
             end
