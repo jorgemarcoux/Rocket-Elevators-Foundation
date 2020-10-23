@@ -16,11 +16,10 @@ Building.destroy_all
 BuildingDetail.destroy_all
 Employee.destroy_all
 Customer.destroy_all
-Lead.destroy_all
 Column.destroy_all
 Elevator.destroy_all
 
-randCustomerCreation = 110
+randCustomerCreation = 10
 randEmployeeCreation = 21
 
 User.create(
