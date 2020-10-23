@@ -51,6 +51,8 @@ gem 'faker', '~> 2.14'
 # Suppressing RangeError during type casting
 gem 'activerecord-suppress_range_error', '~> 0.1.1'
 
+gem 'database_cleaner-active_record'
+
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
 

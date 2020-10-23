@@ -17,20 +17,14 @@ BuildingDetail.destroy_all
 Employee.destroy_all
 Customer.destroy_all
 Lead.destroy_all
+Quote.destroy_all
 Column.destroy_all
 Elevator.destroy_all
 
-randCustomerCreation = 110
+DatabaseCleaner.clean_with(:truncation)
+
+randCustomerCreation = 100
 randEmployeeCreation = 21
-
-User.create(
-    first_name: "Admin",
-    email: "admin@admin.com",
-    password: "admin123",
-
-    is_admin: true,
-    is_user: false
-)
 
 def seed_image
     File.open(File.join(Rails.root, "/app/assets/images/noYou/image.png"))
@@ -370,26 +364,36 @@ def create_customer randCustomerCreation
         end
     end
 
-    Building.all.each { |b|
-        employee1 = Employee.offset(rand(Employee.count)).first
-        employee2 = Employee.offset(rand(Employee.count)).first
-
-        while employee2 == employee1 do
-            employee2 = Employee.offset(rand(Employee.count)).first
-        end
-
-        b.update_attributes(admin_contact_id: employee1.id)
-        b.update_attributes(technical_contact_id: employee2.id)
-
-        b.update_attributes(technical_contact_full_name: employee2.first_name + employee2.last_name)
-        b.update_attributes(technical_contact_email: employee2.email)
-        b.update_attributes(technical_contact_phone: employee2.phone)
-
-        b.update_attributes(administrator_full_name: employee1.first_name + employee1.last_name)
-        b.update_attributes(administrator_email: employee1.email)
-        b.update_attributes(administrator_phone_number: employee1.phone)
-    }
 end
 
-create_employee randEmployeeCreation
 create_customer randCustomerCreation
+create_employee randEmployeeCreation
+
+Building.all.each { |b|
+    employee1 = Employee.offset(rand(Employee.count)).first
+    employee2 = Employee.offset(rand(Employee.count)).first
+
+    while employee2 == employee1 do
+        employee2 = Employee.offset(rand(Employee.count)).first
+    end
+
+    b.update_attributes(admin_contact_id: employee1.id)
+    b.update_attributes(technical_contact_id: employee2.id)
+
+    b.update_attributes(technical_contact_full_name: employee2.first_name + employee2.last_name)
+    b.update_attributes(technical_contact_email: employee2.email)
+    b.update_attributes(technical_contact_phone: employee2.phone)
+
+    b.update_attributes(administrator_full_name: employee1.first_name + employee1.last_name)
+    b.update_attributes(administrator_email: employee1.email)
+    b.update_attributes(administrator_phone_number: employee1.phone)
+}
+
+User.create(
+    first_name: "Admin",
+    email: "admin@admin.com",
+    password: "admin123",
+
+    is_admin: true,
+    is_user: false
+)
