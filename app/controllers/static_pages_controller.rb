@@ -5,7 +5,6 @@ class StaticPagesController < ApplicationController
   def index
   end
 
-
   def residential
   end
 

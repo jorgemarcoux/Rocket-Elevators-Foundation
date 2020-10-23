@@ -38,7 +38,7 @@
               <%= link_to 'CLIENTS', root_path(anchor: "clients") %>
             </li>
             <li><!-- CONTACT -->
-              <%= link_to 'CONTACT', new_lead_path %>
+              <%= link_to 'CONTACT', root_path(anchor: "contact") %>
             </li>
             <% if can? :read, Quote %>
               <li><!-- BACKOFFICE -->

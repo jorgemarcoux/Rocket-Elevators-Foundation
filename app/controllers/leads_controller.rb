@@ -1,6 +1,4 @@
 class LeadsController < ApplicationController
-    before_action :authenticate_user!
-
     def user_leads
         @leads = Lead.where(:user_id => current_user.id)
     end
