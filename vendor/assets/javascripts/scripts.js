@@ -138,10 +138,8 @@
 		_widget_media();
 
 		/** Bootstrap Tooltip **/ 
-		jQuery("[data-toggle=tooltip]").tooltip();
 
 		/** Bootstrap Popover **/
-		jQuery("[data-toggle=popover]").popover();
 
 	}
 
@@ -1181,15 +1179,6 @@
 
 			loadScript(plugin_path + 'jquery.nav.min.js', function() {
 
-				jQuery(_container1).onePageNav({
-					currentClass: 		'active',
-					changeHash: 		false,
-					scrollSpeed: 		750,
-					scrollThreshold: 	0.5,
-					filter: 			':not(.external)',
-					easing: 			'easeInOutExpo'
-				});
-
 				// Close Nav on menu click
 				jQuery("#topMain.nav-onepage li>a").bind("click", function() {
 					if(window.width < 960) {
@@ -1200,29 +1189,6 @@
 			});
 		
 		}
-
-
-		// Bullet Navigation
-		var _container2 = jQuery("#nav-bullet");
-
-		if(_container2.length > 0) {
-
-			loadScript(plugin_path + 'jquery.nav.min.js', function() {
-
-				jQuery(_container2).onePageNav({
-					currentClass: 		'active',
-					changeHash: 		false,
-					scrollSpeed: 		750,
-					scrollThreshold: 	0.5,
-					filter: 			':not(.external)',
-					easing: 			'easeInOutExpo'
-				});
-
-			});
-		
-		}
-
-
 	}
 
 
@@ -1246,7 +1212,6 @@
 
 					// Progress Bar
 					var $opt = eval('(' + options + ')');  // convert text to json
-					console.log($opt, options);
 
 					if($opt.progressBar == 'true') {
 						var afterInit = progressBar;
