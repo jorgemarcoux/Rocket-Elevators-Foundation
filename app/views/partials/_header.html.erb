@@ -7,15 +7,15 @@
         <i class="fa fa-bars"></i>
       </button>
       <!-- Logo -->
-      <%= link_to image_tag('logo/R2.png'), root_path, class: "logo float-left scrollTo" %>
+      <%= link_to image_tag('logo/R2.png'), root_path, class: "logo float-left scrollTo", 'data-turbolinks': false %>
       <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
         <nav class="nav-main">
           <ul id="topMain" class="nav nav-pills nav-main nav-hover nav-onepage">
             <li class="active"><!-- HOME -->
-              <%= link_to 'HOME', root_path %>
+              <%= link_to 'HOME', root_path, 'data-turbolinks': false %>
             </li>
             <li class="dropdown nav-animate-fadeIn resp-active"><!-- SERVICES -->
-              <%= link_to 'SERVICES', root_path(anchor: "services") %>
+              <%= link_to 'SERVICES', root_path(anchor: "services"), 'data-turbolinks': false %>
               <ul class="dropdown-menu">
                 <li class="dropdown">
                   <a href="/static_pages/residential">RESIDENTIAL SERVICES</a>
@@ -29,16 +29,16 @@
               </ul>
             </li>
             <li><!-- PORTFOLIO -->
-              <%= link_to 'PORTFOLIO', root_path(anchor: "portfolio") %>
+              <%= link_to 'PORTFOLIO', root_path(anchor: "portfolio"), 'data-turbolinks': false %>
             </li>
             <li><!-- NEWS -->
-              <%= link_to 'NEWS', root_path(anchor: "news") %>
+              <%= link_to 'NEWS', root_path(anchor: "news"), 'data-turbolinks': false %>
             </li>
             <li><!-- CLIENTS -->
-              <%= link_to 'CLIENTS', root_path(anchor: "clients") %>
+              <%= link_to 'CLIENTS', root_path(anchor: "clients"), 'data-turbolinks': false %>
             </li>
             <li><!-- CONTACT -->
-              <%= link_to 'CONTACT', root_path(anchor: "contact") %>
+              <%= link_to 'CONTACT', root_path(anchor: "contact"), 'data-turbolinks': false %>
             </li>
             <% if can? :read, Quote %>
               <li><!-- BACKOFFICE -->
