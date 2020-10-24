@@ -6,9 +6,9 @@
       <h2 class="fs-90 fw-300">GET A QUOTE</h2>
       <a class="btn btn-lg btn-default btn-lg" href="/">HOME <i class="fa fa-angle-right"></i></a>
       &nbsp; OR &nbsp;
-      <a href="/#contact">
+      <%= link_to root_path(anchor: "contact") do %>
         <span class="btn btn-lg btn-red">CONTACT US <i class="fa fa-angle-right"></i></span>
-      </a>
+      <% end %>
     </div>
   </div>
 </section>

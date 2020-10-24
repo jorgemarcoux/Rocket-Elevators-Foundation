@@ -68,14 +68,14 @@
 </section>
 <!-- / -->
 <!-- BUTTON CALLOUT -->
-<a href="/#contact">
+<%= link_to root_path(anchor: "contact") do %>
   <span class="btn btn-xlg btn-red fs-20 fullwidth m-0 rad-0 p-40">
     <span class="font-lato fs-30">
       Has Rocket Elevators picked your curiosity ? 
       <strong>Contact Us &raquo;</strong>
     </span>
   </span>
-</a>
+<% end %>
 <!-- /BUTTON CALLOUT -->
 <script>
   plugin_path = '../assets/';
