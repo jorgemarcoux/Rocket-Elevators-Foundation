@@ -22,4 +22,10 @@ Rails.application.routes.draw do
 
   get 'my_quotes' => 'quotes#user_quotes', as: :my_quotes
   get 'my_leads' => 'leads#user_leads', as: :my_leads
+
+  resource :messages do
+    collection do
+      post 'reply'
+    end
+  end
 end
