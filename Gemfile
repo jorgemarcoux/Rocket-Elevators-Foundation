@@ -105,3 +105,6 @@ group :production do
   # or :staging or :beta or whatever environments you are using cloudflare in.
   # you probably don't want this for :test or :development
 end
+
+#Slack API
+gem 'slack-ruby-client'
