@@ -7,17 +7,20 @@ class AddBuildingReferences < ActiveRecord::Migration[5.2]
       t.timestamps
     end
     create_table :addresses do |t|
-      t.references :building, foreign_key: true
-      t.references :customer, foreign_key: true
       t.string :type_of_address
       t.string :status
       t.string :entity
       t.string :number_and_street
       t.string :suite_or_apartment
       t.string :city
+      t.string :state
       t.string :postal_code
       t.string :country
       t.string :notes
+      t.float :latitude
+      t.float :longitude
+      t.references :building, foreign_key: true
+      t.references :customer, foreign_key: true
       t.timestamps
     end
     add_reference :buildings, :building_detail, index: true
