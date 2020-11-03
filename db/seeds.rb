@@ -23,7 +23,7 @@ Elevator.destroy_all
 
 DatabaseCleaner.clean_with(:truncation)
 
-randCustomerCreation = 100
+randCustomerCreation = 20
 randEmployeeCreation = 21
 
 def seed_image
