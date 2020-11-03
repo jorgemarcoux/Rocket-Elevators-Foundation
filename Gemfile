@@ -107,4 +107,4 @@ group :production do
 end
 
 #Slack API
-gem 'slack-ruby-client'
+gem "slack-notifier"
