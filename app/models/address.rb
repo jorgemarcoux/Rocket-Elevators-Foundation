@@ -5,4 +5,8 @@ class Address < ApplicationRecord
   def custom_label_method
     "#{number_and_street}"
   end
+
+  def address
+    [number_and_street, city, state, country].compact.join(', ')
+  end
 end
