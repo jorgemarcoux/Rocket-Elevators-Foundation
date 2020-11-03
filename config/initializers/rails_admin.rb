@@ -2,23 +2,17 @@ RailsAdmin.config do |config|
   config.authorize_with :cancancan
 
   config.model 'User' do
-    object_label_method do
-    :custom_label_method
-    end
+    object_label_method { :custom_label_method }
     exclude_fields :id
   end
 
   config.model 'Employee' do
-    object_label_method do
-    :custom_label_method
-    end
+    object_label_method { :custom_label_method }
     exclude_fields :id
   end
 
   config.model 'Address' do
-    object_label_method do
-    :custom_label_method
-    end
+    object_label_method { :custom_label_method }
     exclude_fields :id
   end
 
@@ -39,30 +33,23 @@ RailsAdmin.config do |config|
   end
 
   config.model 'BuildingDetail' do
-    object_label_method do
-    :custom_label_method
-    end
+    object_label_method { :custom_label_method }
     exclude_fields :id
   end
 
   config.model 'Customer' do
-    object_label_method do
-    :custom_label_method
-    end
+    object_label_method { :custom_label_method }
     exclude_fields :id
   end
-
 
   ### Popular gems integration
 
   ## == Devise ==
-  config.authenticate_with do
-    warden.authenticate! scope: :user
-  end
-  
+  config.authenticate_with { warden.authenticate! scope: :user }
+
   config.current_user_method(&:current_user)
 
-  config.main_app_name = ["Rocket Elevators", "BackOffice"]
+  config.main_app_name = ['Rocket Elevators', 'BackOffice']
 
   ## == CancanCan ==
   # config.authorize_with :cancancan
@@ -80,8 +67,8 @@ RailsAdmin.config do |config|
   # config.show_gravatar = true
 
   config.actions do
-    dashboard                     # mandatory
-    index                         # mandatory
+    dashboard # mandatory
+    index # mandatory
     new
     export
     bulk_delete

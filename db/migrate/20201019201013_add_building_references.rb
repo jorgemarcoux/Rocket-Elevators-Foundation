@@ -1,12 +1,12 @@
 class AddBuildingReferences < ActiveRecord::Migration[5.2]
   def change
-      create_table :building_details do |t|
+    create_table :building_details do |t|
       t.references :building, foreign_key: true
       t.string :information_key
       t.string :value
       t.timestamps
     end
-      create_table :addresses do |t|
+    create_table :addresses do |t|
       t.references :building, foreign_key: true
       t.references :customer, foreign_key: true
       t.string :type_of_address

@@ -39,30 +39,16 @@ module ZendeskHelper
     }
 
     begin
-      connection =
-        Excon.new(
-          'https://rocket-elevators.zendesk.com/api/v2/tickets.json',
-          debug_request: true, debug_response: true
-        )
-      connection.request(
-        # interval is in seconds, this will block the client so leaving the limit and interval low
-        method: 'POST',
-        idempotent: true,
-        expects: [200, 201],
-        retry_limit: 2,
-        retry_interval: 0.5,
+      Excon.post(
+        @URL,
         body: JSON.generate(@request_body),
         headers: {
           'Content-Type' => 'application/json',
           'Authorization' => "Basic #{@AUTH_HEADER}"
-        },
-        instrumentor: ActiveSupport::Notifications
-      ) # ActiveSupport::Notifications is for logging of requests and responses
-    rescue Excon::Error => e
-      puts "
-      Warning: #{@ticket_subject} id # #{
-             data_source.id
-           } could not be sent to Zendesk. Please notify an administrator."
+        }
+      )
+    rescue Excon::Error, JSON::ParseError => err
+      puts err
     end
   end
 end
