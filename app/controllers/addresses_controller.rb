@@ -1,4 +1,5 @@
 class AddressesController < ApplicationController
+  before_action :authenticate_user!
   def index
     building_info = []
     Building.all.each do |building|

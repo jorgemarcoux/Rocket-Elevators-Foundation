@@ -1,8 +1,20 @@
-// Place all the styles related to the addresses_controller controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'rails_admin/custom/variables.scss';
 
 #map {
-  width: 600px;
-  height: 400px;
+  height: 75vh;
+}
+
+.address-nav {
+  background-color: $brand-primary;
+  a {
+    color: white;
+
+    &:hover {
+      color: #f28092 !important;
+    }
+  }
+}
+
+.map-container {
+  background-color: #f5f5f5;
 }

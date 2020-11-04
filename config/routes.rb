@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/backoffice', as: 'rails_admin'
+  resources :addresses, only: %i[index]
 
   resources :leads
-
-  # just putting this here for now for testing purposes
-  resources :addresses
 
   resources :quotes, only: %i[user_quotes new create]
 

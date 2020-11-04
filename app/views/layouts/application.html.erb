@@ -4,7 +4,6 @@
     <title>Rocket Elevators</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV["MAPS_API_KEY"]}" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= yield(:head_tags) %>
@@ -15,10 +14,14 @@
   <body class="enable-animation">
     <div id="nonFooter">
       <%= render 'partials/alerts'%>
-      <%= render 'partials/header' %>
+      <% if !current_page?(addresses_path) %>
+        <%= render 'partials/header' %>
+      <% end %>
       <%= yield %>
     </div>
-    <%= render 'partials/footer' %>
+    <% if !current_page?(addresses_path) %>
+      <%= render 'partials/footer' %>
+    <% end %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
