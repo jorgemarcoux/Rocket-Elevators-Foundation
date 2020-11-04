@@ -38,5 +38,7 @@ dwh_db.yml
 public/uploads/lead/attachment
 config/secrets.yml
 
+
+
 # Ignore application configuration
 /config/application.yml
