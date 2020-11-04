@@ -112,5 +112,9 @@ group :production do
   # you probably don't want this for :test or :development
 end
 
+
+#twilio gem
+gem "twilio-ruby"
+
 #Slack API
 gem "slack-notifier"
