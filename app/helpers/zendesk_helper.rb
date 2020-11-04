@@ -20,9 +20,6 @@ module ZendeskHelper
 
     @formatted_string = '<table>' + @html_array.join('') + '</table>'
 
-    @URL = ENV['URL']
-    @AUTH_HEADER = ENV['AUTH_HEADER']
-
     @request_body = {
       "ticket": {
         "subject": "#{@ticket_subject}",
@@ -40,10 +37,7 @@ module ZendeskHelper
 
     begin
       connection =
-        Excon.new(
-          'https://rocket-elevators.zendesk.com/api/v2/tickets.json',
-          debug_request: true, debug_response: true
-        )
+        Excon.new(ENV['ZD_URL'], debug_request: true, debug_response: true)
       connection.request(
         # interval is in seconds, this will block the client so leaving the limit and interval low
         method: 'POST',
@@ -54,7 +48,7 @@ module ZendeskHelper
         body: JSON.generate(@request_body),
         headers: {
           'Content-Type' => 'application/json',
-          'Authorization' => "Basic #{@AUTH_HEADER}"
+          'Authorization' => "Basic #{ENV['ZD_AUTH']}"
         },
         instrumentor: ActiveSupport::Notifications
       ) # ActiveSupport::Notifications is for logging of requests and responses
@@ -62,7 +56,9 @@ module ZendeskHelper
       puts "
       Warning: #{@ticket_subject} id # #{
              data_source.id
-           } could not be sent to Zendesk. Please notify an administrator."
+           } could not be sent to Zendesk. Please notify an administrator.
+           Error: #{e}
+           "
     end
   end
 end
