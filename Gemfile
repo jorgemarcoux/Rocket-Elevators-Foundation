@@ -108,3 +108,4 @@ end
 
 #twilio gem
 gem "twilio-ruby"
+gem "figaro"
