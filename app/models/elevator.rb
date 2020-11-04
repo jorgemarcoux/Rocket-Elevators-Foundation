@@ -9,7 +9,7 @@ end
 
 def slack_notifier_messsage
    if self.elevator_status_changed? 
-    notifier = Slack::Notifier.new Rails.application.credentials.slack[:token]
+    notifier = Slack::Notifier.new "https://hooks.slack.com/services/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"
     notifier.ping "The Elevator #{self.id} with Serial Number #{self.serial_number} changed status from #{self.elevator_status_was} to #{self.elevator_status}"
    end 
 end

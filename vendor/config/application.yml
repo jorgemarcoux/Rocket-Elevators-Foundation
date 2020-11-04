@@ -17,3 +17,6 @@ AUTH_HEADER: d2lsbHp5QG91dGxvb2suY29tL3Rva2VuOnJGNmVaMWl2T2hGZXJpazI3YzlmeEJYZW
 URL: https://rocket-elevators.zendesk.com/api/v2/tickets.json
 
 SLACK_TOKEN: https://hooks.slack.com/services/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
+
+twilio_sid:  ACff8a6f82bf3703afeb665b07e0fb6bc1
+twilio_token: dc60a5cd8484a11d3b6dd12179986711
