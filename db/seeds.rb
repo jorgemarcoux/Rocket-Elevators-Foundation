@@ -382,11 +382,11 @@ Building.all.each { |b|
     b.update_attributes(admin_contact_id: employee1.id)
     b.update_attributes(technical_contact_id: employee2.id)
 
-    b.update_attributes(technical_contact_full_name: employee2.first_name + employee2.last_name)
+    b.update_attributes(technical_contact_full_name: employee2.first_name + ' ' + employee2.last_name)
     b.update_attributes(technical_contact_email: employee2.email)
     b.update_attributes(technical_contact_phone: employee2.phone)
 
-    b.update_attributes(administrator_full_name: employee1.first_name + employee1.last_name)
+    b.update_attributes(administrator_full_name: employee1.first_name + ' ' + employee1.last_name)
     b.update_attributes(administrator_email: employee1.email)
     b.update_attributes(administrator_phone_number: employee1.phone)
 }
@@ -395,7 +395,6 @@ User.create(
     first_name: "Admin",
     email: "admin@admin.com",
     password: "admin123",
-
     is_admin: true,
     is_user: false
 )

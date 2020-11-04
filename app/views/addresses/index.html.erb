@@ -1,9 +1,14 @@
 <% provide :head_tags do %>
   <meta name='turbolinks-visit-control' content='reload'>
+  <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function(){
-      initMap(<%=@address.latitude%>, <%=@address.longitude%>)
+      let addresses = <%= @addresses.html_safe %>
+      JSON.stringify(addresses)
+      initMap(addresses)
     });
   </script>
 <% end %>
-<div id="map"></div>
+<div class="container d-flex justify-content-center">
+  <div id="map"></div>
+</div>
