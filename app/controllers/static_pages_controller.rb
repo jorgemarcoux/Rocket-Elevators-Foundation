@@ -1,9 +1,5 @@
 class StaticPagesController < ApplicationController
-  include WatsonHelper
-
-  def index
-    greeting_message
-  end
+  def index; end
 
   def residential; end
 

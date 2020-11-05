@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include WatsonHelper
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
       format.json { head :forbidden, content_type: 'text/html' }
@@ -24,6 +25,15 @@ class ApplicationController < ActionController::Base
 
   skip_before_action :verify_authenticity_token
   def after_sign_in_path_for(resource)
-    current_user.is_admin? ? rails_admin_path : new_quote_path
+    if current_user.is_admin?
+      begin
+        greeting_message
+        rails_admin_path
+      rescue => e
+        puts e
+      end
+    else
+      new_quote_path
+    end
   end
 end
