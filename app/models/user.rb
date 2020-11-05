@@ -1,4 +1,3 @@
-
 class User < ActiveRecord::Base # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable # Include default devise modules. Others available are:
   devise :database_authenticatable,
          :registerable,
@@ -11,13 +10,12 @@ class User < ActiveRecord::Base # :confirmable, :lockable, :timeoutable, :tracka
   has_one :customer
   has_one :employee
 
-  def custom_label_method
-    "#{first_name} #{last_name}"
-  end
-
   validates_uniqueness_of :email
   validates_presence_of :email
 
-  
-end
+  mount_uploader :greeting_message, AttachmentUploader
 
+  def custom_label_method
+    "#{first_name} #{last_name}"
+  end
+end
