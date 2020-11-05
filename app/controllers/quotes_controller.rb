@@ -1,6 +1,4 @@
 class QuotesController < ApplicationController
-  include ZendeskHelper
-
   def user_quotes
     @quotes = Quote.where(user_id: current_user.id)
   end
