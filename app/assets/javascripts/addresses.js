@@ -1,4 +1,4 @@
-initMap = data => {
+initMap = (data, key) => {
   const map_markers = [];
   const labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   let labelIndex = 0;
@@ -37,7 +37,7 @@ initMap = data => {
       <tr><th>Elevator Number:</th><td>${props.Elevators}</td></tr>
       </table>
       <h6>Streetview Photo</h6>
-      <img src=https://maps.googleapis.com/maps/api/streetview?size=300x150&location=${props.lat},${props.lng}&heading=151.78&pitch=-0.76&key=AIzaSyAMwbHTbE1m3VisGNhAZjHtL_xZdix_BhQ height="100"></img></div>
+      <img src=https://maps.googleapis.com/maps/api/streetview?size=300x150&location=${props.lat},${props.lng}&heading=151.78&pitch=-0.76&key=${key} height="100"></img></div>
       `,
     });
     marker.addListener('click', () => {

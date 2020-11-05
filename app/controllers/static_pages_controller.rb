@@ -1,5 +1,9 @@
-class StaticPagesController < ApplicationController # skip_before_action :authenticate_user!, :only => [:index, :residential, :corporate]
-  def index; end
+class StaticPagesController < ApplicationController
+  include WatsonHelper
+
+  def index
+    greeting_message
+  end
 
   def residential; end
 
