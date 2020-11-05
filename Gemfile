@@ -29,6 +29,13 @@ gem 'jbuilder', '~> 2.5'
 gem "audited", github: "collectiveidea/audited"
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'actionpack-cloudflare'
+gem 'excon'
+
+#DROPBOX API
+gem 'dropbox_api'
+
+#Figaro
+gem 'figaro'
 
 # USER RELATED
 gem 'devise'
