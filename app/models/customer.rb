@@ -1,6 +1,6 @@
 class Customer < ApplicationRecord    
   has_many :buildings
-  has_one :address, :dependent => :delete
+  has_one :address, dependent: :delete
   belongs_to :user, optional: true
 
   after_commit :dropbox_API
