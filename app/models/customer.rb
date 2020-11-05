@@ -27,7 +27,9 @@ class Customer < ApplicationRecord
           file_extension = File.extname(lead.attachment.to_s) 
           file_name = folder_name + "/" + lead.id.to_s  + file_extension
           #puts file_name
-          client.upload file_name, file_content            
+          client.upload file_name, file_content  
+          lead.attachment = nil
+          lead.save          
         end                            
       end 
     end
