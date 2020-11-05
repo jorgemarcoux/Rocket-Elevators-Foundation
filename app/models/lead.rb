@@ -22,19 +22,19 @@ def rocketMail
   @project_name = "#{self.project_name}"
   @email = "#{self.email}"
   puts "-----allo"
-mail = Mail.new
-mail.from = Email.new(email: 'olivier_beauchesne4@hotmail.com')
+SendGrid::mail = Mail.new
+SendGrid::mail.from = Email.new(email: 'olivier_beauchesne4@hotmail.com')
 personalization = Personalization.new
 personalization.add_to(Email.new(email: @email))
 personalization.add_dynamic_template_data({
   "full_name" => @full_name,
   "project_name" => @project_name,
 })
-mail.add_personalization(personalization)
-mail.template_id = 'd-b3ae4b30c1e54327bd9460468cf77df3'
+SendGrid::mail.add_personalization(personalization)
+SendGrid::mail.template_id = 'd-b3ae4b30c1e54327bd9460468cf77df3'
 sg = SendGrid::API.new(api_key: ENV['SENDGRID_APIKEY'])
 begin
-  response = sg.client.mail.("send").post(request_body: mail.to_json)
+  response = sg.client.mail.("send").post(request_body: SendGrid::mail.to_json)
 rescue Exception => e
   puts e.message
 end
