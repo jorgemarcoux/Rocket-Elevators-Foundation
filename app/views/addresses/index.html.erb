@@ -4,9 +4,12 @@
   <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function(){
+      let key = "<%= ENV['MAPS_API_KEY'] %>"
       let addresses = <%= @addresses.html_safe %>
+      JSON.stringify(key)
+      console.log(key)
       JSON.stringify(addresses)
-      initMap(addresses)
+      initMap(addresses, key)
     });
   </script>
 <% end %>
