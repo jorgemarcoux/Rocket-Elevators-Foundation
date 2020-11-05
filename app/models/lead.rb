@@ -22,19 +22,19 @@ def rocketMail
   @project_name = "#{self.project_name}"
   @email = "#{self.email}"
   puts "-----allo"
-SendGrid::mail = Mail.new
-SendGrid::mail.from = Email.new(email: 'olivier_beauchesne4@hotmail.com')
+mail = Mail.new
+mail.from = Email.new(email: 'olivier_beauchesne4@hotmail.com')
 personalization = Personalization.new
 personalization.add_to(Email.new(email: @email))
 personalization.add_dynamic_template_data({
   "full_name" => @full_name,
   "project_name" => @project_name,
 })
-SendGrid::mail.add_personalization(personalization)
-SendGrid::mail.template_id = 'd-b3ae4b30c1e54327bd9460468cf77df3'
+mail.add_personalization(personalization)
+mail.template_id = 'd-b3ae4b30c1e54327bd9460468cf77df3'
 sg = SendGrid::API.new(api_key: ENV['SENDGRID_APIKEY'])
 begin
-  response = sg.client.mail.("send").post(request_body: SendGrid::mail.to_json)
+  response = sg.client.mail.("send").post(request_body: mail.to_json)
 rescue Exception => e
   puts e.message
 end
@@ -43,4 +43,32 @@ puts response.body
 #puts response.parsed_body
 puts response.headers
 puts "allo--------"
+end
+
+after_create do |e|
+  email = self.email
+  full_name = self.full_name
+  project_name = self.project_name
+  mail = SendGrid::Mail.new
+  mail.from = SendGrid::Email.new(email: 'taillefer.jf@gmail.com')
+  pp mail
+  personalization = Personalization.new
+  personalization.add_to(Email.new(email: email))
+  personalization.add_dynamic_template_data({
+        "full_name" => self.full_name,
+        "project_name" => self.project_name
+  })
+  pp personalization
+  mail.add_personalization(personalization)
+  mail.template_id = 'd-d0f3822b6af745b088972b8f8e7d2564'
+  sg = SendGrid::API.new(api_key: ENV["SENDGRID_API_KEY"])
+  begin
+      response = sg.client.mail._("send").post(request_body: SendGrid::mail.to_json)
+  rescue Exception => e
+      puts e.message
+  end
+   puts response.status_code
+   puts response.body
+#    puts response.parsed_body
+   puts response.headers
 end
