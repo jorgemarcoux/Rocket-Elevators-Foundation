@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  skip_before_action :verify_authenticity_token
   include WatsonHelper
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
@@ -11,6 +10,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActionController::InvalidAuthenticityToken,
               with: :redirect_and_prompt_for_sign_in
+              skip_before_action :verify_authenticity_token
 
   protected
 
