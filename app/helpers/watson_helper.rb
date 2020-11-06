@@ -42,8 +42,10 @@ You currently have #{lead_count} leads in your contact requests.
 #{battery_count} Batteries are deployed across #{city_count} cities.
 Stay hydrated and have a great day."
 
+    file_location = "public/uploads/user/#{current_user.id}"
     begin
-      File.open('greetings.wav', 'wb') do |audio_file|
+      FileUtils.mkdir_p file_location
+      File.open("#{file_location}/greetings.wav", 'wb') do |audio_file|
         response =
           text_to_speech.synthesize(
             text: "#{spoken_text}",
@@ -51,6 +53,9 @@ Stay hydrated and have a great day."
             voice: 'en-US_AllisonV3Voice'
           )
         audio_file.write(response.result)
+        u = User.find(current_user.id)
+        u.greeting_message = audio_file
+        u.save
       end
     rescue IBMWatson::ApiException => ex
       print "Method failed with status code #{ex.code}: #{ex.error}"

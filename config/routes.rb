@@ -25,8 +25,6 @@ Rails.application.routes.draw do
   get 'my_leads' => 'leads#user_leads', as: :my_leads
 
   resource :messages do
-    collection do
-      post 'reply'
-    end
+    collection { post 'reply' }
   end
 end
