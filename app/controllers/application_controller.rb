@@ -1,4 +1,13 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery
+  skip_before_action :verify_authenticity_token, if: :json_request?
+
+  protected
+
+  def json_request?
+    request.format.json?
+  end
+
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
       format.json { head :forbidden, content_type: 'text/html' }
