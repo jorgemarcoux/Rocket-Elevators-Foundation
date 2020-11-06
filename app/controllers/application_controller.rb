@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActionController::InvalidAuthenticityToken,
               with: :redirect_and_prompt_for_sign_in
-              skip_before_action :verify_authenticity_token
+              
 
   protected
 
