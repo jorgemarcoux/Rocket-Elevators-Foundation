@@ -1,15 +1,8 @@
-require 'ibm_watson/authenticators'
-require 'ibm_watson/text_to_speech_v1'
-include IBMWatson
-include ZendeskHelper
-
-# There are currently XXX elevators deployed in the XXX buildings of your XXX customers
-# Currently, XXX elevators are not in Running Status and are being serviced
-# You currently have XXX quotes awaiting processing
-# You currently have XXX leads in your contact requests
-# XXX Batteries are deployed across XXX cities
-
 module WatsonHelper
+  require 'ibm_watson/authenticators'
+  require 'ibm_watson/text_to_speech_v1'
+  include IBMWatson
+  include ZendeskHelper
   def greeting_message
     authenticator =
       Authenticators::IamAuthenticator.new(apikey: "#{ENV['WATSON_API_KEY']}")
