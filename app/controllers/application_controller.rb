@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include WatsonHelper
   protect_from_forgery
   skip_before_action :verify_authenticity_token, if: :json_request?
 
@@ -28,11 +29,16 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_out_path_for(resource)
-    new_user_session_path
+    root_path
   end
 
   skip_before_action :verify_authenticity_token
   def after_sign_in_path_for(resource)
-    current_user.is_admin? ? rails_admin_path : root_path
+    if current_user.is_admin?
+      greeting_message
+      return rails_admin_path
+    else
+      root_path
+    end
   end
 end
