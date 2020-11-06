@@ -59,11 +59,12 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-    config.api_only = false
-    config.session_store :cookie_store
-    config.middleware.use ActionDispatch::Cookies
-    config.middleware.use ActionDispatch::Session::CookieStore, config.session_options
-    config.middleware.use ::Rack::MethodOverride
+  config.api_only = false
+  config.session_store :cookie_store
+  config.middleware.use ActionDispatch::Cookies
+  config.middleware.use ActionDispatch::Session::CookieStore,
+                        config.session_options
+  config.middleware.use ::Rack::MethodOverride
 
   # MAILER OPTIONS FOR DEVISE: DEV ENV
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }

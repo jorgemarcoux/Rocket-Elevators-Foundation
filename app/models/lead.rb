@@ -49,51 +49,20 @@ def rocketMail
     mail = SendGrid::Mail.new
     mail.from = Email.new(email: "olivier_beauchesne4@hotmail.com")
     mail.subject = 'Hello World from the Twilio SendGrid Ruby Library'
-
+    pp mail
     personalization = Personalization.new
-    personalization.add_to(Email.new(email: "jorgemarcoux@gmail.com"))
+    personalization.add_to(Email.new(email: @email))
     personalization.add_dynamic_template_data({
         "full_name" => @full_name,
         "project_name" => @project_name,
     })
     mail.add_personalization(personalization)
     mail.template_id = 'd-b3ae4b30c1e54327bd9460468cf77df3'
-
-    mail.send_at = Email.new(email: "jorgemarcoux@gmail.com")
+    pp personalization 
 
     sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
     response = sg.client.mail._('send').post(request_body: mail.to_json)
-    puts "alolooooooooooooooooooooooooooo"
 
 
-    # to = Email.new("#{self.email}")
-    # content = Content.new(type: 'text/plain', value: 'some text here')
-    # mail = SendGrid::Mail.new("olivier_beauchesne4@hotmail.com",  'Hello World from the Twilio SendGrid Ruby Library',SendGrid::Mail.("thomas.carrier@codeboxx.biz"))
-    # # puts mail, "allo"
-
-    # sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
-    # response = sg.client.mail._('send').post(request_body: mail.to_json)
-
-
-
-
-    #@full_name = "#{self.full_name}"
-    #@project_name = "#{self.project_name}"
-
-
-
-
-    # from = SendGrid::Mail.new(email: 'olivier_beauchesne4@hotmail.com')
-    # subject = 'Hello World from the Twilio SendGrid Ruby Library'
-    # to = Email.new("#{self.email}")
-    # content = Content.new(type: 'text/plain', value: 'some text here')
-    # mail = SendGrid::Mail.new(from, subject, to, content)
-    # # puts JSON.pretty_generate(mail.to_json)
-    # puts mail.to_json
-  
-    # sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
-    # response = sg.client.mail._('send').post(request_body: mail.to_json)
-    # puts response.status_code
-    # puts response.body
-    # puts response.headers
+ 
 end

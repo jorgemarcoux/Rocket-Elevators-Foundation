@@ -1,7 +1,17 @@
+require 'slack-notifier'
 require 'twilio-ruby'
+
 class Elevator < ApplicationRecord
   belongs_to :column
   before_update :messageSms
+  before_update :slack_notifier_messsage
+end
+
+def slack_notifier_messsage
+   if self.elevator_status_changed? 
+    notifier = Slack::Notifier.new ENV["SLACK_TOKEN"]
+    notifier.ping "The Elevator #{self.id} with Serial Number #{self.serial_number} changed status from #{self.elevator_status_was} to #{self.elevator_status}"
+   end 
 end
 
 def messageSms
@@ -26,4 +36,7 @@ def messageSms
     puts  "allo-----------"
   end
 end
+
+
+
 
