@@ -1,7 +1,7 @@
-
-require 'sendgrid-ruby'
-include SendGrid
 class Lead < ApplicationRecord
+  require 'sendgrid-ruby'
+  include SendGrid
+
     belongs_to :user, optional: true
     validates :full_name, presence: true, allow_blank: false
     validates :email, presence: true, allow_blank: false
@@ -14,7 +14,7 @@ class Lead < ApplicationRecord
   
     mount_uploader :attachment, AttachmentUploader
     after_create :rocketMail
-end
+
 
 def rocketMail
 
@@ -27,7 +27,7 @@ def rocketMail
     mail.subject = 'Hello World from the Twilio SendGrid Ruby Library'
     pp mail
     personalization = Personalization.new
-    personalization.add_to(Email.new(email: @email))
+    personalization.add_to(SendGrid::Email.new(email: @email))
     personalization.add_dynamic_template_data({
         "full_name" => @full_name,
         "project_name" => @project_name,
@@ -89,6 +89,6 @@ end
     
 
 
-# end
+end
 
 

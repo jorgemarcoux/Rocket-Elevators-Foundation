@@ -5,7 +5,7 @@ class Elevator < ApplicationRecord
   belongs_to :column
   before_update :messageSms
   before_update :slack_notifier_messsage
-end
+
 
 def slack_notifier_messsage
    if self.elevator_status_changed? 
@@ -35,6 +35,7 @@ def messageSms
     end
     puts  "allo-----------"
   end
+end
 end
 
 
