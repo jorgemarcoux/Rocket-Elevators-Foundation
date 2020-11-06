@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery prepend: true, with: :exception
-    skip_before_action :verify_authenticity_token
-    protected
+  protect_from_forgery
+  skip_before_action :verify_authenticity_token, if: :json_request?
+
+  protected
+
+  def json_request?
+    request.format.json?
+  end
     
   include WatsonHelper
   rescue_from CanCan::AccessDenied do |exception|
