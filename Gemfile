@@ -29,6 +29,11 @@ gem 'jbuilder', '~> 2.5'
 gem "audited", github: "collectiveidea/audited"
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'actionpack-cloudflare'
+gem 'excon'
+
+#DROPBOX API
+gem 'dropbox_api'
+
 
 # USER RELATED
 gem 'devise'
@@ -50,7 +55,7 @@ gem 'faker', '~> 2.14'
 # Store API keys & other secrets in ENV variables
 gem 'figaro'
 # HTTP client
-gem 'excon', '~> 0.78.0'
+#gem 'excon', '~> 0.78.0'
 # gem to convert addresses into lat/long
 gem 'geocoder', '~> 1.3', '>= 1.3.7'
 # Watson API client
@@ -117,8 +122,12 @@ end
 
 #twilio gem
 gem "twilio-ruby"
+gem "figaro"
+
+#sendgrid gem
+gem "sendgrid-ruby"
+
 
 #Slack API
 gem "slack-notifier"
 
-gem "sendgrid-ruby"
