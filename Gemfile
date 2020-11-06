@@ -122,8 +122,12 @@ end
 
 #twilio gem
 gem "twilio-ruby"
+gem "figaro"
+
+#sendgrid gem
+gem "sendgrid-ruby"
+
 
 #Slack API
 gem "slack-notifier"
 
-gem "sendgrid-ruby"
