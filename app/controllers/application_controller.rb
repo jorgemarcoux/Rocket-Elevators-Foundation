@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  skip_before_filter :verify_authenticity_token
   include WatsonHelper
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
