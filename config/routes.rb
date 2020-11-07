@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   get 'static_pages/corporate'
 
   devise_for :users,
-             controllers: { registrations: 'users/registrations' },
-             path_prefix: '',
-             path: 'u',
+             controllers: {
+               registrations: 'users/registrations', sessions: 'users/sessions'
+             },
              path_names: {
                sign_in: 'sign_in',
                sign_out: 'sign_out',

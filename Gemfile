@@ -70,6 +70,9 @@ gem 'client_side_validations-simple_form'
 
 gem 'carrierwave', '~> 2.0'
 
+# Recaptcha
+gem 'new_google_recaptcha'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

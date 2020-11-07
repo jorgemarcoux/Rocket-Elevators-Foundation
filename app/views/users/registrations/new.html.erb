@@ -1,3 +1,6 @@
+<% provide :head_tags do %>
+  <meta name='turbolinks-visit-control' content='reload'>
+<% end %>
 <section class="pt-10 pb-10">
   <div class="container">
     <div class="text-center">
@@ -5,12 +8,15 @@
         <h1 class="arrow-top fw-600">Sign Up</h1>
       </div>
     </div>
+    <%= content_for :recaptcha_js do %>
+      <%= include_recaptcha_js %>
+    <% end %>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= recaptcha_action('user') %>
       <%= render "devise/shared/error_messages", resource: resource %>
       <form class="form-signin d-flex justify-content-center flex-wrap">
         <div class="form-div field mx-auto mb-25" style='width: 60%;'>
           <%= f.email_field :email, autocomplete: "off", class: 'no-box', value: '' %>
-
           <%= f.label :email, class: 'label-name no-box' do %>
             <span class="content-name no-box">Email</span>
           <% end %>
@@ -20,14 +26,12 @@
         <% end %>
         <div class="form-div field mx-auto mb-25" style='width: 60%;'>
           <%= f.password_field :password, autocomplete: "off", class: 'no-box', value: '' %>
-
           <%= f.label :password, class: 'label-name no-box' do %>
             <span class="content-name no-box">Password</span>
           <% end %>
         </div>
         <div class="form-div field mx-auto mb-25" style='width: 60%;'>
           <%= f.password_field :password_confirmation, autocomplete: "off", class: 'no-box', value: '' %>
-
           <%= f.label :password_confirmation, class: 'label-name no-box' do %>
             <span class="content-name no-box">Password Confirmation</span>
           <% end %>

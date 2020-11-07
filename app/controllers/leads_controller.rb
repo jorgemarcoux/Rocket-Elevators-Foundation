@@ -1,6 +1,6 @@
 class LeadsController < ApplicationController
   include ZendeskHelper
-  
+
   def user_leads
     @leads = Lead.where(user_id: current_user.id)
   end
@@ -8,23 +8,33 @@ class LeadsController < ApplicationController
   def create
     @lead = Lead.new(lead_params)
     @lead.user_id = current_user.id if user_signed_in?
-    @lead.save
-
-    respond_to do |format|
-      if @lead.save && user_signed_in?
-        format.html do
-          redirect_to my_leads_path,
-                      notice: 'Your contact request has been sent successfully.'
+    if NewGoogleRecaptcha.human?(
+         params[:new_google_recaptcha_token],
+         'lead',
+         NewGoogleRecaptcha.minimum_score,
+         @lead
+       ) && @lead.save
+      @lead.save
+      respond_to do |format|
+        if @lead.save && user_signed_in?
+          format.html do
+            redirect_to my_leads_path,
+                        notice:
+                          'Your contact request has been sent successfully.'
+          end
+          create_zd_ticket(@lead, 'question')
+        elsif @lead.save && !user_signed_in?
+          format.html do
+            redirect_to root_path,
+                        notice:
+                          'Your contact request has been sent successfully.'
+          end
+          create_zd_ticket(@lead, 'question')
         end
-        create_zd_ticket(@lead, 'question')
-      elsif @lead.save && !user_signed_in?
-        format.html do
-          redirect_to root_path,
-                      notice: 'Your contact request has been sent successfully.'
-        end
-        create_zd_ticket(@lead, 'question')
-      else
-        format.html { render :new }
+      end
+    else
+      format.html do
+        redirect_to root_path, notice: 'You are a robot beep bop boop.'
       end
     end
   end
