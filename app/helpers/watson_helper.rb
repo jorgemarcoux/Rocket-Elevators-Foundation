@@ -5,7 +5,7 @@ module WatsonHelper
   include ZendeskHelper
   def greeting_message
     authenticator =
-      Authenticators::IamAuthenticator.new(apikey: "#{ENV['WATSON_API_KEY']}")
+      Authenticators::IamAuthenticator.new(apikey: ENV['WATSON_API_KEY'])
     text_to_speech = TextToSpeechV1.new(authenticator: authenticator)
     text_to_speech.service_url = "#{ENV['WATSON_URL']}"
 
