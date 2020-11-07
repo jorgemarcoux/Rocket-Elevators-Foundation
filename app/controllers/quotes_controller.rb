@@ -34,8 +34,10 @@ class QuotesController < ApplicationController
         end
       end
     else
-      format.html do
-        redirect_to root_path, notice: 'You are a robot beep bop boop.'
+      respond_to do |format|
+        format.html do
+          redirect_to root_path, notice: 'You are a robot beep bop boop.'
+        end
       end
     end
   end

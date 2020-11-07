@@ -43,7 +43,7 @@ Stay hydrated and have a great day."
           text_to_speech.synthesize(
             text: "#{spoken_text}",
             accept: 'audio/wav',
-            voice: 'en-US_AllisonV3Voice'
+            voice: 'en-GB_KateV3Voice'
           )
         audio_file.write(response.result)
         u = User.find(current_user.id)

@@ -30,11 +30,15 @@ class LeadsController < ApplicationController
                           'Your contact request has been sent successfully.'
           end
           create_zd_ticket(@lead, 'question')
+        else
+          render :new
         end
       end
     else
-      format.html do
-        redirect_to root_path, notice: 'You are a robot beep bop boop.'
+      respond_to do |format|
+        format.html do
+          redirect_to root_path, notice: 'You are a robot beep bop boop.'
+        end
       end
     end
   end
