@@ -35,7 +35,8 @@ This week we learned to use the excellent service APIs that will give our client
         <li>Slack-notifier</li>
 </ol>
 
-Our website deployed on CodeBoxx servers can be found at http://marcouxs.com/
+Our website deployed on CodeBoxx servers can be found at http://marcouxs.com/ . In order to visit the "backoffice" section, you will need to login with the following information: username: admin@admin.com , password: admin123
+ONce there you can try several APIs. If you click on "Elevators" on the left menu, you can see the Slack API in action by changing its status.
 
 
 ## Week-4, Team Project Description
