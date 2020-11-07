@@ -1,7 +1,7 @@
 # Rocket Elevators Information System
 
 <h2>Week 7 - APIs</h2>
-<br>
+
 <p>Team members:</p>
 <ol>
 	<li>William Sinclair</li>
@@ -9,6 +9,34 @@
 	<li>Olivier Beachesne</li>
 	<li>Jorge Marcoux</li>
 </ol>
+
+<p>
+This week we learned to use the excellent service APIs that will give our client's system new capabilities. The APIs we use are:</p>
+<ol>
+	<li><b>Google Maps</b> for geolocalisation</li>
+	<li><b>Twilio</b> to send SMS </li>
+	<li><b>Slack</b> to send updates to the maintenance channel</li>
+	<li><b>Dropbox</b> to sotre files in the cloud</li>
+	<li><b>Sendgrid</b> to sens emails to our leads</li>
+	<li><b>IBM Watson</b> to create a customized welcome message</li>
+	<li><b>ZendDesk</b> to create tickets for our sales department</li>
+</ol>
+
+<h4>Gems used:</h4>
+<ol>
+	<li>Excon</li>
+	<liFigaro</li>
+	<li>Dropbox_api</li>
+	<li>Geocoder</li>
+	<li>Ibm_watson</li>
+	<li>New_google_recaptcha</li>
+	<li>Twilio-ruby</li>
+	<li>Sendgrid-ruby</li>
+        <li>Slack-notifier</li>
+</ol>
+
+Our website deployed on CodeBoxx servers can be found at http://marcouxs.com/ . In order to visit the "backoffice" section, you will need to login with the following information: username: admin@admin.com , password: admin123
+ONce there you can try several APIs. If you click on "Elevators" on the left menu, you can see the Slack API in action by changing its status.
 
 
 ## Week-4, Team Project Description
