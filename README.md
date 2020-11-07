@@ -1,4 +1,16 @@
 # Rocket Elevators Information System
+
+<h2>Week 7 - APIs</h2>
+<br>
+<p>Team members:</p>
+<ol>
+	<li>William Sinclair</li>
+	<li>Samuel Coutinho</li>
+	<li>Olivier Beachesne</li>
+	<li>Jorge Marcoux</li>
+</ol>
+
+
 ## Week-4, Team Project Description
 
 The main goal of this week is to transform the static site previously developed during the Genesis program and turn it into a web application on MVC (Model - View - Controller) foundations. The site must be in a state that allows you to create a new section that saves the JavaScripts form that calculates an estimate in the form of a purchase order. This purchase order includes the key elements of the estimation form and allows you to enter more details.
