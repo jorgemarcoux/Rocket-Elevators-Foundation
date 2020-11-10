@@ -88,4 +88,26 @@ module Dwh
       end
     end
   end
+
+  # def self.sync_fact_inter
+  #   Building.all.each do |i|
+  #     user = User.find(q.user_id) # gets the customer from the quote to find it's company name
+  #     customer = Customer.find(user.id)
+
+  #     FactIntervention.create!(
+  #       {
+  #         employee_id: ,
+  #         building_id: ,
+  #         battery_id: rand (1, employes.count),
+  #         column_id: ,
+  #         result: ,
+  #         report: ,
+  #         status: ,
+  #         intervention_start_date_time: ,
+  #         intervention_end_date_time: ,
+  #       }
+  #     )
+  #   end
+  # end
+
 end
