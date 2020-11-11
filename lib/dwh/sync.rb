@@ -89,25 +89,26 @@ module Dwh
     end
   end
 
-  # def self.sync_fact_inter
-  #   Building.all.each do |i|
-  #     user = User.find(q.user_id) # gets the customer from the quote to find it's company name
-  #     customer = Customer.find(user.id)
+  def self.sync_fact_inter
+    Building.all.each do |i|
+      user = User.find(q.user_id) # gets the customer from the quote to find it's company name
+      customer = Customer.find(user.id)
 
-  #     FactIntervention.create!(
-  #       {
-  #         employee_id: ,
-  #         building_id: ,
-  #         battery_id: rand (1, employes.count),
-  #         column_id: ,
-  #         result: ,
-  #         report: ,
-  #         status: ,
-  #         intervention_start_date_time: ,
-  #         intervention_end_date_time: ,
-  #       }
-  #     )
-  #   end
-  # end
+      FactIntervention.create!(
+        {
+          employee_id: rand(1..employes.count),
+          building_id: rand(1..buildings.count),
+          battery_id: rand(1..batteries.count),
+          column_id: rand(1..columns.count),
+          elevator_id: rand(1..elevators.count),
+          result: ["Success","Failure","Incomplete"].sample(1),
+          report: Faker::Lorem.sentence(word_count: rand(8..20).floor),
+          status: ["Pending","InProgress","Interrupted","Resumed","Complete"].sample(1),
+          intervention_start_date_time: Faker::Time.backward(days: 1095, format: :short),
+          intervention_end_date_time: Faker::Time.between(from: intervention_start_date_time, to: intervention_start_date_time + rand(1..4), format: :short),
+        }
+      )
+    end
+  end
 
 end
