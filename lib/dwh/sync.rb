@@ -87,5 +87,36 @@ module Dwh
         )
       end
     end
+  
+
+  def self.sync_fact_interventions
+    Elevator.all.each do |e| 
+        col = Column.find(e.column_id)
+        btry = Battery.find(col.battery_id)
+        buil = Building.find(btry.building_id)
+        empl = Employee.find(buil.technical_contact_id)
+        intervention_start = Faker::Time.between_dates(from:'2017-01-01 07:03:30 -0700', to: Date.today, period: :all)
+        
+        def self.rng(id)
+          return rand(0..1) == 0 ? id : nil
+        end
+
+      FactIntervention.create!(
+        {
+          employee_id: empl.id ,
+          building_id: buil.id,
+          battery_id: rng(btry.id),
+          column_id: rng(col.id),
+          elevator_id: e.id,
+          result: ["Success","Failure","Incomplete"].sample,
+          report: Faker::Lorem.sentence(word_count: rand(8..20).floor),
+          status: ["Pending","InProgress","Interrupted","Resumed","Complete"].sample,
+          intervention_start_date_time: intervention_start,
+          intervention_end_date_time: intervention_start.next_day,
+        }
+      )
+    end
   end
+
+end
 end
