@@ -90,22 +90,24 @@ module Dwh
   end
 
   def self.sync_fact_inter
-    Building.all.each do |i|
-      user = User.find(q.user_id) # gets the customer from the quote to find it's company name
-      customer = Customer.find(user.id)
+    Elevator.all.each do |e| 
+        col = Column.find(e.column_id)
+        btry = Battery.find(col.battery_id)
+        buil = Building.find(btry.building_id)
+        empl = Employee.find(buil.technical_contact_id)
 
       FactIntervention.create!(
         {
-          employee_id: rand(1..employes.count),
-          building_id: rand(1..buildings.count),
-          battery_id: rand(1..batteries.count),
-          column_id: rand(1..columns.count),
-          elevator_id: rand(1..elevators.count),
-          result: ["Success","Failure","Incomplete"].sample(1),
+          employee_id: empl.id,
+          building_id: buil.id,
+          battery_id: btry.id,
+          column_id: col.id,
+          elevator_id: e.id,
+          result: ["Success","Failure","Incomplete"].sample,
           report: Faker::Lorem.sentence(word_count: rand(8..20).floor),
-          status: ["Pending","InProgress","Interrupted","Resumed","Complete"].sample(1),
-          intervention_start_date_time: Faker::Time.backward(days: 1095, format: :short),
-          intervention_end_date_time: Faker::Time.between(from: intervention_start_date_time, to: intervention_start_date_time + rand(1..4), format: :short),
+          status: ["Pending","InProgress","Interrupted","Resumed","Complete"].sample,
+          intervention_start_date_time: Faker::Date.between(from: '2017-01-01', to: '2020-19-05'),
+          intervention_end_date_time: intervention_start_date_time + rand(1.days..3.days),
         }
       )
     end
