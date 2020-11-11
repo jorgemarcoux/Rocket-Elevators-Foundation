@@ -89,7 +89,7 @@ module Dwh
     end
   end
 
-  def self.sync_fact_inter
+  def self.sync_fact_intervention
     Elevator.all.each do |e| 
         col = Column.find(e.column_id)
         btry = Battery.find(col.battery_id)
