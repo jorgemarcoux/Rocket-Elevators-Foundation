@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   get 'static_pages/corporate'
 
   devise_for :users,
-             controllers: { registrations: 'registrations' },
-             path_prefix: '',
-             path: 'u',
+             controllers: {
+               registrations: 'users/registrations', sessions: 'users/sessions'
+             },
              path_names: {
                sign_in: 'sign_in',
                sign_out: 'sign_out',
@@ -25,8 +25,6 @@ Rails.application.routes.draw do
   get 'my_leads' => 'leads#user_leads', as: :my_leads
 
   resource :messages do
-    collection do
-      post 'reply'
-    end
+    collection { post 'reply' }
   end
 end

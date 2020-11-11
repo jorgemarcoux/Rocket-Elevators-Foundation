@@ -1,4 +1,14 @@
 class ApplicationController < ActionController::Base
+  include WatsonHelper
+  protect_from_forgery
+  skip_before_action :verify_authenticity_token, if: :json_request?
+
+  protected
+
+  def json_request?
+    request.format.json?
+  end
+
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
       format.json { head :forbidden, content_type: 'text/html' }
@@ -19,11 +29,16 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_out_path_for(resource)
-    new_user_session_path
+    root_path
   end
 
   skip_before_action :verify_authenticity_token
   def after_sign_in_path_for(resource)
-    current_user.is_admin? ? rails_admin_path : new_quote_path
+    if current_user.is_admin?
+      greeting_message
+      return rails_admin_path
+    else
+      root_path
+    end
   end
 end

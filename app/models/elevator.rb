@@ -5,7 +5,7 @@ class Elevator < ApplicationRecord
   belongs_to :column
   before_update :messageSms
   before_update :slack_notifier_messsage
-end
+
 
 def slack_notifier_messsage
    if self.elevator_status_changed? 
@@ -24,8 +24,8 @@ def messageSms
       auth_token = ENV["twilio_token"]
       client = Twilio::REST::Client.new(account_sid, auth_token)
   
-      from = '+12058982214' # Your Twilio number
-      to = '+14184488182' # Your mobile phone number
+      from = ENV["twilio_from_numbr"]
+      to = ENV["twilio_to_numbr"]
   
       client.messages.create(
       from: from,
@@ -35,6 +35,7 @@ def messageSms
     end
     puts  "allo-----------"
   end
+end
 end
 
 

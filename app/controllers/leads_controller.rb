@@ -8,23 +8,37 @@ class LeadsController < ApplicationController
   def create
     @lead = Lead.new(lead_params)
     @lead.user_id = current_user.id if user_signed_in?
-    @lead.save
-
-    respond_to do |format|
-      if @lead.save && user_signed_in?
-        format.html do
-          redirect_to my_leads_path,
-                      notice: 'Your contact request has been sent successfully.'
+    if NewGoogleRecaptcha.human?(
+         params[:new_google_recaptcha_token],
+         'lead',
+         NewGoogleRecaptcha.minimum_score,
+         @lead
+       ) && @lead.save
+      @lead.save
+      respond_to do |format|
+        if @lead.save && user_signed_in?
+          format.html do
+            redirect_to my_leads_path,
+                        notice:
+                          'Your contact request has been sent successfully.'
+          end
+          create_zd_ticket(@lead, 'question')
+        elsif @lead.save && !user_signed_in?
+          format.html do
+            redirect_to root_path,
+                        notice:
+                          'Your contact request has been sent successfully.'
+          end
+          create_zd_ticket(@lead, 'question')
+        else
+          render :new
         end
-        create_zd_ticket(@lead, 'question')
-      elsif @lead.save && !user_signed_in?
+      end
+    else
+      respond_to do |format|
         format.html do
-          redirect_to root_path,
-                      notice: 'Your contact request has been sent successfully.'
+          redirect_to root_path, notice: 'You are a robot beep bop boop.'
         end
-        create_zd_ticket(@lead, 'question')
-      else
-        format.html { render :new }
       end
     end
   end

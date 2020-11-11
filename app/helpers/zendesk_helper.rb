@@ -4,28 +4,14 @@ require 'json'
 
 module ZendeskHelper
   def create_zd_ticket(data_source, type)
-    @ticket_subject = type == 'question' ? 'Contact Form Request' : 'New Quote'
     @ticket_priority = type == 'question' ? 'normal' : 'high'
-
-    @html_array = []
-    data_source.attributes.transform_values do |value|
-      value.nil? ? 'N/A' : value
-    end.each_pair do |k, v|
-      @html_array.push(
-        "<tr><th style='text-align: left; padding: 5px;'><h3>#{
-          k.to_s.humanize
-        }</h3></th> <tr><td style='padding: 5px;'>#{v.to_s}</td></tr>"
-      )
-    end
-
-    @formatted_string = '<table>' + @html_array.join('') + '</table>'
 
     @request_body = {
       "ticket": {
-        "subject": "#{@ticket_subject}",
+        "subject": "#{data_source.ticket_subject}",
         "type": "#{type}",
         "priority": "#{@ticket_priority}",
-        "comment": { "html_body": "#{@formatted_string}" },
+        "comment": { "html_body": "#{data_source.ticket_body}" },
         "requester": {
           "name": "#{data_source.full_name}", "email": "#{data_source.email}"
         },
@@ -37,7 +23,10 @@ module ZendeskHelper
 
     begin
       connection =
-        Excon.new(ENV['ZD_URL'], debug_request: true, debug_response: true)
+        Excon.new(
+          "#{ENV['ZD_URL']}/api/v2/tickets.json",
+          debug_request: true, debug_response: true
+        )
       connection.request(
         # interval is in seconds, this will block the client so leaving the limit and interval low
         method: 'POST',
@@ -60,5 +49,15 @@ module ZendeskHelper
            Error: #{e}
            "
     end
+  end
+
+  def ticket_query(search_string, params)
+    # params could be something like 'search' or 'search/count' to get the count only
+    response =
+      Excon.get(
+        "#{ENV['ZD_URL']}/api/v2/#{params}.json?query=#{search_string}",
+        headers: { 'Authorization' => "Basic #{ENV['ZD_AUTH']}" }
+      )
+    return JSON.parse(response.body)
   end
 end

@@ -4,9 +4,11 @@
   <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function(){
+      let key = "<%= ENV['MAPS_API_KEY'] %>"
       let addresses = <%= @addresses.html_safe %>
+      JSON.stringify(key)
       JSON.stringify(addresses)
-      initMap(addresses)
+      initMap(addresses, key)
     });
   </script>
 <% end %>
@@ -15,10 +17,10 @@
     Rocket Elevators
     <small>BackOffice</small>
   </a>
-  <a class="pjax" href="/backoffice/">Back To Dashboard</a>
-  <a href="/">Home</a></li>
-<a href="http://localhost:3000/backoffice/user/49/edit"><span>admin@admin.com</span></a>
-<a rel="nofollow" data-method="delete" href="/u/sign_out"><span class="label label-danger">Log out</span></a>
+  <%= link_to 'Back To Dashboard', rails_admin_path, class: 'pjax' %>
+  <%= link_to 'Home', root_path %>
+  <%= link_to "#{current_user.custom_label_method}", edit_user_registration_path %>
+  <%= link_to 'Log out', destroy_user_session_path %>
 </nav>
 <div class="map-container">
   <div class='text-center'>

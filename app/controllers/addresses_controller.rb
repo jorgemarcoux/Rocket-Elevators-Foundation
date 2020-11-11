@@ -38,6 +38,5 @@ class AddressesController < ApplicationController
       )
     end
     @addresses = building_info.to_json
-    puts @addresses
   end
 end
