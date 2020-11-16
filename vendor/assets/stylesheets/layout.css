@@ -2573,10 +2573,13 @@ body.menu-vertical #mainMenu.sidebar-vertical .navbar-collapse>ul.nav.navbar-nav
 	}
 	#header.header-md #topNav a.logo>img {
 		height:70px;
+		
+		
 	}
 	#header.header-md #topNav #topMain>li>a {
 		height:70px;
 		line-height:70px;
+		padding-left:10px;
 	}
 	@media only screen and (max-width: 992px) {
 		#header.header-md #topMain.nav-pills>li>a {
