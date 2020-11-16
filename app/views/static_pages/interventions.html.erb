@@ -17,9 +17,8 @@
 			<div class="row">
 				<!-- FORM -->
 					<div class="container col-5 mt-5 mb-5 text-center">
-                       collection_select(:post, :author_id, Author.all, :id, :name, prompt: true)
                        <label for="clients">Select Client</label>
-					   <input required type="text" value="" name="clients" id="clientsForm">
+					   <%= collection_select(:customer, :user_id, Customer.all, :id, :company_name, prompt: true) %>
                        <br/>
                        <br/>
                        <label for="client-buildings">Select Building</label>
