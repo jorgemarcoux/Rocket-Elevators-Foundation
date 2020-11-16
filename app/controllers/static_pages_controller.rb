@@ -4,4 +4,6 @@ class StaticPagesController < ApplicationController
   def residential; end
 
   def corporate; end
+
+  def interventions; end
 end

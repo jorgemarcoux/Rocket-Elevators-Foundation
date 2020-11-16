@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root to: 'static_pages#index'
   get 'static_pages/residential'
   get 'static_pages/corporate'
+  get 'static_pages/interventions'
 
   devise_for :users,
              controllers: {
