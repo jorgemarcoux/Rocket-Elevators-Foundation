@@ -22,20 +22,20 @@
 					   <%= collection_select(:customer, :customer_id, Customer.all, :id, :company_name, {prompt: true}, {:id=>'select_customer', :name => 'customer_id'})  %>
                        <br/>
                        <br/>
-                       <label for="building_id" class="d-none">Select Building</label>
-					   <%= collection_select(:building, :customer_id, Building.all, :id, :id, {prompt: true}, {:id=>'select_build', :name => 'building_id'}) %>
+                       <label for="building_id" class="d-none" id="build_label">Select Building</label>
+					   <%= collection_select(:building, :customer_id, Building.all, :id, :id, {prompt: true}, {:id=>'select_build', :name => 'building_id', :class => "d-none"}) %>
                        <br/>
                        <br/>
-                       <label for="battery_id">Select Battery</label>
-					   <%= collection_select(:battery, :building_id, Battery.all, :id, :id, {prompt: true}, {:id=>'select_bat', :name => 'battery_id'}) %>
+                       <label for="battery_id" class="d-none" id="bat_label">Select Battery</label>
+					   <%= collection_select(:battery, :building_id, Battery.all, :id, :id, {prompt: true}, {:id=>'select_bat', :name => 'battery_id', :class => "d-none"}) %>
                        <br/>
                        <br/>
-                       <label for="column_id">Select Column</label>
-					   <%= collection_select(:column, :battery_id, Column.all, :id, :id, {:prompt => "None"}, {:id=>'seelct_col', :name => 'column_id'}) %>
+                       <label for="column_id" class="d-none" id="col_label">Select Column</label>
+					   <%= collection_select(:column, :battery_id, Column.all, :id, :id, {:prompt => "None"}, {:id=>'select_col', :name => 'column_id',:class => "d-none"}) %>
                        <br/>
                        <br/>
-                       <label for="elevator_id">Select Lift</label>
-					   <%= collection_select(:elevator, :column_id, Elevator.all, :id, :id, {:prompt => "None"},{:id=>'select-elev', :name => 'elevator_id'}) %>
+                       <label for="elevator_id" class="d-none" id="elev_label">Select Lift</label>
+					   <%= collection_select(:elevator, :column_id, Elevator.all, :id, :id, {:prompt => "None"},{:id=>'select-elev', :name => 'elevator_id', :class => "d-none"}) %>
                        <br/>
                        <br/>
                        <label for="employee_id">Company's employees</label>
