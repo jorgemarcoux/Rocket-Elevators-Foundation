@@ -23,7 +23,6 @@
                        <br/>
                        <br/>
                        <label for="client-buildings">Select Building</label>
-                       <%= grouped_collection_select :customer_id, Building.all, :id, :customer, :id, :id %>
 					   <%= collection_select(:building, :customer_id, Building.all, :customer_id, :administrator_full_name, prompt: true) %>
                        <br/>
                        <br/>
@@ -40,7 +39,7 @@
                        <br/>
                        <br/>
                        <label for="columns-lift">Company's employees</label>
-					   <%= collection_select(:elevator, :column_id, Employee.all, :id, :id, prompt: true) %>
+					   <%= collection_select(:employe, :column_id, Employee.all, :id, :first_name, prompt: true) %>
                        <br/>
                        <br/>
                        <label for="description">Intervention Description</label>
