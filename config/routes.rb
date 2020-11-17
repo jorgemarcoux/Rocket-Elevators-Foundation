@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   get 'my_quotes' => 'quotes#user_quotes', as: :my_quotes
   get 'my_leads' => 'leads#user_leads', as: :my_leads
 
+  #To create new intervention entry
+  post '/interventions' => 'interventions#create'
+
   resource :messages do
     collection { post 'reply' }
   end

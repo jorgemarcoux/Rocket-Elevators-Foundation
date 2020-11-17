@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_17_011230) do
+ActiveRecord::Schema.define(version: 2020_11_17_182138) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "type_of_address"
@@ -146,9 +146,9 @@ ActiveRecord::Schema.define(version: 2020_11_17_011230) do
     t.integer "employee_id"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.string "result"
+    t.string "result", default: "Incomplete"
     t.text "report"
-    t.string "status"
+    t.string "status", default: "Pending"
   end
 
   create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

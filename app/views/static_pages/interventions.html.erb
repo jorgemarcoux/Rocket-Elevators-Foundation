@@ -17,37 +17,46 @@
 			<div class="row">
 				<!-- FORM -->
 					<div class="container col-5 mb-5 text-center">
-                     <form action="" method="" enctype="multipart/form-data" id="intForm">
-                       <label for="clients">Select Client</label>
-					   <%= collection_select(:customer, :customer_id, Customer.all, :id, :company_name, prompt: true) %>
+                     <form action="/interventions" method="POST" enctype="multipart/form-data" id="intForm">
+                       <label for="customer_id">Select Client</label>
+					   <%= collection_select(:customer, :customer_id, Customer.all, :id, :company_name, {prompt: true}, {:id=>'select_customer', :name => 'customer_id'})  %>
                        <br/>
                        <br/>
-                       <label for="client-buildings">Select Building</label>
-					   <%= collection_select(:building, :customer_id, Building.all, :customer_id, :administrator_full_name, prompt: true) %>
+                       <label for="building_id" class="d-none">Select Building</label>
+					   <%= collection_select(:building, :customer_id, Building.all, :id, :id, {prompt: true}, {:id=>'select_build', :name => 'building_id'}) %>
                        <br/>
                        <br/>
-                       <label for="buildings-batteries">Select Battery</label>
-					   <%= collection_select(:battery, :building_id, Battery.all, :id, :id, prompt: true) %>
+                       <label for="battery_id">Select Battery</label>
+					   <%= collection_select(:battery, :building_id, Battery.all, :id, :id, {prompt: true}, {:id=>'select_bat', :name => 'battery_id'}) %>
                        <br/>
                        <br/>
-                       <label for="batteries-columns">Select Column</label>
-					   <%= collection_select(:column, :battery_id, Column.all, :id, :id, prompt: true) %>
+                       <label for="column_id">Select Column</label>
+					   <%= collection_select(:column, :battery_id, Column.all, :id, :id, {:prompt => "None"}, {:id=>'seelct_col', :name => 'column_id'}) %>
                        <br/>
                        <br/>
-                       <label for="columns-lift">Select Lift</label>
-					   <%= collection_select(:elevator, :column_id, Elevator.all, :id, :id, prompt: true) %>
+                       <label for="elevator_id">Select Lift</label>
+					   <%= collection_select(:elevator, :column_id, Elevator.all, :id, :id, {:prompt => "None"},{:id=>'select-elev', :name => 'elevator_id'}) %>
                        <br/>
                        <br/>
-                       <label for="columns-lift">Company's employees</label>
-					   <%= collection_select(:employe, :column_id, Employee.all, :id, :first_name, prompt: true) %>
+                       <label for="employee_id">Company's employees</label>
+					   <%= collection_select(:employe, :employee_id, Employee.all, :id, :first_name, {:prompt => "None"},{:id=>'seelct_empl', :name => 'employee_id'}) %>
                        <br/>
                        <br/>
-                       <label for="description">Intervention Description</label>
-                       <input required type="text" value="" class="form-control" name="description" id="descrFrm">
+                       <label for="report">Intervention Description</label>
+                       <input required type="text" value="" class="form-control" name="report" id="descrFrm">
                        <button type="submit" class="btn btn-rblue" id="btnForm" style="background-color:#EB2C55;"><i class="fa fa-check"></i>SUBMIT</button>
                     </div>
                       
                     </div>
+
+                    <!-- DIV TEST FETCHING DATA RUBY -->
+                    <p id="testdiv"><%= params[:customer_id] %></p>
+                    
+                    
+                      
+                    
+
+                    
 
             </div>
 
