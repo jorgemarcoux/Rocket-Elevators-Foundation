@@ -23,6 +23,7 @@
                        <br/>
                        <br/>
                        <label for="client-buildings">Select Building</label>
+                       <%= grouped_collection_select :customer_id, Building.all, :id, :customer, :id, :id %>
 					   <%= collection_select(:building, :customer_id, Building.all, :customer_id, :administrator_full_name, prompt: true) %>
                        <br/>
                        <br/>
@@ -56,3 +57,4 @@
 <a href="#" id="toTop">
   <span class="arrow-top">▲</span>
 </a>
+

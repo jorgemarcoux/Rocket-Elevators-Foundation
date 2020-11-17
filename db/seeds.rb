@@ -20,6 +20,7 @@ Lead.destroy_all
 Quote.destroy_all
 Column.destroy_all
 Elevator.destroy_all
+Intervention.destroy_all
 
 DatabaseCleaner.clean_with(:truncation)
 
@@ -398,3 +399,29 @@ User.create(
     is_admin: true,
     is_user: false
 )
+
+10.times do |i|
+
+    def self.rng(id)
+        return rand(0..1) == 0 ? id : nil
+    end
+
+    inter_start = Faker::Time.between_dates(from:'2017-01-01 07:03:30 -0700', to: Date.today, period: :all)
+
+
+    tmp_inter = Intervention.create(
+        author: rand(1..8),
+        customer_id: rand(1..50),
+        building_id: rand(1..150),
+        battery_id: rng(rand(1..50)),
+        column_id: rng(5),
+        elevator_id: rand(1..150),
+        employee_id: rng(5),
+        start_date: inter_start,
+        end_date: inter_start.next_day,
+        result: ["Success","Failure","Incomplete"].sample,
+        report: Faker::Lorem.sentence(word_count: rand(8..20).floor),
+        status:["Pending","InProgress","Interrupted","Resumed","Complete"].sample,
+    )
+
+end
