@@ -5,7 +5,7 @@
 </script>
 
 <!--Interventions Form-->
-<form action="" method="" enctype="multipart/form-data" id="intForm">
+
 
 <div class="container">
 
@@ -16,32 +16,37 @@
 
 			<div class="row">
 				<!-- FORM -->
-					<div class="container col-5 mt-5 mb-5 text-center">
+					<div class="container col-5 mb-5 text-center">
+                     <form action="" method="" enctype="multipart/form-data" id="intForm">
                        <label for="clients">Select Client</label>
-					   <%= collection_select(:customer, :user_id, Customer.all, :id, :company_name, prompt: true) %>
+					   <%= collection_select(:customer, :customer_id, Customer.all, :id, :company_name, prompt: true) %>
                        <br/>
                        <br/>
                        <label for="client-buildings">Select Building</label>
-					   <input required type="text" value="" name="client-buildings" id="clientsBlForm">
+					   <%= collection_select(:building, :customer_id, Building.all, :customer_id, :administrator_full_name, prompt: true) %>
                        <br/>
                        <br/>
                        <label for="buildings-batteries">Select Battery</label>
-					   <input required type="text" value="" name="buildings-batteries" id="BlBattForm">
+					   <%= collection_select(:battery, :building_id, Battery.all, :id, :id, prompt: true) %>
                        <br/>
                        <br/>
                        <label for="batteries-columns">Select Column</label>
-					   <input required type="text" value="" name="batteries-columns" id="batColForm">
+					   <%= collection_select(:column, :battery_id, Column.all, :id, :id, prompt: true) %>
                        <br/>
                        <br/>
                        <label for="columns-lift">Select Lift</label>
-					   <input required type="text" value="" name="columns-lift" id="colLifForm">
+					   <%= collection_select(:elevator, :column_id, Elevator.all, :id, :id, prompt: true) %>
+                       <br/>
+                       <br/>
+                       <label for="columns-lift">Company's employees</label>
+					   <%= collection_select(:elevator, :column_id, Employee.all, :id, :id, prompt: true) %>
                        <br/>
                        <br/>
                        <label for="description">Intervention Description</label>
                        <input required type="text" value="" class="form-control" name="description" id="descrFrm">
+                       <button type="submit" class="btn btn-rblue" id="btnForm" style="background-color:#EB2C55;"><i class="fa fa-check"></i>SUBMIT</button>
+                    </div>
                       
-
-                    
                     </div>
 
             </div>
