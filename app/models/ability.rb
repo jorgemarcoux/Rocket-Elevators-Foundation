@@ -5,6 +5,7 @@ class Ability
 
   def initialize(user)
     user ||= User.new # guest user (not logged in)
+    
     if user.is_admin?
       can :read, :all
       can :manage, :all
@@ -15,6 +16,7 @@ class Ability
       can :read, :all
       can :read, :dashboard
       can :access, :rails_admin
+      
     end
   end # See the wiki for details:
 end

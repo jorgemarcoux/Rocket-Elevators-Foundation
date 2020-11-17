@@ -5,5 +5,8 @@ class StaticPagesController < ApplicationController
 
   def corporate; end
 
-  def interventions; end
+  def interventions
+    
+  end
+  
 end

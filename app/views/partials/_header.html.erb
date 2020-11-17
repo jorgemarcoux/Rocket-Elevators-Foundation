@@ -40,9 +40,11 @@
             <li><!-- CONTACT -->
               <%= link_to 'CONTACT', root_path(anchor: "contact"), 'data-turbolinks': false %>
             </li>
-            <li><!-- INTERVENTIONS -->
+            <!-- INTERVENTIONS -->
+            <li>
               <a href="/static_pages/interventions">INTERVENTIONS</a>
             </li>
+
             <% if can? :read, Quote %>
               <li><!-- BACKOFFICE -->
                 <%= link_to 'BACKOFFICE', rails_admin_path %>
