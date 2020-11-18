@@ -133,3 +133,6 @@ gem "sendgrid-ruby"
 #Slack API
 gem "slack-notifier"
 
+#Zendesk week 9 Jorge
+gem "zendesk_api"
+
