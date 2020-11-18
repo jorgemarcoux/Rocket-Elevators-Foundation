@@ -5,8 +5,12 @@ class InterventionsController < ApplicationController
     end
 
     def create
+        author = params['author']
+
         @intervention = Intervention.new(inter_params)
+        @intervention.author = author
         @intervention.save!
+        
     end
 
     def inter_params
