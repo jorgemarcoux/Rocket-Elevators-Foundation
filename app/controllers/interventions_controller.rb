@@ -1,5 +1,6 @@
+require 'zendesk_api'
 class InterventionsController < ApplicationController
-    after_create :create_intervention_ticket #Create ticket after form submition
+    after_action :create_intervention_ticket #Create ticket after form submition
 
     def new
         @intervention = Intervention.new
@@ -25,34 +26,31 @@ class InterventionsController < ApplicationController
 
     #Creating a new Zenddesk interveniton ticket
     def create_intervention_ticket
-       client = ZendeskAPI::Client.new do |set|
-        set.url = ENV["ZENDESK_URL"]
-        set.username = ENV["ZENDESK_USERNAME"]
-        set.token = ENV["ZENDESK_TOKEN"]
+       client = ZendeskAPI::Client.new do |config|
+        config.url = 'https://codeboxx-jorge-marcoux.zendesk.com/api/v2'
+
+        config.username = ENV["ZENDESK_USERNAME"]
+        config.token = ENV["ZENDESK_TOKEN"]
     end
 
-    ZendeskAPI::Ticket.create! (client,
-       subject: "New intervention request for client ID: #{self.customer_id}",
-       :comment => {
-           :value => "A new intervention was requested for client with id: #{self.customer_id}
-            by employee ID #{self.author}.
-            <br/>
-            Necessary information for the intervention:
-            -Building ID = #{self.building_id}
-            -Battery ID = #{self.battery_id}
-            -Column ID = #{self.column_id}
-            -Elevator ID = #{self.elevator_id}
-            -Employee ID = #{self.employee_id}
-            -Report = #{self.report}"
-       },
-
-       :priority => "normal"
-       :type => "problem"
+    ZendeskAPI::Ticket.create!(
+        client, :subject => "New intervention request for client ID: #{params[:customer_id]}}", 
+        :comment => { :value => "A new intervention was requested for client with id: #{params[:customer_id]}
+        by employee ID #{params[:author]}.
+        
+        Necessary information for the intervention:
+        -Building ID = #{params[:building_id]}
+        -Battery ID = #{params[:battery_id]}
+        -Column ID = #{params[:column_id]}
+        -Elevator ID = #{params[:elevator_id]}
+        -Employee ID = #{params[:employee_id]}
+        -Report = #{params[:report]}" }, 
+        :priority => "normal",
+        :type => "problem"
+        )
     
-    )
-    end
 
-       
+    end
     
 
     
