@@ -6,6 +6,14 @@ Rails.application.routes.draw do
 
   resources :quotes, only: %i[user_quotes new create]
 
+  resources :interventions do
+    get :get_build_request, on: :collection
+    get :get_batt_request, on: :collection
+    get :get_col_request, on: :collection
+    get :get_elev_request, on: :collection
+
+  end
+
   root to: 'static_pages#index'
   get 'static_pages/residential'
   get 'static_pages/corporate'
@@ -27,6 +35,9 @@ Rails.application.routes.draw do
 
   #To create new intervention entry
   post '/interventions' => 'interventions#create'
+
+  #AJAX request controller route
+  # get '/ajax-request' => 'interventions#get_ajax_request'
 
   resource :messages do
     collection { post 'reply' }
