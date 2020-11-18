@@ -1,6 +1,5 @@
-require 'zendesk_api'
 class InterventionsController < ApplicationController
-   after_action :create_intervention_ticket #Create ticket after form submition
+   require 'zendesk_api'
    respond_to :js, :json, :html
 
     def new
@@ -9,11 +8,9 @@ class InterventionsController < ApplicationController
 
     def create
         author = params['author']
-
         @intervention = Intervention.new(inter_params)
         @intervention.author = author
         @intervention.save!
-        
     end
 
     def inter_params
@@ -29,16 +26,16 @@ class InterventionsController < ApplicationController
         )
     end
 
-    Creating a new Zenddesk interveniton ticket
+    #Creating a new Zenddesk interveniton ticket
     def create_intervention_ticket
        client = ZendeskAPI::Client.new do |config|
         config.url = ENV["ZENDESK_URL"]
 
         config.username = ENV["ZENDESK_USERNAME"]
         config.token = ENV["ZENDESK_TOKEN"]
-    end
+       end
 
-    ZendeskAPI::Ticket.create!(
+     ZendeskAPI::Ticket.create!(
         client, :subject => "New intervention request for client ID: #{params[:customer_id]}}", 
         :comment => { :value => "A new intervention was requested for client with id: #{params[:customer_id]}
         Requester ID: #{params[:author]}.
