@@ -27,7 +27,7 @@ class InterventionsController < ApplicationController
     #Creating a new Zenddesk interveniton ticket
     def create_intervention_ticket
        client = ZendeskAPI::Client.new do |config|
-        config.url = 'https://codeboxx-jorge-marcoux.zendesk.com/api/v2'
+        config.url = ENV["ZENDESK_URL"]
 
         config.username = ENV["ZENDESK_USERNAME"]
         config.token = ENV["ZENDESK_TOKEN"]
