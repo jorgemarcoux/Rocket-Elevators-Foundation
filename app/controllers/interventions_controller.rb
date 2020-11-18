@@ -40,13 +40,13 @@ class InterventionsController < ApplicationController
     end
 
     def get_col_request
-        column_id = params[:column_id]
+        battery_id = params[:battery_id]
         columns = Column.where(battery_id: battery_id)
         render json: columns
     end
 
-    def get_elev_reques
-        elevator_id = params[:elevator_id]
+    def get_elev_request
+        column_id = params[:column_id]
         elevators = Elevator.where(column_id: column_id)
         render json: elevators
     end
