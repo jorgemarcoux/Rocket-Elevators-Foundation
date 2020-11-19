@@ -1,7 +1,7 @@
 class InterventionsController < ApplicationController
    require 'zendesk_api'
    respond_to :js, :json, :html
-   after_action :create_intervention_ticket
+   #after_action :create_intervention_ticket
 
     def new
         @intervention = Intervention.new
@@ -12,6 +12,7 @@ class InterventionsController < ApplicationController
         @intervention = Intervention.new(inter_params)
         @intervention.author = author
         @intervention.save!
+        create_intervention_ticket
     end
 
     def inter_params
@@ -51,8 +52,9 @@ class InterventionsController < ApplicationController
         :priority => "normal",
         :type => "problem"
         )
-
     end
+
+    
 
     #Controllers for AJAX request
     def get_build_request
