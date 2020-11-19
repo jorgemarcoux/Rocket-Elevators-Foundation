@@ -1,4 +1,7 @@
 class Intervention < ApplicationRecord
-    after_create :create_intervention_ticket #Create ticket after form submition
-    belongs_to :employee,
+    belongs_to :employee, optional: true
+    after_create :create_intervention_ticket
+    
+     
+
 end
