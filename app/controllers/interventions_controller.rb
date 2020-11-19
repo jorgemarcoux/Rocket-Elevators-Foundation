@@ -1,6 +1,7 @@
 class InterventionsController < ApplicationController
    require 'zendesk_api'
    respond_to :js, :json, :html
+   after_action :create_intervention_ticket
 
     def new
         @intervention = Intervention.new
