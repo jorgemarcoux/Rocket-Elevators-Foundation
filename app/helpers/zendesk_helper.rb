@@ -24,7 +24,7 @@ module ZendeskHelper
     begin
       connection =
         Excon.new(
-          "#{ENV['ZD_URL']}/api/v2/tickets.json",
+          "#{ENV['ZENDESK_URL']}/api/v2/tickets.json",
           debug_request: true, debug_response: true
         )
       connection.request(
@@ -37,7 +37,7 @@ module ZendeskHelper
         body: JSON.generate(@request_body),
         headers: {
           'Content-Type' => 'application/json',
-          'Authorization' => "Basic #{ENV['ZD_AUTH']}"
+          'Authorization' => "Basic #{ENV['ZENDESK_TOKEN']}"
         },
         instrumentor: ActiveSupport::Notifications
       ) # ActiveSupport::Notifications is for logging of requests and responses
@@ -55,8 +55,8 @@ module ZendeskHelper
     # params could be something like 'search' or 'search/count' to get the count only
     response =
       Excon.get(
-        "#{ENV['ZD_URL']}/api/v2/#{params}.json?query=#{search_string}",
-        headers: { 'Authorization' => "Basic #{ENV['ZD_AUTH']}" }
+        "#{ENV['ZENDESK_URL']}/api/v2/#{params}.json?query=#{search_string}",
+        headers: { 'Authorization' => "Basic #{ENV['ZENDESK_TOKEN']}" }
       )
     return JSON.parse(response.body)
   end
