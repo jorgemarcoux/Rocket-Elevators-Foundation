@@ -8,7 +8,6 @@ class QuotesController < ApplicationController
   end
 
   def create
-    create_quote_ticket
     @quote = Quote.new(quote_params)
     if NewGoogleRecaptcha.human?(
          params[:new_google_recaptcha_token],
@@ -41,6 +40,7 @@ class QuotesController < ApplicationController
         end
       end
     end
+    create_quote_ticket
   end
 
   private
@@ -86,22 +86,13 @@ class QuotesController < ApplicationController
      can be reached at #{params.require(:quote).require(:email)} 
      and at phone number #{params.require(:quote).require(:phone)}, just filled out a quote form. 
      
-     Apartments: #{params.require(:quote).require(:project_description)}
+     Apartments: #{params.require(:quote).require(:apartments)}
      Floors: #{params.require(:quote).require(:floors)}
      Basements: #{params.require(:quote).require(:basements)}
-     Businesses:  #{params.require(:quote).require(:businesses)}
-     Elevator shafts: #{params.require(:quote).require(:elevator_shafts)}
-     Parking spaces: #{params.require(:quote).require(:parking_spaces)}
-     Occupants: #{params.require(:quote).require(:occupants)}
-     Opening hours: #{params.require(:quote).require(:opening_hours)}
      Product line: #{params.require(:quote).require(:product_line)}
      Total elevators required: #{params.require(:quote).require(:elevator_number)}
-     Elevator cost: #{params.require(:quote).require(:unit_prices)}
      Installation free: #{params.require(:quote).require(:install_fee)}
-     Total price: #{params.require(:quote).require(:total_price)}
-
-
-     "
+     Total price: #{params.require(:quote).require(:total_price)}"
      
     },
      
