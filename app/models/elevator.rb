@@ -17,7 +17,6 @@ end
 def messageSms
   if self.elevator_status_changed? 
     if self.elevator_status == "Intervention"
-      puts "-------allo"
       message = "The Elevator #{self.id} with Serial Number #{self.serial_number} changed status from #{self.elevator_status_was} to #{self.elevator_status}"
   
       account_sid = ENV["twilio_sid"]
@@ -33,7 +32,7 @@ def messageSms
       body: message
       )
     end
-    puts  "allo-----------"
+   
   end
 end
 end
