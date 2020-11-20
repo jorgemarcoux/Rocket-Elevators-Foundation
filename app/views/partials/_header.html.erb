@@ -41,9 +41,11 @@
               <%= link_to 'CONTACT', root_path(anchor: "contact"), 'data-turbolinks': false %>
             </li>
             <!-- INTERVENTIONS -->
+            <% if user_signed_in? && current_user.is_employee? || user_signed_in? && current_user.is_admin? %>
             <li>
               <a href="/static_pages/interventions">INTERVENTIONS</a>
             </li>
+            <% end %>
 
             <% if can? :read, Quote %>
               <li><!-- BACKOFFICE -->
