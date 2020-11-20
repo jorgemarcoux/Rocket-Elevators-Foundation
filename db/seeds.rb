@@ -394,8 +394,8 @@ Building.all.each { |b|
 
 User.create(
     first_name: "Admin",
-    email: "admin@admin.com",
-    password: "admin123",
+    email: "rocket@admin.com",
+    password: "rocket",
     is_admin: true,
     is_user: false
 )
