@@ -3,12 +3,13 @@
 <h2>Week 9</h2>
 
 
-<p>
-For this project I used the Ruby on Rails application that was made by my team and I during the apst 2 weeks. I then implemented some modifications:</p>
+
+For this project I used the Ruby on Rails application that was made by my team and I during the apst 2 weeks. I then implemented some modifications:
 <ol>
 	<li>A new updated MySQL database</li>
 	<li>An 'intervention form' only available to employees</li>
-	<li><b>SlackThree ned endpoints to the REST API</li>
+	<li>Three ned endpoints to the REST API</li>
+</ol>
 	
 The website deployed on CodeBoxx servers can be found at http://marcouxs.com/ . In order to visit the "backoffice" section, you will need to login with the following information: 
 
