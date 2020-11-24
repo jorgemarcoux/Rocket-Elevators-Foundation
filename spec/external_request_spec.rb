@@ -6,6 +6,6 @@ describe 'External quote request' do
 
     response = Net::HTTP.get(uri)
 
-    expect(response).to be_an_instance_of(String)
+    expect(response).to eq("<p>Quote of the day</p>")
   end
 end

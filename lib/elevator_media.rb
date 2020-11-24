@@ -15,5 +15,6 @@ require'httparty'
 
 end #End model
 
+#New quote API call to retrive a daily quote
 quote = ElevatorMedia::Streamer.new
 puts quote::getContent
