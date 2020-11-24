@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe 'External request' do
-  it 'queries FactoryGirl contributors on GitHub' do
-    uri = URI('https://api.github.com/repos/thoughtbot/factory_girl/contributors')
+describe 'External quote request' do
+  it 'looks for a daily quote on quote API' do
+    uri = URI('http://quotes.rest/qod.json')
 
     response = Net::HTTP.get(uri)
 

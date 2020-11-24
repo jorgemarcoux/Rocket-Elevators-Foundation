@@ -1,11 +1,14 @@
 require 'elevator_media'
+require 'spec_helper'
 include ElevatorMedia
 
 describe ElevatorMedia do
     describe "#getContent" do
-        context 'Get content to display in elevators' do
-          it 'returns content' do
-            expect(Streamer.getContent).to eq("<p>quote of the day</p>")
+        context 'Get daily quote to display in elevators' do
+          it 'returns an API response with a quote of the day' do
+            uri = URI('http://quotes.rest/qod.json')
+            response = Net::HTTP.get(uri)
+            expect(response).to be_an_instance_of(String)
           end
         end
     end
