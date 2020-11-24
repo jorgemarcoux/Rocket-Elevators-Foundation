@@ -3,7 +3,7 @@ module ElevatorMedia
     class Streamer
 
         def self.getContent
-          return "content"
+          return "<p>quote of the day</p>"
         end
 
 
