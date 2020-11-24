@@ -1,12 +1,19 @@
 module ElevatorMedia
+require 'rubygems'
+require'httparty'
 
     class Streamer
+        include HTTParty
+        base_uri "quotes.rest/"
 
-        def self.getContent
-          return "<p>quote of the day</p>"
+        def getContent
+            self.class.get('/qod.json') 
         end
 
 
     end #End class
 
 end #End model
+
+quote = ElevatorMedia::Streamer.new
+puts quote::getContent
