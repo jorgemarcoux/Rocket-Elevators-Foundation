@@ -2,10 +2,11 @@ module ElevatorMedia
 
     class Streamer
 
-        def getContent
-
+        def self.getContent
+          return "content"
         end
 
-    end
 
-end
+    end #End class
+
+end #End model
