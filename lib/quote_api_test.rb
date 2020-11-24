@@ -3,10 +3,10 @@ require'httparty'
 
 class QuoteApi
     include HTTParty
-    base_uri "edutechional-resty.herokuapp.com/"
+    base_uri "quotes.rest/"
 
     def posts
-      self.class.get('/posts.json')
+      self.class.get('/qod.json')
     end
 
 end
