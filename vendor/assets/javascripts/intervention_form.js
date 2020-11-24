@@ -64,6 +64,8 @@ $("#select_col").on('change click', function(){
       alert("Intervention request successfully created")
   });
 
+ 
+
 
 
 
