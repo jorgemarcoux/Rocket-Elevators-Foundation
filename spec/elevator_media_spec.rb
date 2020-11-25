@@ -8,7 +8,7 @@ describe ElevatorMedia do
           it 'returns an API response with a quote of the day' do
             uri = URI('http://quotes.rest/qod.json')
             response = Net::HTTP.get(uri)
-            expect(response).to be_an_instance_of(String)
+            expect(response).to be_an_instance_of("<p>Quote of the day</p>")
           end
         end
     end

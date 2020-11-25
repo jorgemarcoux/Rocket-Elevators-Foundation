@@ -1,0 +1,3 @@
+class ElevatorMediaController < ApplicationController
+
+end

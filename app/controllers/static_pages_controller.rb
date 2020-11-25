@@ -8,5 +8,9 @@ class StaticPagesController < ApplicationController
   def interventions
     
   end
+
+  def elevator_media
+    
+  end
   
 end

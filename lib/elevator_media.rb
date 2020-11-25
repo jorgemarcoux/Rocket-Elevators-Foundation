@@ -6,15 +6,22 @@ require'httparty'
         include HTTParty
         base_uri "quotes.rest/"
 
-        def getContent
-            self.class.get('/qod.json') 
+        #New quote API call to retrive a daily quote
+        def callContent
+          self.class.get('/qod.json') 
         end
 
+        def getContent
+          #@quote = ElevatorMedia::Streamer.new
+          #render html: @quote
+        end
 
+       
     end #End class
-
+    
 end #End model
 
-#New quote API call to retrive a daily quote
-quote = ElevatorMedia::Streamer.new
-puts quote::getContent
+
+#@quote = ElevatorMedia::Streamer.new
+#puts @quote::callContent
+

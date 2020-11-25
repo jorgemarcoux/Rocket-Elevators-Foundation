@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'static_pages/residential'
   get 'static_pages/corporate'
   get 'static_pages/interventions'
+  get 'static_pages/elevator_media'
 
   devise_for :users,
              controllers: {

@@ -80,6 +80,8 @@ class InterventionsController < ApplicationController
         elevators = Elevator.where(column_id: column_id)
         render json: elevators
     end
+    
+    
 
 
 
