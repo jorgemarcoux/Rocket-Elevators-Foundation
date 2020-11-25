@@ -1,4 +1,4 @@
-require './lib/elevator_media.rb'
+require './lib/elevator_media/streamer'
 
 class MediaStreamer < ActiceRecord::Base
     include ElevatorMedia

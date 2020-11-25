@@ -173,6 +173,9 @@ GEM
       domain_name (~> 0.5)
     http-form_data (2.3.0)
     http_parser.rb (0.6.0)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     ibm_cloud_sdk_core (1.1.1)
@@ -203,6 +206,7 @@ GEM
       character_set (~> 1.4)
       regexp_parser (~> 1.8, >= 1.8.2)
       regexp_property_values (~> 1.0)
+    json (1.8.6)
     jwt (2.2.2)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
@@ -457,6 +461,7 @@ DEPENDENCIES
   figaro
   geocoder (~> 1.3, >= 1.3.7)
   groupdate (~> 5.2, >= 5.2.1)
+  httparty (~> 0.13.7)
   ibm_watson (~> 1.6)
   jbuilder (~> 2.5)
   jquery-rails

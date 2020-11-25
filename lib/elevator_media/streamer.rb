@@ -1,12 +1,12 @@
 require 'rubygems'
-#require 'httparty'
+require 'httparty'
 
 module ElevatorMedia
 
 
     class Streamer
-       # include HTTParty
-        #base_uri "quotes.rest/"
+       include HTTParty
+       base_uri "quotes.rest/"
 
         #New quote API call to retrive a daily quote
         def callContent
@@ -14,8 +14,7 @@ module ElevatorMedia
         end
 
         def self.getContent
-          #@quote = ElevatorMedia::Streamer.new
-          #render html: @quote
+          @quote = ElevatorMedia::Streamer.new
           'test string'
         end
 
