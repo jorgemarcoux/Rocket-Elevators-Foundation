@@ -1,3 +1,20 @@
-class ElevatorMediaController < ApplicationController
+require './lib/elevator_media.rb'
+
+class ElevatorMediasController < ApplicationController
+    include MediaStreamer
+    
+    helper :all
+
+    def getQuote
+        @quote = ElevatorMedia::Streamer.new
+        render html: @quote
+    end
+
+    # def getContent
+    #     self.class.get('/qod.json') 
+    # end
+
+    helper_method :getQuote
+
 
 end

@@ -10,6 +10,7 @@ ENV['RAILS_ADMIN_THEME'] = 'material'
 
 module App
   class Application < Rails::Application # Initialize configuration defaults for originally generated Rails version.
+    config.eager_load_paths += %W(#{config.root}/lib)
     config.load_defaults 5.2
     config.api_only = false
 
