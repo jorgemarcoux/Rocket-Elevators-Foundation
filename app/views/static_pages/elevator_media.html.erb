@@ -1,8 +1,10 @@
-<%=
+<%
   require 'elevator_media/streamer'
+  @quote = ElevatorMedia::Streamer.new
+  
 %>
 
 <h1>ELEVATOR MEDIA</h1>
 
 <!-- DIV TEST API WEEK 10 -->
-<%=ElevatorMedia::Streamer.getContent.html_safe%>
+<%=@quote.getContent()%>
