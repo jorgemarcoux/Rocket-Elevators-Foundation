@@ -30,6 +30,12 @@ RSpec.configure do |config|
       with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
       to_return(status: 200, body: "<p>Usless fact</p>", headers: {})
   end
+
+  config.before(:each) do
+    stub_request(:get, /consolidation-jorge-rest.azurewebsites.net/).
+      with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
+      to_return(status: 200, body: "200", headers: {})
+  end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
