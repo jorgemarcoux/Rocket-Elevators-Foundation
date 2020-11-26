@@ -6,7 +6,6 @@ describe ElevatorMedia::Streamer do
     describe "#getContent" do
         context 'Get daily quote to display in elevators' do
           it 'returns an API response with a quote of the day' do
-            #expect(ElevatorMedia::Streamer.getContent).to be_kind_of(String)
             uri = URI('http://quotes.rest/qod.json')
             response = Net::HTTP.get(uri)
             expect(response).to eq("<p>Quote of the day</p>")

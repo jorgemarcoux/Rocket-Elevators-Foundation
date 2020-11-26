@@ -14,10 +14,11 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  require File.expand_path("../../config/environment", __FILE__) #added to require files for Rspec tests Week 10
   #Disabling HTTP external requests for tests
   require 'webmock/rspec'
   WebMock.disable_net_connect!(allow_localhost: true)
-
+  
   config.before(:each) do
     stub_request(:get, /quotes.rest/).
       with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).

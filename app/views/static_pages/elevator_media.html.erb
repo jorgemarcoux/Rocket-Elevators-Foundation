@@ -1,11 +1,11 @@
 <%
   require 'elevator_media/streamer'
   @quote = ElevatorMedia::Streamer.new
-  render html: @quote
-  
+  #render html: @quote
+  #parsed_json = JSON.parse(@quote)
 %>
 
 <h1>ELEVATOR MEDIA</h1>
 
 <!-- DIV TEST API WEEK 10 -->
-<%=@quote.getContent() %>
+<%=@quote.getContent().to_s.html_safe %>
