@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'httparty'
+require 'rest-client'
 
 module ElevatorMedia
     class Streamer
@@ -8,12 +9,13 @@ module ElevatorMedia
 
         #New quote API call to retrive a daily quote 
         def getContent
-          self.class.get('/qod.json')
+          thequote = RestClient.get('https://uselessfacts.jsph.pl/random.json?language=en')
+          parsedQuote = JSON.parse(thequote)
+          return parsedQuote['text']
         end
        
     end 
 end 
 
 
-
-
+ 

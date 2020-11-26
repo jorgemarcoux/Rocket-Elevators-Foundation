@@ -169,13 +169,14 @@ GEM
       http-cookie (~> 1.0)
       http-form_data (~> 2.0)
       http_parser.rb (~> 0.6.0)
+    http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     http-form_data (2.3.0)
     http_parser.rb (0.6.0)
-    httparty (0.13.7)
-      json (~> 1.8)
-      multi_xml (>= 0.5.2)
+    httparty (0.9.0)
+      multi_json (~> 1.0)
+      multi_xml
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     ibm_cloud_sdk_core (1.1.1)
@@ -206,7 +207,6 @@ GEM
       character_set (~> 1.4)
       regexp_parser (~> 1.8, >= 1.8.2)
       regexp_property_values (~> 1.0)
-    json (1.8.6)
     jwt (2.2.2)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
@@ -249,6 +249,7 @@ GEM
     net-scp (3.0.0)
       net-ssh (>= 2.6.5, < 7.0.0)
     net-ssh (6.1.0)
+    netrc (0.11.0)
     new_google_recaptcha (1.2.0)
       rails (>= 4.2.0)
     nio4r (2.5.4)
@@ -320,6 +321,11 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rspec-core (3.10.0)
       rspec-support (~> 3.10.0)
     rspec-expectations (3.10.0)
@@ -461,7 +467,7 @@ DEPENDENCIES
   figaro
   geocoder (~> 1.3, >= 1.3.7)
   groupdate (~> 5.2, >= 5.2.1)
-  httparty (~> 0.13.7)
+  httparty (= 0.9.0)
   ibm_watson (~> 1.6)
   jbuilder (~> 2.5)
   jquery-rails
@@ -474,6 +480,7 @@ DEPENDENCIES
   rails_admin (~> 2.0)
   rails_admin_material
   rails_admin_rollincode (~> 1.0)
+  rest-client
   rspec-rails (~> 4.0.1)
   rvm1-capistrano3
   sass-rails (~> 5.0)

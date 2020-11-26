@@ -141,5 +141,6 @@ gem "slack-notifier"
 #Zendesk week 9 Jorge
 gem "zendesk_api"
 
-gem 'httparty', '~> 0.13.7'
+gem "httparty","0.9.0"
 
+gem 'rest-client'
