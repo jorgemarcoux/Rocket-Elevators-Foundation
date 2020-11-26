@@ -7,14 +7,13 @@ module ElevatorMedia
        base_uri "quotes.rest/"
 
         #New quote API call to retrive a daily quote 
-        def self.getContent
+        def getContent
           self.class.get('/qod.json')
         end
        
-    end #End class
-end #End model
+    end 
+end 
 
 
-@quote = ElevatorMedia::Streamer.new
-puts @quote::getContent
+
 
