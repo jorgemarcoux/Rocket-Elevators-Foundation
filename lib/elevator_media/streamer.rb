@@ -8,7 +8,7 @@ module ElevatorMedia
 
         #New quote API call to retrive a daily quote 
         def getContent
-          self.class.get('/qod.json')
+          self.class.get('/qod.json').data.contents.quotes[0].quote
         end
        
     end 
