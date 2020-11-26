@@ -37,8 +37,6 @@ Rails.application.routes.draw do
   #To create new intervention entry
   post '/interventions' => 'interventions#create'
 
-  #AJAX request controller route
-  # get '/ajax-request' => 'interventions#get_ajax_request'
 
   resource :messages do
     collection { post 'reply' }
