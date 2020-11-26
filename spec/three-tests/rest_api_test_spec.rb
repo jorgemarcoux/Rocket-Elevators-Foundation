@@ -1,4 +1,4 @@
-require 'elevator_media/rest_api_test'
+require '3 tests/rest_api_test'
 require 'spec_helper'
 require "rails_helper"
 
@@ -13,7 +13,15 @@ RSpec.describe RestApiTest do
           end
         end
     end
+    context 'Check type of response' do
+        it 'returns a JSON response' do
+            uri = URI('https://consolidation-jorge-rest.azurewebsites.net/api/interventions/pending')
+            response = Net::HTTP.get(uri)
+            json = JSON.parse(response)
+        end
+    end
 end
+
 
 
 
