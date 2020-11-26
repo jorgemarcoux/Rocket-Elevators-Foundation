@@ -4,11 +4,11 @@ include ElevatorMedia
 
 describe ElevatorMedia::Streamer do
     describe "#getContent" do
-        context 'Get daily quote to display in elevators' do
-          it 'returns an API response with a quote of the day' do
-            uri = URI('http://quotes.rest/qod.json')
+        context 'Get usless fact to display in elevators' do
+          it 'returns an API response with a usless fact' do
+            uri = URI('https://uselessfacts.jsph.pl/random.json?language=en')
             response = Net::HTTP.get(uri)
-            expect(response).to eq("<p>Quote of the day</p>")
+            expect(response).to eq("<p>Usless fact</p>")
           end
         end
     end
