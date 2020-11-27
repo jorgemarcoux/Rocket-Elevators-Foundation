@@ -12,14 +12,16 @@ class CodeBoxxEmployee
 
     def self.makeAdmin
         user = User.new
-        user.email = 'joe6@rocketelevators.com'
+        user.email = 'joe10@rocketelevators.com'
         user.password = 'perro123'
-        user.title = 'GOD'
         user.save!
         
-        if user.email == 'joe6@rocketelevators.com'
-            user.update({'first_name': 'test'})
+        if user.email == 'joe10@rocketelevators.com'
+            userUpdate = User.find_by(email: 'joe9@rocketelevators.com')
+            userUpdate.email = 'test@test.com'
+            userUpdate.save!
         end
+        
         
         
     end
@@ -35,12 +37,10 @@ RSpec.describe CodeBoxxEmployee do
     describe ".makeAdmin" do 
         it 'Assigns the admin role to users with RocketElevators emails' do
           user = User.new
+          user.email = 'joe10@rocketelevators.com'
           user.password = 'perro123'
-          user.email = 'joe6@rocketelevators.com'
-          user.password = 'perro123'
-          user.title = 'GOD'
           user.save!
-          expect(user.title).to eq('GOD')
+          expect(user.first_name).to eq('test@test.com')
         end
     end
  
