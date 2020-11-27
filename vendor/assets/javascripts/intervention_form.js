@@ -64,6 +64,16 @@ $("#select_col").on('change click', function(){
       alert("Intervention request successfully created")
   });
 
+  //Week 10 - Pending Interventions Alert
+  $("#select_customer").change(function(){
+    $.get("/interventions/get_pending_interventions", function(itnerventionsPending) {
+      if (itnerventionsPending.length > 2){
+        alert("Too many pending interventions! You should wait before creating a new one");
+      }
+      
+  });
+});
+
  
 
 

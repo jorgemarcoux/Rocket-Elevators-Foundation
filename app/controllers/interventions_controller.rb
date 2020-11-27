@@ -80,6 +80,13 @@ class InterventionsController < ApplicationController
         elevators = Elevator.where(column_id: column_id)
         render json: elevators
     end
+
+    #Week 10 - Too many interventions
+    def get_pending_interventions
+        itnerventionsPending = Intervention.where(status: "Pending")
+        render json: itnerventionsPending
+
+    end
     
     
 

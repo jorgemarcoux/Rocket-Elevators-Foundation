@@ -9,7 +9,7 @@ class InterventionsChecker
 
     def self.preventInterventions
         return if @pendingIntervention.count > 3
-         "Too many pending interventions! You should wait to create a new one"
+         "Too many pending interventions! You should wait before creating a new one"
     end
 end
 
@@ -25,7 +25,7 @@ RSpec.describe InterventionsChecker do
     end
     describe ".preventInterventions" do 
         it 'Suggests to wait to create new intervention if pending interventions > 3' do
-        expect(InterventionsChecker.preventInterventions).to eq("Too many pending interventions! You should wait to create a new one")
+        expect(InterventionsChecker.preventInterventions).to eq("Too many pending interventions! You should wait before creating a new one")
         end
     end
 end

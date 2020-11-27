@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get :get_batt_request, on: :collection
     get :get_col_request, on: :collection
     get :get_elev_request, on: :collection
+    get :get_pending_interventions, on: :collection
 
   end
 
