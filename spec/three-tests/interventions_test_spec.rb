@@ -2,26 +2,14 @@ require 'spec_helper'
 
 class InterventionsChecker
 
-    def self.checkAmount
-        # return 5
-        count = 0;
-        interventions = Intervention.all
-
-        employee = Employee.joins(:interventions).group('employees.id').having('count(employee_id) > 5')
-
-        listofemployees = employee.as_json
-
-        for employeeinlist in listofemployees
-            count += 1
-        end
-
-        return count
-
+    def self.checkPending
+        @pendingIntervention = Intervention.where(status: "Pending")
+        return @pendingIntervention.count
     end
 
     def self.preventInterventions
-        intervention = Intervention.all
-        
+        return if @pendingIntervention.count > 3
+         "Too many pending interventions! You should wait to create a new one"
     end
 end
 
@@ -29,14 +17,15 @@ end
 
 
 RSpec.describe InterventionsChecker do
-    describe ".checkAmount" do 
-        it 'Returns employee with the most open interventions' do
-        expect(InterventionsChecker.checkAmount).to eq(5)
+    describe ".checkPending" do 
+        it 'Checks amount of pending interventions' do
+        testPending = Intervention.where(status: "Pending")
+        expect(InterventionsChecker.checkPending).to eq(testPending.count)
         end
     end
     describe ".preventInterventions" do 
-        it 'Prevents an employee with 5+ interventions to take more' do
-        expect(InterventionsChecker.preventInterventions).to eq("Sorry, this employee has too many open interventions")
+        it 'Suggests to wait to create new intervention if pending interventions > 3' do
+        expect(InterventionsChecker.preventInterventions).to eq("Too many pending interventions! You should wait to create a new one")
         end
     end
 end
