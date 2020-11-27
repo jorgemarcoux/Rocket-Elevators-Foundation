@@ -1,5 +1,6 @@
 <%
   require 'elevator_media/streamer'
+  @userGreeting = 'Welcome back ' + current_user.first_name
 %>
 
 <div class="container">
@@ -9,4 +10,10 @@
 <!-- DIV TEST API WEEK 10 -->
 <div class="container bg-primary text-white">
   <%= @content %>
+</div>
+
+<div class="container">
+  <br/>
+  <br/>
+  <%= @userGreeting%>
 </div>

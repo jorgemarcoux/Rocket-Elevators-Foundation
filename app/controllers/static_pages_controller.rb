@@ -14,5 +14,6 @@ class StaticPagesController < ApplicationController
     @quote = ElevatorMedia::Streamer.new
     @content = @quote.getContent
   end
+
   
 end
