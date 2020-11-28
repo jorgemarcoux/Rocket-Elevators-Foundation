@@ -24,7 +24,7 @@ RSpec.describe InterventionsChecker do
         end
     end
     describe ".preventInterventions" do 
-        it 'Suggests to wait to create new intervention if pending interventions > 3' do
+        it 'Suggests to wait before creating new intervention if pending interventions > 3' do
         expect(InterventionsChecker.preventInterventions).to eq("Too many pending interventions! You should wait before creating a new one")
         end
     end
