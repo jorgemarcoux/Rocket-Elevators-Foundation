@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get :get_batt_request, on: :collection
     get :get_col_request, on: :collection
     get :get_elev_request, on: :collection
+    get :get_pending_interventions, on: :collection
 
   end
 
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
   get 'static_pages/residential'
   get 'static_pages/corporate'
   get 'static_pages/interventions'
+  get 'static_pages/elevator_media'
 
   devise_for :users,
              controllers: {
@@ -36,8 +38,6 @@ Rails.application.routes.draw do
   #To create new intervention entry
   post '/interventions' => 'interventions#create'
 
-  #AJAX request controller route
-  # get '/ajax-request' => 'interventions#get_ajax_request'
 
   resource :messages do
     collection { post 'reply' }

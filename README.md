@@ -1,6 +1,32 @@
 # Rocket Elevators Consolidation Project
 
+
+<h2>Week 10 - TDD</h2>
+
+<p>
+In order to make TDD with Ruby on Rails, I used the Rspec gem.
+The main requirement is under lib/elevator_media/streamer.rb This module contains the Streamer class with a getContent method that is in charge of displaying the content.
+</p>
+<p>
+This method makes a call to an API that returns a usless fact that is then displayed in the elevator_media.html.erb view (app/views/elevator_media.html.erb)
+
+The streamer test can be found at lib/spec/elevator_media_spec.rb
+</p>
+<p>
+The other 3 tests are under lib/spec/three-tests:
+ 1. interventions_test_spec.rb
+ 2. rest_api_test_spec.rb (the actual code for this code is uner lib/3 tests/rest_api_test.rb)
+ 3. user_message_spec.rb
+</p>
+
+<p>
+The command that you will be using to run the tests is 'bundle exec rspec file_path --format documentation'. Exemple:
+bundle exec rspec ./spec/three-tests/interventions_test_spec.rb --format documentation
+</p>
+
+<h2>Week 7 - APIs</h2>
 <h2>Week 9</h2>
+
 
 
 

@@ -93,6 +93,11 @@ class LeadsController < ApplicationController
      )
  end
 
+ #Week 10 - TDD
+ def self.avoid_employee
+  "DON'T"
+ end
+
 
 
 
