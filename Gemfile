@@ -144,3 +144,7 @@ gem "zendesk_api"
 gem "httparty","0.9.0"
 
 gem 'rest-client'
+
+#Security
+gem 'bundler-audit', '~> 0.4.0'
+gem 'attr_encrypted', '~> 3.1'
