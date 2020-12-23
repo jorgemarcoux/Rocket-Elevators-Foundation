@@ -144,3 +144,6 @@ gem "zendesk_api"
 gem "httparty","0.9.0"
 
 gem 'rest-client'
+
+#Week 14
+gem 'newrelic_rpm'
